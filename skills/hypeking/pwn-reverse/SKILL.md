@@ -74,6 +74,6 @@ Ref: `skill://hypeking/reverse-skill/mcp-kali-example.json`
 | Web pipeline | `HackinMode` |
 | SPA API harvest | `pwn-api-recon` |
 | MITRE / WSTG | `pwn-mitre-*` / `pwn-wstg` |
-| LLM redteam | `g0dm0d3` / `pwn-ai-llm` |
+| LLM redteam | `pwn-ai-llm` |
 
 Provenance: [zhaoxuya520/reverse-skill](https://github.com/zhaoxuya520/reverse-skill) MIT — `skill://hypeking/REVERSE-SKILL-IMPORT.md`

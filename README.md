@@ -16,10 +16,14 @@ Unified capability bundle for `omp` (`oh-my-pi` v18.12.1). Combines the full off
 | `AGENTS.md` | Pure technical router with 33 closed intents, lazy knowledge chain, and 6 Done-Gate profiles. |
 | `config.yml` | Harness settings for omp (model roles, thinking budget). |
 | `models.yml` | Model provider endpoint definitions. |
-| `vendor/` | Component provenance records (`provenance.json`, `sources.json`). |
-| `restore.sh` | Automated deployment script to sync bundle to `~/.omp/agent/`. |
+| `vendor/` | Component provenance records (`provenance.json`, `sources.json`), licenses (`vendor/licenses/`). |
+| `restore.sh` | Automated deployment script to sync bundle to `~/.omp/agent/` and provision binaries. |
+| `LICENSE` | MIT License. |
+| `NOTICE` | Third-party software attribution and copyright notices. |
 
 ## Quick Start & Installation
+
+> **Important**: A raw git clone of this repository does not include the pre-built `bin/codebase-memory-mcp` binary (>280 MB, excluded via `.gitignore` to comply with GitHub object limits). Running `./restore.sh` is **required** to download and verify the binary with SHA256 integrity (`ce11c141431aeadd788506c3a7e6942db8fd438dec369d0707a39ec9fd8c6510`) before running `omp`.
 
 Run the automated restore script to synchronize this bundle to `~/.omp/agent/`:
 
@@ -27,7 +31,6 @@ Run the automated restore script to synchronize this bundle to `~/.omp/agent/`:
 chmod +x restore.sh
 ./restore.sh
 ```
-
 To verify skill discovery with `omp`:
 
 ```bash

@@ -1,0 +1,83 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main", "build/*" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate:
+    name: Validation & Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@0b93645e9fb717ef6b147a7504a4d36144305b84 # v5.4.0
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: "mcp/penulis-ilmiah/package-lock.json"
+
+      - name: Validate JSON configurations
+        run: |
+          python3 -c '
+          import json
+          for f in ["mcp.json", "vendor/provenance.json", "vendor/sources.json", "vendor/freeze-manifest.json", "vendor/release-contract.json"]:
+              with open(f) as fp:
+                  json.load(fp)
+              print(f"VALID: {f}")
+          '
+
+      - name: Verify skill & command catalog counts
+        run: |
+          python3 -c '
+          import os
+          skills = [d for d in os.listdir("skills") if os.path.isdir(os.path.join("skills", d))]
+          manual = [d for d in os.listdir("manual-skills") if os.path.isdir(os.path.join("manual-skills", d))]
+          commands = [f[:-3] for f in os.listdir("commands") if f.endswith(".md")]
+          
+          assert len(skills) == 52, f"Expected 52 skills, got {len(skills)}"
+          assert len(manual) == 15, f"Expected 15 manual skills, got {len(manual)}"
+          assert len(commands) == 15, f"Expected 15 commands, got {len(commands)}"
+          assert sorted(manual) == sorted(commands), "Mismatch between manual-skills and commands"
+          print(f"CATALOG PASS: {len(skills)} skills, {len(manual)} manual skills, {len(commands)} commands.")
+          '
+
+      - name: Verify path sanitization
+        run: |
+          FORBIDDEN="~/.config/"'opencode'
+          if grep -rn --exclude-dir=.git "$FORBIDDEN" .; then
+            echo "ERROR: Found forbidden path"
+            exit 1
+          fi
+          echo "PATH PASS: 0 occurrences of forbidden path"
+      - name: Verify Python compilation
+        run: |
+          python3 -c '
+          import subprocess, py_compile
+          files = [f for f in subprocess.check_output(["git", "ls-files", "-z", "*.py"]).decode("utf-8").split("\0") if f.endswith(".py")]
+          print(f"Compiling {len(files)} Python files...")
+          for f in files:
+              py_compile.compile(f, doraise=True)
+          print("All Python files compiled cleanly.")
+          '
+
+      - name: Run router contract test suite
+        run: |
+          python3 tests/test_route.py
+
+      - name: Build & test MCP penulis-ilmiah
+        run: |
+          cd mcp/penulis-ilmiah
+          npm ci
+          npm run build
+          npm test

@@ -24,7 +24,7 @@ RULES: list[tuple[list[str], str, str, int]] = [
     (["ctf", "lomba", "ctf sandbox", "competition challenge", "靶场", "awd"], "ctf/SKILL.md", "ctf", 96),
     (["route", "routing", "which skill", "triage", "dispatch", "skill router"], "SKILL.md", "", 95),
     (["pwn ", "pwn\t", "axiom", "aggressive pipeline", "web pwn"], "HackinMode/SKILL.md", "pipeline", 90),
-    (["godmode", "g0dm0d3", "god mode"], "HackinMode/SKILL.md", "pipeline", 90),
+    (["godmode", "god mode", "jailbreak", "adversarial prompt"], "pwn-ai-llm/SKILL.md", "09-ai-llm-web/jailbreak", 90),
     (["api recon", "api-recon", "frontend api", "spa harvest", "webpack chunk", "vite manifest", "xhr harvest", "fetch stub", "param samples", "runtime_harvest", "preload.js", "shadow endpoint discovery", "route map extract"], "pwn-api-recon/SKILL.md", "01-recon/api-recon", 95),
     # reverse-skill gap packs (mobile / binary / js crypto / ctf / firmware / forensics)
     (["game modding", "universal modder", "game recon", "mod any game", "unity modding", "unreal modding"], "reverse-skill/game-modding/SKILL.md", "reverse/game-modding", 95),
