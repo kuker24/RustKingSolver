@@ -1,0 +1,153 @@
+#!/usr/bin/env bash
+# bin/omp — profile-aware launcher for oh-my-pi (omp).
+#
+# Behavior:
+#   omp                     -> activate the "default" MCP profile, then launch omp
+#   omp pentest [args...]   -> activate the "pentest" MCP profile, then launch omp
+#   omp default [args...]   -> activate the "default" MCP profile, then launch omp
+#   omp status              -> print the active MCP profile, then exit (no launch)
+#   omp pentest status      -> activate "pentest", print status, then exit (no launch)
+#   omp <anything else>     -> activate the "default" profile, then launch omp verbatim
+#
+# Only the exact leading tokens `pentest`, `default` and a lone `status` are
+# intercepted. Everything else is forwarded to the real oh-my-pi binary
+# untouched, so omp's own subcommands keep working.
+#
+# Environment:
+#   OMP_AGENT_DIR   Agent state dir (default: ~/.omp/agent), same as omp-profile.
+#   OMP_REAL_BIN    Absolute path to the real oh-my-pi binary (bypasses discovery).
+#   OMP_NO_PROFILE  When set and non-empty, skip all profile management and just
+#                   exec the real binary with the given arguments.
+#
+# This script never re-invokes a command named `omp` from PATH; it resolves the
+# real binary by absolute path and guards against resolving itself.
+set -euo pipefail
+
+SELF="$(readlink -f "${BASH_SOURCE[0]}")"
+SELF_DIR="$(dirname "$SELF")"
+TARGET_DIR="${OMP_AGENT_DIR:-$HOME/.omp/agent}"
+PROFILES_DIR="$TARGET_DIR/profiles"
+
+# --- locate the real oh-my-pi binary without recursing into this wrapper ---
+resolve_real_omp() {
+  if [ -n "${OMP_REAL_BIN:-}" ] && [ -x "${OMP_REAL_BIN}" ]; then
+    printf '%s\n' "${OMP_REAL_BIN}"
+    return 0
+  fi
+
+  # Known install locations (documented assumption: oh-my-pi lands in ~/.local/bin).
+  local cand
+  for cand in "$HOME/.local/bin/omp" "/usr/local/bin/omp" "/usr/bin/omp" "$HOME/.bun/bin/omp"; do
+    [ -x "$cand" ] || continue
+    [ "$cand" -ef "$SELF" ] && continue
+    printf '%s\n' "$cand"
+    return 0
+  done
+
+  # Fall back to a PATH scan, skipping the directory that holds this wrapper.
+  local d rd
+  IFS=':' read -r -a _dirs <<< "${PATH:-}"
+  for d in "${_dirs[@]}"; do
+    [ -n "$d" ] || continue
+    rd="$(cd "$d" 2>/dev/null && pwd)" || continue
+    [ "$rd" = "$SELF_DIR" ] && continue
+    if [ -x "$d/omp" ] && [ ! "$d/omp" -ef "$SELF" ]; then
+      printf '%s\n' "$d/omp"
+      return 0
+    fi
+  done
+  return 1
+}
+
+# --- locate omp-profile (sibling first, then PATH) ---
+resolve_omp_profile() {
+  if [ -x "$SELF_DIR/omp-profile" ]; then
+    printf '%s\n' "$SELF_DIR/omp-profile"
+  elif command -v omp-profile >/dev/null 2>&1; then
+    command -v omp-profile
+  fi
+}
+
+print_status() {
+  local pb
+  pb="$(resolve_omp_profile)"
+  if [ -n "$pb" ]; then
+    "$pb" status
+  else
+    if [ -f "$TARGET_DIR/mcp.json" ]; then
+      echo "[*] Active MCP config: $TARGET_DIR/mcp.json (omp-profile not found for detail)"
+    else
+      echo "[!] No MCP config at $TARGET_DIR/mcp.json. Run ./restore.sh first." >&2
+      return 1
+    fi
+  fi
+}
+
+# apply_profile <default|pentest> [quiet]
+apply_profile() {
+  local p="$1" quiet="${2:-}"
+  local src="$PROFILES_DIR/mcp.$p.json"
+
+  if [ ! -f "$src" ]; then
+    echo "[!] Profile '$p' not found at $src" >&2
+    echo "[!] Run ./restore.sh first to deploy the bundle." >&2
+    return 1
+  fi
+
+  if [ -f "$TARGET_DIR/mcp.json" ] && cmp -s "$src" "$TARGET_DIR/mcp.json"; then
+    [ -n "$quiet" ] || echo "[+] $p profile active" >&2
+    return 0
+  fi
+
+  mkdir -p "$TARGET_DIR"
+  local pb
+  pb="$(resolve_omp_profile)"
+  if [ -n "$pb" ]; then
+    "$pb" "$p" >/dev/null 2>&1 || cp "$src" "$TARGET_DIR/mcp.json"
+  else
+    cp "$src" "$TARGET_DIR/mcp.json"
+  fi
+  [ -n "$quiet" ] || echo "[+] $p profile active" >&2
+}
+
+if [ -z "${OMP_NO_PROFILE:-}" ]; then
+  if [ "$#" -eq 0 ]; then
+    apply_profile default quiet
+  else
+    case "$1" in
+      pentest|default)
+        if [ "$#" -eq 2 ] && [ "$2" = "status" ]; then
+          apply_profile "$1"
+          print_status
+          exit 0
+        fi
+        apply_profile "$1"
+        shift
+        ;;
+      status)
+        if [ "$#" -eq 1 ]; then
+          print_status
+          exit 0
+        fi
+        apply_profile default quiet
+        ;;
+      *)
+        apply_profile default quiet
+        ;;
+    esac
+  fi
+fi
+
+REAL_OMP="$(resolve_real_omp)" || {
+  echo "[!] Could not locate the real oh-my-pi 'omp' binary." >&2
+  echo "[!] Set OMP_REAL_BIN=/absolute/path/to/omp and retry." >&2
+  exit 127
+}
+
+if [ "$REAL_OMP" -ef "$SELF" ]; then
+  echo "[!] Resolved the launcher itself as the real binary; refusing to recurse." >&2
+  echo "[!] Set OMP_REAL_BIN=/absolute/path/to/omp and retry." >&2
+  exit 127
+fi
+
+exec "$REAL_OMP" "$@"

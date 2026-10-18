@@ -9,7 +9,7 @@ Unified capability bundle for `omp` (`oh-my-pi` v18.12.1). Combines the full off
 | `skills/` | 52 discovered skills: 1 umbrella offensive router (`hypeking`) + 51 engineering skills. |
 | `manual-skills/` | 15 manual specialists isolated from automatic scanner discovery. |
 | `commands/` | 15 slash command stubs routing to `~/.omp/agent/manual-skills/<name>/SKILL.md`. |
-| `bin/` | Executables: `opencode-chromium-cdp` (with symlink `omp-chromium-cdp`) and `codebase-memory-mcp`. |
+| `bin/` | Executables: profile-aware `omp` launcher, `omp-profile` switcher, `opencode-chromium-cdp` (with symlink `omp-chromium-cdp`) and `codebase-memory-mcp`. |
 | `mcp/` | First-party MCP packages: `penulis-ilmiah` (Indonesian academic paper assistant). |
 | `rules/` | Operational governance: `00-routing.md`, `01-verification.md`, `02-engineering-principles.md`, `03-prose-discipline.md`, `decision-log-protocol.md`. |
 | `mcp.json` | Unified MCP configuration: 4 enabled (codebase-memory, context7, shadcn, penulis-ilmiah) + 13 disabled. |
@@ -62,6 +62,59 @@ bin/omp-profile default
 bin/omp-profile status
 ```
 
+## Launcher: `omp` vs `omp pentest`
+
+`bin/omp` is a thin wrapper around the real oh-my-pi binary that selects an MCP
+profile *before* launch, so you never have to run `omp-profile` by hand:
+
+| Invocation | Effect |
+|---|---|
+| `omp` | activate the **default** profile, then launch omp |
+| `omp pentest [args…]` | activate the **pentest** profile, then launch omp |
+| `omp default [args…]` | activate the **default** profile, then launch omp |
+| `omp status` | print the active MCP profile and exit (no omp launch) |
+| `omp pentest status` | switch to **pentest**, print status, exit (no omp launch) |
+| `omp <anything else>` | activate the **default** profile, then launch omp verbatim |
+
+Only the exact leading tokens `pentest`, `default`, and a lone `status` are
+intercepted; every other argument is forwarded to the real oh-my-pi binary
+untouched, so omp's own subcommands keep working.
+
+### PATH setup (required)
+
+The wrapper must be found **before** the real `omp` binary. `~/.omp/agent/bin`
+is usually not on PATH, while the oh-my-pi installer puts `omp` in
+`~/.local/bin`, so prepend the bundle bin directory:
+
+```bash
+# Add to ~/.bashrc / ~/.zshrc, after the line that adds ~/.local/bin
+export PATH="$HOME/.omp/agent/bin:$PATH"
+```
+
+`./restore.sh` prints this reminder on completion. Restart your shell (or
+`source` the rc file) and verify:
+
+```bash
+which omp          # must resolve to ~/.omp/agent/bin/omp
+omp status         # prints the active profile
+```
+
+The wrapper resolves the real binary by absolute path and refuses to re-execute
+itself, so there is no recursion even when it is first on PATH.
+
+### Environment variables
+
+| Variable | Purpose |
+|---|---|
+| `OMP_AGENT_DIR` | Agent state dir (default `~/.omp/agent`), shared with `omp-profile`. |
+| `OMP_REAL_BIN` | Absolute path to the real oh-my-pi binary; bypasses auto-discovery (useful when `omp` lives somewhere unusual). |
+| `OMP_NO_PROFILE` | When set and non-empty, skip all profile management and exec the real binary verbatim. |
+
+> **Note**: switching profiles rewrites `~/.omp/agent/mcp.json`. A bare `omp`
+> always resets to the default profile, so a manually chosen pentest profile is
+> not sticky across launches — use `omp pentest` each time, or export
+> `OMP_NO_PROFILE=1` to manage `mcp.json` yourself.
+
 ## Environment Variables
 
 Credentials are never stored in the repository. Set the required variables in your shell environment:
@@ -102,4 +155,9 @@ Credentials are never stored in the repository. Set the required variables in yo
    bin/opencode-chromium-cdp start
    bin/opencode-chromium-cdp status
    bin/opencode-chromium-cdp stop
+   ```
+
+5. **Verify Launcher Profile Selection** (no real omp launch):
+   ```bash
+   python3 tests/test_launcher.py
    ```
