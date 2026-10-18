@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "note": "allowlist = WHAT is owned. This file = HOW each owned skill may be invoked. provenance = WHERE it came from. Catalog frozen at 66 names (51 model, 15 manual; 26 closed intents; see docs/CATALOG-FREEZE.md).",
+  "skills": {
+    "academic": {
+      "invocation": "model"
+    },
+    "adhd": {
+      "invocation": "model"
+    },
+    "agent-architecture-audit": {
+      "invocation": "model"
+    },
+    "api-design": {
+      "invocation": "model"
+    },
+    "architect": {
+      "invocation": "manual"
+    },
+    "arena": {
+      "invocation": "manual"
+    },
+    "automation-audit-ops": {
+      "invocation": "model"
+    },
+    "blast-radius": {
+      "invocation": "manual"
+    },
+    "browser-act": {
+      "invocation": "model"
+    },
+    "business-motion-film": {
+      "invocation": "model"
+    },
+    "chrome-devtools-axi": {
+      "invocation": "model"
+    },
+    "click-path-audit": {
+      "invocation": "model"
+    },
+    "code-tour": {
+      "invocation": "model"
+    },
+    "codebase-design": {
+      "invocation": "model"
+    },
+    "contract-first": {
+      "invocation": "model"
+    },
+    "cost-aware-llm-pipeline": {
+      "invocation": "model"
+    },
+    "create-verification-skill": {
+      "invocation": "manual"
+    },
+    "decision-log": {
+      "invocation": "manual"
+    },
+    "deck-design": {
+      "invocation": "model"
+    },
+    "demo-video": {
+      "invocation": "manual"
+    },
+    "diagnosing-bugs": {
+      "invocation": "model"
+    },
+    "diagram-design": {
+      "invocation": "model"
+    },
+    "domain-modeling": {
+      "invocation": "model"
+    },
+    "emil-design-eng": {
+      "invocation": "model"
+    },
+    "eval-harness": {
+      "invocation": "model"
+    },
+    "figure-it-out": {
+      "invocation": "manual"
+    },
+    "found-this-design": {
+      "invocation": "model"
+    },
+    "full-audit-keamanan": {
+      "invocation": "model"
+    },
+    "full-performance-audit": {
+      "invocation": "model"
+    },
+    "gh-axi": {
+      "invocation": "model"
+    },
+    "grill-with-docs": {
+      "invocation": "model"
+    },
+    "humanizer": {
+      "invocation": "model"
+    },
+    "hyperframes": {
+      "invocation": "model"
+    },
+    "id-demo-video": {
+      "invocation": "model"
+    },
+    "impeccable": {
+      "invocation": "model"
+    },
+    "improve-codebase-architecture": {
+      "invocation": "manual"
+    },
+    "install-anti-slop": {
+      "invocation": "model"
+    },
+    "interrogate": {
+      "invocation": "manual"
+    },
+    "json-render": {
+      "invocation": "model"
+    },
+    "maintain-verification-skill": {
+      "invocation": "manual"
+    },
+    "markitdown": {
+      "invocation": "model"
+    },
+    "matt-code-review": {
+      "invocation": "model"
+    },
+    "mongodb-ops": {
+      "invocation": "model"
+    },
+    "ninerouter": {
+      "invocation": "model"
+    },
+    "pageindex": {
+      "invocation": "model"
+    },
+    "penulis-ilmiah": {
+      "invocation": "model"
+    },
+    "playwright-qa": {
+      "invocation": "model"
+    },
+    "prototype": {
+      "invocation": "model"
+    },
+    "reflect": {
+      "invocation": "manual"
+    },
+    "research": {
+      "invocation": "model"
+    },
+    "scroll-craft": {
+      "invocation": "model"
+    },
+    "scroll-world": {
+      "invocation": "model"
+    },
+    "skill-stocktake": {
+      "invocation": "model"
+    },
+    "smartbook-ingest": {
+      "invocation": "model"
+    },
+    "smartdoc": {
+      "invocation": "model"
+    },
+    "supabase-ops": {
+      "invocation": "model"
+    },
+    "tdd": {
+      "invocation": "model"
+    },
+    "technical-writing": {
+      "invocation": "manual"
+    },
+    "to-spec": {
+      "invocation": "model"
+    },
+    "to-tickets": {
+      "invocation": "model"
+    },
+    "unslop": {
+      "invocation": "manual"
+    },
+    "vercel-ops": {
+      "invocation": "model"
+    },
+    "visual-studio": {
+      "invocation": "model"
+    },
+    "why": {
+      "invocation": "manual"
+    },
+    "wizard": {
+      "invocation": "manual"
+    },
+    "writing-for-agents": {
+      "invocation": "model"
+    }
+  }
+}

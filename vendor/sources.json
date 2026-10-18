@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "product": "omp-bundle",
+  "productVersion": "1.0.0",
+  "sources": {
+    "codebase-memory": {
+      "repository": "https://github.com/DeusData/codebase-memory-mcp",
+      "version": "0.11.0",
+      "platform": "linux-x86_64",
+      "artifactUrl": "https://github.com/DeusData/codebase-memory-mcp/releases/download/v0.11.0/codebase-memory-mcp-linux-amd64-portable.tar.gz",
+      "artifactSha256": "1f9e8293eb2bc5c05cfa27a7e8fc033da6d729ffad525ccfcdaa3fd606306683",
+      "innerBinarySha256": "ce11c141431aeadd788506c3a7e6942db8fd438dec369d0707a39ec9fd8c6510"
+    },
+    "shadcn": {
+      "repository": "https://github.com/shadcn-ui/ui",
+      "package": "shadcn",
+      "version": "4.21.1",
+      "via": "npx",
+      "engines": {
+        "node": ">=20.18.1"
+      },
+      "note": "Pinned CLI version for MCP stdio. npx downloads the package; there is no artifactSha256."
+    },
+    "context7": {
+      "url": "https://mcp.context7.com/mcp",
+      "transport": "http",
+      "note": "Remote MCP. No auth secret is stored by this installer."
+    },
+    "serena": {
+      "repository": "https://github.com/oraios/serena",
+      "version": "1.7.0",
+      "package": "serena-agent",
+      "status": "optional-on-demand"
+    },
+    "stitch": {
+      "url": "https://stitch.googleapis.com/mcp",
+      "transport": "http",
+      "status": "optional-on-demand",
+      "note": "Remote MCP. Screen and mock comp generation only. No secrets stored in git; configured via STITCH_API_KEY environment variable or OAuth."
+    },
+    "reticle": {
+      "package": "@reticlehq/server",
+      "version": "3.5.0",
+      "transport": "stdio",
+      "via": "npx",
+      "license": "FSL-1.1-ALv2",
+      "status": "foreign-on-demand",
+      "note": "Optional visual perception MCP. Server licensed under FSL-1.1-ALv2; not vendored. Enabled via opencode-he reticle enable."
+    },
+    "ui-skills": {
+      "url": "https://www.ui-skills.com/mcp",
+      "transport": "http",
+      "status": "foreign-on-demand",
+      "note": "Optional remote MCP for design skill lookup only. Enabled via opencode-he ui-skills enable."
+    },
+    "markitdown": {
+      "repository": "https://github.com/microsoft/markitdown",
+      "version": "0.1.8",
+      "commit": "b8f79c57ebc0044be41323d89b2a45d3fda8460e",
+      "license": "MIT",
+      "package": "markitdown-mcp",
+      "via": "uvx",
+      "transport": "stdio",
+      "status": "foreign-on-demand",
+      "note": "Optional MCP via uvx --from markitdown-mcp==0.0.1a7 --with markitdown[all]==0.1.8 markitdown-mcp. Not vendored. No Azure keys. Enabled via opencode-he markitdown enable."
+    },
+    "scrapling": {
+      "repository": "https://github.com/D4Vinci/Scrapling",
+      "version": "0.4.15",
+      "commit": "333fa22b7a5821194ce66b59b11f4b16a6484f02",
+      "license": "BSD-3-Clause",
+      "package": "scrapling",
+      "via": "uvx",
+      "transport": "stdio",
+      "status": "foreign-on-demand",
+      "wheelSha256": "ae66bde9f63afb793ad6f93bd76b451e29f1631347465a553c4e7765c0ecc1f2",
+      "sdistSha256": "72406900f437316209dd05d9853dae04420f1cab0e11071604bb4588b6e2f713",
+      "note": "Optional MCP via uvx --from scrapling[ai]==0.4.15 scrapling mcp. Not vendored. Enabled via opencode-he scrapling enable. Do not run scrapling install (requires sudo / playwright install-deps)."
+    },
+    "penulis-ilmiah": {
+      "package": "penulis-ilmiah-mcp",
+      "version": "0.1.0",
+      "transport": "stdio",
+      "via": "npx",
+      "status": "foreign-on-demand",
+      "note": "Optional first-party MCP server for Bahasa Indonesia academic writing, EYD V, KBBI standard words, and verified citations. Enabled via opencode-he penulis-ilmiah enable."
+    },
+    "crawl4ai": {
+      "repository": "https://github.com/unclecode/crawl4ai",
+      "version": "0.9.4",
+      "commit": "133e1d92e37885dfccc03ea2e3687d06c98b7ceb",
+      "status": "foreign-on-demand",
+      "note": "Optional remote MCP at http://127.0.0.1:11235/mcp/sse. Legacy /mcp emits WARN CRAWL4AI_LEGACY_URL."
+    },
+    "agent-reach": {
+      "repository": "https://github.com/Panniantong/Agent-Reach",
+      "version": "1.5.0",
+      "commit": "f65526cbaaad3879473acc1ba6dbefd195caf2be",
+      "license": "MIT",
+      "status": "pointer-only",
+      "note": "POINTER_ONLY, not installed by OCH. PyPI name agent-reach belongs to another project; install via git URL with pipx if desired. Do not run agent-reach install --system."
+    },
+    "browser-act": {
+      "repository": "https://github.com/browser-act/skills",
+      "commit": "11c057b03f92101642cadc9f840564574120d184",
+      "version": "1.4.2",
+      "package": "browser-act-cli",
+      "status": "optional-host",
+      "note": "Three supported execution modes (chrome, stealth-fresh, stealth-fixed). Never chrome-direct. Host CLI pinned 1.4.2."
+    },
+    "semgrep": {
+      "package": "semgrep",
+      "version": "1.179.0",
+      "status": "optional-host"
+    },
+    "gitleaks": {
+      "repository": "https://github.com/gitleaks/gitleaks",
+      "version": "8.30.1",
+      "status": "optional-host"
+    },
+    "osv-scanner": {
+      "repository": "https://github.com/google/osv-scanner",
+      "version": "2.6.0",
+      "status": "optional-host"
+    },
+    "impeccable": {
+      "repository": "https://github.com/pbakaus/impeccable",
+      "tag": "skill-v4.3.1",
+      "commit": "cd12f8660e2d",
+      "verifiedMainCommit": "e0881d2de397d5e9761d7b35ff5017d8f5ebf69b",
+      "license": "Apache-2.0",
+      "copyright": "Copyright 2025 Paul Bakaus",
+      "licenseFile": "vendor/licenses/IMPECCABLE-APACHE2.txt",
+      "note": "Adapted reference set with strict overlay gates (Design V2 atom shortlisting, taste-guard 4-tier, found-this-design world pin, BANK_MISS != generate, email design merge). No runtime plugin download."
+    },
+    "emil-design-eng": {
+      "repository": "https://github.com/emilkowalski/skills",
+      "commit": "e8a175de22ae1e49370fc144c1f3bb9aeedf988d",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Emil Kowalski",
+      "licenseFile": "vendor/licenses/EMILKOWALSKI-MIT.txt",
+      "note": "Emil Kowalski design engineering principles and motion doctrines merged into single specialist without catalog bloat (motion, apple-principles, native-motion, interface-feel). Adversarial UI stress testing (break-ui) merged into skills/impeccable/reference/break-ui.md."
+    },
+    "email-design-sources": {
+      "sources": [
+        "https://github.com/CosmoBlk/email-design (commit c56bfe0, MIT)",
+        "https://github.com/jayesh-bansal/email-pro-max (commit 6a28b31, MIT)",
+        "https://github.com/chunkydotdev/email-skills (commit dca18fc, MIT)",
+        "https://github.com/Olshansk/agent-skills (commit d43745c, MIT)"
+      ],
+      "note": "Merged into skills/impeccable/reference/email.md; zero new allowlist names."
+    },
+    "axi": {
+      "repository": "https://github.com/kunchenguid/axi",
+      "commit": "85a8723276ca",
+      "license": "MIT",
+      "note": "Surfaces for gh-axi and chrome-devtools-axi under 4-door browser hierarchy."
+    },
+    "hyperframes": {
+      "repository": "https://github.com/heygen-com/hyperframes",
+      "commit": "6037d228441e23e50cd6713a464d6158941cfcae",
+      "version": "0.8.122",
+      "license": "Apache-2.0"
+    },
+    "diagram-design": {
+      "repository": "https://github.com/cathrynlavery/diagram-design",
+      "commit": "f903933a534b",
+      "version": "2.6.51",
+      "license": "MIT"
+    },
+    "humanizer": {
+      "repository": "https://github.com/blader/humanizer",
+      "commit": "225a6f39ac85",
+      "version": "3.1.0",
+      "license": "MIT"
+    },
+    "matt-pocock-skills": {
+      "repository": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "version": "v1.3.0 (d81f3a1; tag 984a2c0 = version bump)",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Matt Pocock",
+      "licenseFile": "vendor/licenses/MATT-POCOCK-MIT.txt"
+    },
+    "scroll-craft": {
+      "repository": "https://github.com/nateherkai/scroll-craft",
+      "commit": "75d81f74e83692add18cd7a8a8e078b8a887a579",
+      "originalPath": "plugins/nateherk-design/skills/scroll-craft",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Nate Herk",
+      "licenseFile": "vendor/licenses/NATEHERK-SCROLL-CRAFT-MIT.txt",
+      "note": "Adapted skill and engine with deterministic cleanup and split mechanism/theme CSS. No KIE/Higgsfield/Playwright core path. Worldflight runtime removed; Continuous World handed to scroll-world."
+    },
+    "scroll-world": {
+      "repository": "https://github.com/oso95/scroll-world",
+      "commit": "71cc36d3bb150248ae36a2c552f9cbf88802a79c",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 cyw",
+      "note": "Continuous camera fly-through landing with vanilla-JS scrub engine and seam QA calibration. Paid video backends degrade to NOT_CONFIGURED."
+    },
+    "pstack": {
+      "repository": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "subdir": "pstack",
+      "version": "0.15.9",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Lauren Tan",
+      "licenseFile": "vendor/licenses/PSTACK-MIT.txt",
+      "note": "Evaluated at tip e43c7ee (pstack 0.15.9); adopted /correct (9511e60) into manual-skills/reflect/references/correct.md. Pstack selected skills retained with OpenCode host adaptation. Rejected upstream: poteto-mode, /how, /automate-me, /make-bot-ui, /bro, swarm, autopilot loops (ralph-loop, orchestrate, continual-learning), and ~/.cursor/rules/pstack-models.mdc model configuration."
+    },
+    "playwright-cli": {
+      "repository": "https://github.com/microsoft/playwright-cli",
+      "commit": "b85c7a736bb473bf55b584e54a09ffa698d6d871",
+      "license": "Apache-2.0",
+      "copyright": "Copyright (c) Microsoft Corporation",
+      "licenseFile": "vendor/licenses/MICROSOFT-PLAYWRIGHT-CLI-APACHE2.txt",
+      "note": "OCBF exploratory browser QA adapter; isolated sessions, default headless Chromium."
+    },
+    "taste-skill": {
+      "repository": "https://github.com/Leonxlnx/taste-skill",
+      "commit": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+      "originalPath": "skills/taste-skill",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Leonxlnx",
+      "licenseFile": "vendor/licenses/LEONXLNX-TASTE-MIT.txt",
+      "note": "Selectively adapted into Impeccable reference/taste-guard.md and reference/taste/ modules."
+    },
+    "anti-slop": {
+      "repository": "https://github.com/dmmulroy/anti-slop",
+      "commit": "c44ef22ca116d0ba62a3ff663a0bd13a3f3fa40b",
+      "version": "0.1.2+c44ef22",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Dillon Mulroy",
+      "licenseFile": "vendor/licenses/DMMULROY-ANTI-SLOP-MIT.txt",
+      "note": "Vendored rule snapshot for TS/JS projects with 5 modes (audit, recommended, strict, custom, update), 18 generic rules, and 5 opt-in Effect rules."
+    },
+    "eslint-stylistic": {
+      "repository": "https://github.com/eslint-stylistic/eslint-stylistic",
+      "commit": "435c3ea0fd26a5fef9042c4b36b6e165fbbf8d08",
+      "version": "v6.0.0-beta.6",
+      "license": "MIT",
+      "copyright": "Copyright OpenJS Foundation and other contributors, <www.openjsf.org>; Copyright (c) 2023-PRESENT ESLint Stylistic contributors",
+      "licenseFile": "vendor/licenses/ESLINT-STYLISTIC-MIT.txt",
+      "note": "Vendored padding-line rules adapted upstream by Dillon Mulroy for Oxlint AST."
+    },
+    "json-render": {
+      "repository": "https://github.com/vercel-labs/json-render",
+      "commit": "c2600d73908ed505e6d726f5b6f969ba8f597ce7",
+      "license": "Apache-2.0",
+      "copyright": "Copyright 2025 Vercel Inc.",
+      "note": "First-party skill wrapper. npm packages not vendored. Experimental Jev composition not ported."
+    },
+    "deck-design": {
+      "repository": "https://github.com/carnot-tech/consulting-pptx-skill",
+      "commit": "f50edac656d34636f026afec9e6dbb3697f4c6d4",
+      "license": "MIT",
+      "copyright": "Copyright (c) carnot-tech contributors",
+      "note": "First-party skill wrapper. Upstream 62-type HTML/PPTX packs not vendored."
+    },
+    "pageindex": {
+      "repository": "https://github.com/VectifyAI/PageIndex",
+      "commit": "6d23caf416858f2ca136840305d1f479a86f6ef7",
+      "version": "0.2.21",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 PageIndex AI / VectifyAI",
+      "note": "First-party skill wrapper. Tree-then-reason navigation with start_index and end_index boundaries. SDK/Cloud/MCP not vendored and not core MCP."
+    },
+    "business-motion-film": {
+      "repository": "https://github.com/echris6/motion-video-kit",
+      "commit": "255562b04b1e5ecaa4ba98e5c9aa191d5ba7f6fa",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 echris6",
+      "licenseFile": "vendor/licenses/ECHRIS6-MOTION-VIDEO-KIT-MIT.txt",
+      "note": "First-party skill wrapper. Pointers reference pinned upstream files; large reference packs not vendored. Rendered via hyperframes."
+    },
+    "motion-designer": {
+      "repository": "https://github.com/kaventro/motion-designer",
+      "version": "1.2.0",
+      "commit": "7d0b8bb78ddd2c91c57db9d1e83fcf711304bdb8",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 kaventro",
+      "licenseFile": "vendor/licenses/KAVENTRO-MOTION-DESIGNER-MIT.txt",
+      "note": "Merged into skills/business-motion-film as product-film mode. Real app UI in device chrome, seek(t) frame determinism, 4-still approval gate, phone-size review (360px), motion blur, and 7-dimension scored review gate. Models and plugin not vendored."
+    },
+    "9router": {
+      "repository": "https://github.com/decolua/9router",
+      "commit": "a99cf57239ff778b61e434c2786009d5ed1c412c",
+      "version": "0.5.95",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 decolua",
+      "status": "foreign-on-demand",
+      "note": "Multi-provider LLM gateway and capability skills. First-party stub in skills/ninerouter; capability skills fetched on-demand; not an extra core MCP. Requires TLS certificate validation."
+    },
+    "cli-pentestv1": {
+      "repository": "https://github.com/kuker24/cli-pentestv1.git",
+      "commit": "fda8e627f43897884c6c9802619fe839fa149391",
+      "description": "Hypeking offensive security suite, HackinMode, ctf pack, and reverse-skill"
+    },
+    "opencode-highend": {
+      "repository": "https://github.com/kuker24/OpenCodeHighEnd.git",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "version": "0.1.18",
+      "description": "51 automatic skills, 15 manual skills, browser CDP stack, rules, and first-party MCP"
+    },
+    "geo-sleuth": {
+      "repository": "https://github.com/Oldcircle/geo-sleuth.git",
+      "commit": "da0813705c8beb0d9b82fbbf9ec5480ed11468c4",
+      "description": "Photo geolocation candidate board, tools, and regional database"
+    },
+    "rea": {
+      "repository": "https://github.com/morluto/rea.git",
+      "commit": "7c458f04b9155707c8ba406f8b455b10016f1b99",
+      "package": "rea-agents@6.6.0",
+      "description": "Reverse engineering assistant MCP server"
+    },
+    "universal-modder": {
+      "repository": "https://github.com/rehan-remade/universal-modder.git",
+      "commit": "6a8865ae171b406f50892c7f46fc5f45655269eb",
+      "description": "Game modding orchestrator, game-recon, game-automation, mod-any-game, mashup-mods"
+    },
+    "deepteam": {
+      "repository": "https://github.com/confident-ai/deepteam.git",
+      "commit": "bc80bfa1daffa240f53fdbafa7740bbc690aa23f",
+      "description": "Confident AI LLM red teaming framework"
+    },
+    "supply-chain": {
+      "repository": "https://github.com/zhaoxuya520/reverse-skill.git",
+      "commit": "cab634bd855fc287f6e420c1f36fd1a6b9245960",
+      "description": "Supply chain security methodology, SBOM/SCA analysis, and CTF sandbox challenge"
+    },
+    "gods-eye-view": {
+      "repository": "https://github.com/bilawalsidhu/gods-eye-view.git",
+      "commit": "93ea088f4556a5a65b3292a2d15142d5a6c562bc",
+      "description": "Curated public intelligence telemetry feeds (ADS-B, AIS, TLE, USGS, FIRMS)"
+    }
+  }
+}

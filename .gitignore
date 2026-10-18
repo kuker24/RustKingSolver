@@ -12,11 +12,17 @@ run/
 *.db-shm
 *.db-wal
 
-# --- python junk ---
+# --- node & python dependencies & caches ---
+node_modules/
+**/node_modules/
+__pycache__/
 **/__pycache__/
+*.pyc
 **/*.pyc
 
-# --- secrets ---
+# --- large binaries (>100MB blocked by GitHub) ---
+bin/codebase-memory-mcp
+# --- secrets & local tokens ---
 .env
 *.env
 **/broker.token

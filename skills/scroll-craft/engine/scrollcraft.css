@@ -1,0 +1,176 @@
+/* ScrollCraft mechanism layer. Safe to add to an existing design system. */
+
+:root {
+  --sc-canvas: #08090b;
+  --sc-ink: #f4f2ef;
+  --sc-accent: #d8ff3e;
+  --sc-gutter: clamp(1.25rem, 5vw, 5.5rem);
+  --sc-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --sc-d-slow: 420ms;
+  --sc-z-stage: 1;
+  --sc-z-copy: 20;
+  --sc-z-chrome: 60;
+}
+
+.sc-act--pinned { position: relative; }
+.sc-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: clip;
+  z-index: var(--sc-z-stage);
+}
+
+.sc-stage :is(video[data-sc-scrub], canvas[data-sc-sequence], .sc-stage__poster) {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+video[data-sc-scrub] { opacity: 0; transition: opacity 380ms var(--sc-ease-out); }
+.sc-has-clip video[data-sc-scrub] { opacity: 1; }
+.sc-stage__poster { z-index: 0; transition: opacity 380ms var(--sc-ease-out); }
+.sc-has-clip .sc-stage__poster { opacity: 0; }
+
+.sc-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    var(--sc-scrim-angle, 180deg),
+    color-mix(in oklab, var(--sc-canvas) var(--sc-scrim-a, 78%), transparent) 0%,
+    color-mix(in oklab, var(--sc-canvas) 30%, transparent) 42%,
+    transparent 68%
+  );
+}
+.sc-scrim--bottom { --sc-scrim-angle: 0deg; }
+.sc-scrim--left { --sc-scrim-angle: 90deg; }
+.sc-scrim--right { --sc-scrim-angle: 270deg; }
+.sc-scrim--lead {
+  background: linear-gradient(to top right,
+    color-mix(in oklab, var(--sc-canvas) 94%, transparent) 0%,
+    color-mix(in oklab, var(--sc-canvas) 72%, transparent) 30%,
+    color-mix(in oklab, var(--sc-canvas) 30%, transparent) 52%,
+    transparent 72%);
+}
+.sc-scrim--trail {
+  background: linear-gradient(to top left,
+    color-mix(in oklab, var(--sc-canvas) 94%, transparent) 0%,
+    color-mix(in oklab, var(--sc-canvas) 72%, transparent) 30%,
+    color-mix(in oklab, var(--sc-canvas) 30%, transparent) 52%,
+    transparent 72%);
+}
+.sc-scrim--band {
+  background: linear-gradient(to top,
+    color-mix(in oklab, var(--sc-canvas) 94%, transparent) 0%,
+    color-mix(in oklab, var(--sc-canvas) 74%, transparent) 22%,
+    color-mix(in oklab, var(--sc-canvas) 30%, transparent) 42%,
+    transparent 58%);
+}
+.sc-scrim--vignette {
+  background: radial-gradient(120% 90% at 50% 45%, transparent 40%,
+    color-mix(in oklab, var(--sc-canvas) 70%, transparent) 100%);
+}
+
+.sc-copy {
+  position: absolute;
+  z-index: var(--sc-z-copy);
+  inset-inline: var(--sc-gutter);
+  max-width: min(46rem, 76vw);
+  will-change: opacity, transform;
+}
+.sc-copy--lead { left: var(--sc-gutter); bottom: clamp(3rem, 12vh, 9rem); }
+.sc-copy--center {
+  inset-inline: auto;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  text-align: center;
+}
+.sc-copy--trail {
+  inset-inline: auto;
+  right: var(--sc-gutter);
+  bottom: clamp(3rem, 12vh, 9rem);
+  text-align: right;
+}
+
+[data-sc-cue] { opacity: 1; will-change: opacity, transform; }
+.sc-ready [data-sc-cue] { opacity: 0; transition: none; }
+.sc-split { display: inline-block; overflow: hidden; vertical-align: top; }
+.sc-split--line { display: block; padding-bottom: 0.14em; margin-bottom: -0.14em; }
+.sc-split__i { display: inline-block; will-change: transform, opacity; }
+.sc-is-split { opacity: 1 !important; }
+
+[data-sc-pan] { display: flex; will-change: transform; }
+[data-sc-reveal] { will-change: clip-path; }
+[data-sc-parallax] { will-change: transform; }
+[data-sc-in], [data-sc-stagger] > * {
+  opacity: 1;
+  transform: none;
+}
+.sc-ready [data-sc-in], .sc-ready [data-sc-stagger] > * {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition: opacity 620ms var(--sc-ease-out), transform 620ms var(--sc-ease-out);
+}
+.sc-ready [data-sc-in].sc-in, .sc-ready [data-sc-stagger] > .sc-in { opacity: 1; transform: none; }
+
+[data-sc-tilt] { transform-style: preserve-3d; will-change: transform; }
+[data-sc-magnet] { will-change: transform; }
+[data-sc-spotlight] { isolation: isolate; }
+:where([data-sc-spotlight]) { position: relative; }
+[data-sc-spotlight]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background: radial-gradient(
+    28rem 28rem at calc(var(--sc-mx, 0.5) * 100%) calc(var(--sc-my, 0.5) * 100%),
+    color-mix(in oklab, var(--sc-accent) 16%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--sc-d-slow) var(--sc-ease-out);
+}
+[data-sc-spotlight]:hover::after { opacity: 1; }
+
+[data-sc-progress] {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: var(--sc-z-chrome);
+  background: var(--sc-accent);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-sc-in], [data-sc-stagger] > * { transform: none; transition-duration: 220ms; }
+  [data-sc-parallax], [data-sc-pan], .sc-split__i { transform: none !important; }
+  [data-sc-reveal] { clip-path: none !important; }
+  [data-sc-act="pan"] .sc-stage,
+  [data-sc-act="pan"] [data-sc-stage] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+  }
+  [data-sc-pan] > * { scroll-snap-align: center; }
+  [data-sc-spotlight]::after { display: none; }
+}
+
+@media (max-width: 860px) {
+  .sc-copy { inset-inline: var(--sc-gutter); max-width: none; }
+  .sc-copy--trail { text-align: left; }
+  .sc-stage { height: 100svh; }
+  .sc-scrim--trail {
+    background: linear-gradient(to top,
+      color-mix(in oklab, var(--sc-canvas) 94%, transparent) 0%,
+      color-mix(in oklab, var(--sc-canvas) 74%, transparent) 22%,
+      color-mix(in oklab, var(--sc-canvas) 30%, transparent) 42%,
+      transparent 58%);
+  }
+}

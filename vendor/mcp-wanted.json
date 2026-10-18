@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "servers": {
+    "codebase-memory-mcp": {
+      "wanted": true,
+      "ownedIfAdded": true,
+      "scope": "user",
+      "transport": "stdio",
+      "commandKind": "owned-binary",
+      "binaryKey": "codebase-memory"
+    },
+    "context7": {
+      "wanted": true,
+      "ownedIfAdded": true,
+      "scope": "user",
+      "transport": "http",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "shadcn": {
+      "wanted": true,
+      "ownedIfAdded": true,
+      "scope": "user",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "shadcn@4.21.1", "mcp"]
+    },
+    "exa": {
+      "wanted": false,
+      "ownedIfAdded": false,
+      "scope": "user",
+      "transport": "http",
+      "url": "https://mcp.exa.ai/mcp",
+      "status": "FOREIGN_ON_DEMAND"
+    },
+    "serena": {
+      "wanted": false,
+      "ownedIfAdded": false,
+      "scope": "user",
+      "transport": "stdio",
+      "status": "ON_DEMAND_ABSENT"
+    },
+    "stitch": {
+      "wanted": false,
+      "ownedIfAdded": false,
+      "scope": "user",
+      "transport": "http",
+      "url": "https://stitch.googleapis.com/mcp",
+      "status": "ON_DEMAND_ABSENT"
+    },
+    "reticle": {
+      "wanted": false,
+      "ownedIfAdded": false,
+      "scope": "user",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@reticlehq/server@3.5.0", "mcp"],
+      "status": "FOREIGN_ON_DEMAND"
+    },
+    "ui-skills": {
+      "wanted": false,
+      "ownedIfAdded": false,
+      "scope": "user",
+      "transport": "http",
+      "url": "https://www.ui-skills.com/mcp",
+      "status": "FOREIGN_ON_DEMAND"
+    },
+    "markitdown": {
+      "wanted": false,
+      "ownedIfAdded": false,
+      "scope": "user",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "markitdown-mcp==0.0.1a7",
+        "--with",
+        "markitdown[all]==0.1.8",
+        "markitdown-mcp"
+      ],
+      "status": "FOREIGN_ON_DEMAND"
+    },
+    "crawl4ai": {
+      "wanted": false,
+      "ownedIfAdded": false,
+      "scope": "user",
+      "transport": "http",
+      "url": "http://127.0.0.1:11235/mcp/sse",
+      "status": "FOREIGN_ON_DEMAND"
+    },
+    "scrapling": {
+      "wanted": false,
+      "ownedIfAdded": false,
+      "scope": "user",
+      "transport": "stdio",
+      "command": "uvx",
+      "args": ["--from", "scrapling[ai]==0.4.15", "scrapling", "mcp"],
+      "status": "FOREIGN_ON_DEMAND"
+    },
+    "penulis-ilmiah": {
+      "wanted": false,
+      "ownedIfAdded": false,
+      "scope": "user",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["tsx", "mcp/penulis-ilmiah/src/index.ts"],
+      "status": "FOREIGN_ON_DEMAND"
+    }
+  }
+}

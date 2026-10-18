@@ -1,64 +1,79 @@
-# cli-pentestv1 — omp ready-to-use bundle
+# cli-pentestv1 — omp Unified Bundle (v1)
 
-Kumpulan **skills**, **MCP config**, dan **AGENTS.md** untuk OpenCode / omp (`oh-my-pi`).
-Repo ini adalah bundle restore: clone/pull, lalu taruh file-nya ke `~/.omp/agent/`.
+Unified capability bundle for `omp` (`oh-my-pi` v18.12.1). Combines the full offensive security suite `hypeking` (`cli-pentestv1`), the complete software engineering catalog from `OpenCodeHighEnd` (51 automatic skills + 15 manual slash commands + full browser CDP stack), 5 functional gap integrations (`geo-sleuth`, `rea`, `universal-modder`, `deepteam`, `supply-chain`), 17 configured MCP servers, and a single technical router in `AGENTS.md`.
 
-## Isi repo
+## Repository Structure
 
-| Path | Fungsi |
+| Path | Purpose |
 |---|---|
-| `skills/` | Seluruh skill `hypeking` (pwn / reverse / CTF / log-SIEM / red-team, dst). |
-| `mcp.json` | Daftar MCP server (scopesentry, playwright, jshook, idapro, ghidra, sliver). |
-| `AGENTS.md` | File instruksi agent. |
-| `config.yml` | Setelan omp (model role, thinking level). |
-| `models.yml` | Definisi provider/model. |
+| `skills/` | 52 discovered skills: 1 umbrella offensive router (`hypeking`) + 51 engineering skills. |
+| `manual-skills/` | 15 manual specialists isolated from automatic scanner discovery. |
+| `commands/` | 15 slash command stubs routing to `~/.omp/agent/manual-skills/<name>/SKILL.md`. |
+| `bin/` | Executables: `opencode-chromium-cdp` (with symlink `omp-chromium-cdp`) and `codebase-memory-mcp`. |
+| `mcp/` | First-party MCP packages: `penulis-ilmiah` (Indonesian academic paper assistant). |
+| `rules/` | Operational governance: `00-routing.md`, `01-verification.md`, `02-engineering-principles.md`, `03-prose-discipline.md`, `decision-log-protocol.md`. |
+| `mcp.json` | Unified MCP configuration: 4 enabled (codebase-memory, context7, shadcn, penulis-ilmiah) + 13 disabled. |
+| `AGENTS.md` | Pure technical router with 33 closed intents, lazy knowledge chain, and 6 Done-Gate profiles. |
+| `config.yml` | Harness settings for omp (model roles, thinking budget). |
+| `models.yml` | Model provider endpoint definitions. |
+| `vendor/` | Component provenance records (`provenance.json`, `sources.json`). |
+| `restore.sh` | Automated deployment script to sync bundle to `~/.omp/agent/`. |
 
-## Cara pasang (restore)
+## Quick Start & Installation
 
-Jalankan dari root repo ini. Asumsi target `~/.omp/agent/` sudah ada.
+Run the automated restore script to synchronize this bundle to `~/.omp/agent/`:
 
 ```bash
-TARGET="$HOME/.omp/agent"
-mkdir -p "$TARGET/skills"
-
-# 1. skills
-rsync -a skills/ "$TARGET/skills/"
-
-# 2. config + MCP + instruksi agent
-cp mcp.json config.yml models.yml AGENTS.md "$TARGET/"
+chmod +x restore.sh
+./restore.sh
 ```
 
-Lalu isi nilai yang di-redact (lihat bawah) di environment kamu sebelum menjalankan omp.
+To verify skill discovery with `omp`:
 
-## Environment variable yang wajib di-set
+```bash
+omp skill list --json
+```
 
-Kredensial **tidak** ada di repo ini — semua ditulis sebagai placeholder `${...}`.
+Target discovery: exactly **52 skills** (1 `hypeking` + 51 OpenCodeHighEnd skills).
 
-| Variable | Dipakai oleh | Keterangan |
+## Environment Variables
+
+Credentials are never stored in the repository. Set the required variables in your shell environment:
+
+| Variable | Target Component | Purpose |
 |---|---|---|
-| `NINEROUTER_API_KEY` | `models.yml` | API key gateway 9router (mis. `sk-...`). Diisi manual. |
-| `SCOPESENTRY_API_KEY` | `mcp.json` | Header `X-API-Key` untuk server MCP `scopesentry`. |
-| `SLIVER_MULTIPLAYER_CFG` | `mcp.json` | Path ke config client sliver. |
+| `NINEROUTER_API_KEY` | `models.yml` | Gateway API key for 9router. |
+| `SLIVER_MULTIPLAYER_CFG` | `mcp.json` (`sliver`) | Path to Sliver C2 client multiplayer configuration (optional). |
+| `OPENALEX_API_KEY` | `mcp.json` (`penulis-ilmiah`) | Optional API key to increase OpenAlex query rate limits. |
+| `CROSSREF_MAILTO` | `mcp.json` (`penulis-ilmiah`) | Contact email address for Crossref polite pool. |
+| `STITCH_API_KEY` | `mcp.json` (`stitch`) | Optional Google Stitch API key. |
+| `EXA_API_KEY` | `mcp.json` (`exa`) | Optional Exa API key for neural search. |
 
-Contoh (jangan di-commit):
+## Verification & Testing
 
-```bash
-export NINEROUTER_API_KEY="sk-xxxxxxxxxxxxxxxx"
-export SCOPESENTRY_API_KEY="xxxxxxxx"
-export SLIVER_MULTIPLAYER_CFG="$HOME/.sliver-client/configs"
-```
+1. **Verify Path Sanitization**:
+   ```bash
+   grep -rn "~/.config/"'opencode' .
+   ```
+   (Must return 0 matches)
 
-## Catatan
+2. **Verify MCP Configuration**:
+   ```bash
+   python3 -c "import json; d=json.load(open('mcp.json')); assert len(d['mcpServers']) == 17; assert len(d['disabledServers']) == 13; assert d['mcpServers']['codebase-memory-mcp']['enabled'] is True; print('VALID')"
+   ```
 
-- `models.yml` semula berisi API key asli; di repo ini sudah diganti `${NINEROUTER_API_KEY}`.
-- Folder runtime (`sessions/`, `cache/`, `blobs/`, `logs/`, `*.db`) **sengaja tidak** disertakan — lihat `.gitignore`.
-- Sebagian MCP server di `mcp.json` berstatus `enabled: false`; aktifkan sesuai kebutuhan.
+3. **Verify Hypeking Auto-Router**:
+   ```bash
+   python3 skills/hypeking/scripts/route.py --ask "photo geolocation exif where was this taken"
+   python3 skills/hypeking/scripts/route.py --ask "game modding unity memory recon"
+   python3 skills/hypeking/scripts/route.py --ask "deepteam red teaming llms"
+   python3 skills/hypeking/scripts/route.py --ask "supply chain sbom sca methodology"
+   python3 skills/hypeking/scripts/route.py --ask "godmode bypass"
+   ```
 
-## Sync balik (backup dari mesin kerja)
-
-```bash
-# dari ~/.omp/agent
-rsync -a --exclude '__pycache__' --exclude '*.pyc' skills/ /path/to/cli-pentestv1/skills/
-cp mcp.json config.yml AGENTS.md /path/to/cli-pentestv1/
-# edit models.yml → ganti apiKey jadi ${NINEROUTER_API_KEY}
-```
+4. **Verify Chromium CDP Runner**:
+   ```bash
+   bin/opencode-chromium-cdp start
+   bin/opencode-chromium-cdp status
+   bin/opencode-chromium-cdp stop
+   ```

@@ -1,6 +1,6 @@
 ---
 name: hypeking
-description: "HYPEKING — single full-equip skill. Auto-routes every ask (pwn suite + ARTEX api-recon/scopesentry/playwright-cli + reverse-skill APK/JS/IDA/Ghidra/CTF/firmware, G0DM0D3, HackinMode) WITHOUT a prior skill call. Trigger ANY offensive / recon / reverse / apk / ida / js-reverse / ctf / exploit / LLM-redteam / godmode / mitre / wstg / cloud / c2 ask."
+description: "HYPEKING — single full-equip skill. Auto-routes every ask (pwn suite + ARTEX api-recon + reverse-skill APK/JS/IDA/Ghidra/CTF/firmware, HackinMode) WITHOUT a prior skill call. Trigger ANY offensive / recon / reverse / apk / ida / js-reverse / ctf / exploit / LLM-redteam / godmode / mitre / wstg / cloud / c2 ask."
 alwaysApply: true
 ---
 
@@ -32,9 +32,7 @@ alwaysApply: true
 
 `skill://hypeking/<relative>` resolves any nested file, e.g.:
 - `skill://hypeking/HackinMode/SKILL.md`
-- `skill://hypeking/g0dm0d3/scripts/godmode.py`
 - `skill://hypeking/всегда побеждать/01-recon/httpx-smart-recon/scripts/agent.py`
-
 ## Keyword → nested pack
 
 | Keywords | Nested path | Mode |
@@ -104,13 +102,6 @@ python3 '~/.omp/agent/skills/hypeking/всегда побеждать/pipeline/a
 
 OPSEC: `--quiet` | `--moderate` | `--loud` · lab: `--lab`
 
-## G0DM0D3 quick
-
-```bash
-python3 '~/.omp/agent/skills/hypeking/g0dm0d3/scripts/godmode.py' --race -q '…'
-python3 '~/.omp/agent/skills/hypeking/g0dm0d3/scripts/parseltongue.py' -t '…' --technique unicode --intensity heavy
-python3 '~/.omp/agent/skills/hypeking/g0dm0d3/scripts/autotune.py' -m '…' --strategy adaptive --json
-```
 
 ## Dual skill format (suite)
 

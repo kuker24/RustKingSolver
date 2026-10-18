@@ -1,6 +1,39 @@
 {
   "$schema": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/packages/coding-agent/src/config/mcp-schema.json",
   "mcpServers": {
+    "codebase-memory-mcp": {
+      "type": "stdio",
+      "command": "${HOME}/.omp/agent/bin/codebase-memory-mcp",
+      "args": [],
+      "enabled": true,
+      "instructions": true
+    },
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true,
+      "instructions": true
+    },
+    "shadcn": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "shadcn@4.21.1", "mcp"],
+      "enabled": true,
+      "instructions": true
+    },
+    "penulis-ilmiah": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${HOME}/.omp/agent/mcp/penulis-ilmiah/dist/index.js"],
+      "enabled": true,
+      "instructions": true,
+      "env": {
+        "CROSSREF_MAILTO": "",
+        "OPENALEX_API_KEY": "${OPENALEX_API_KEY}",
+        "KBBI_RATE_PER_MIN": "30",
+        "PENULIS_CACHE_DIR": "${HOME}/.cache/penulis-ilmiah"
+      }
+    },
     "jshook": {
       "type": "stdio",
       "command": "npx",
@@ -29,7 +62,86 @@
       "args": ["mcp", "--config", "${SLIVER_MULTIPLAYER_CFG}"],
       "enabled": false,
       "instructions": true
+    },
+    "crawl4ai": {
+      "type": "sse",
+      "url": "http://127.0.0.1:11235/mcp/sse",
+      "enabled": false,
+      "instructions": true
+    },
+    "scrapling": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["--from", "scrapling[ai]==0.4.15", "scrapling", "mcp"],
+      "enabled": false,
+      "instructions": true
+    },
+    "markitdown": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["--from", "markitdown-mcp==0.0.1a7", "--with", "markitdown[all]==0.1.8", "markitdown-mcp"],
+      "enabled": false,
+      "instructions": true
+    },
+    "serena": {
+      "type": "stdio",
+      "command": "serena",
+      "args": ["start-mcp-server", "--context", "agent", "--project-from-cwd"],
+      "enabled": false,
+      "instructions": true
+    },
+    "reticle": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@reticlehq/server@3.5.0", "mcp"],
+      "enabled": false,
+      "instructions": true
+    },
+    "ui-skills": {
+      "type": "http",
+      "url": "https://www.ui-skills.com/mcp",
+      "enabled": false,
+      "instructions": true
+    },
+    "stitch": {
+      "type": "http",
+      "url": "https://stitch.googleapis.com/mcp",
+      "headers": {
+        "X-Goog-Api-Key": "${STITCH_API_KEY}"
+      },
+      "enabled": false,
+      "instructions": true
+    },
+    "exa": {
+      "type": "http",
+      "url": "https://mcp.exa.ai/mcp",
+      "headers": {
+        "X-Api-Key": "${EXA_API_KEY}"
+      },
+      "enabled": false,
+      "instructions": true
+    },
+    "rea": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "rea-agents@6.6.0", "mcp"],
+      "enabled": false,
+      "instructions": true
     }
   },
-  "disabledServers": ["jshook", "idapro", "ghidra", "sliver"]
+  "disabledServers": [
+    "jshook",
+    "idapro",
+    "ghidra",
+    "sliver",
+    "crawl4ai",
+    "scrapling",
+    "markitdown",
+    "serena",
+    "reticle",
+    "ui-skills",
+    "stitch",
+    "exa",
+    "rea"
+  ]
 }

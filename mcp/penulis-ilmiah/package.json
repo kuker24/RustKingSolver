@@ -1,0 +1,30 @@
+{
+  "name": "penulis-ilmiah-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Bahasa Indonesia academic writing, EYD V spelling, KBBI standard words, and verified citations",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "penulis-ilmiah-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "citation-js": "0.7.22",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT"
+}

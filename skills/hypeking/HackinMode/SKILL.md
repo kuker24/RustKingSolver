@@ -17,17 +17,13 @@ FULL EQUIP — DISCOVERY PACKS
   skill://hypeking                    — ONLY discovered skill (auto-router)
   skill://hypeking/scripts/route.py   — CLI dispatcher
   skill://hypeking/HackinMode/SKILL.md
-  skill://hypeking/g0dm0d3/SKILL.md
   skill://hypeking/pwn-*/SKILL.md     — category indexes (+ api-recon, reverse)
   skill://hypeking/pwn-api-recon/SKILL.md — ARTEX SPA/MPA API harvest
   skill://hypeking/pwn-reverse/SKILL.md   — reverse-skill umbrella (APK/JS/IDA/CTF)
-  skill://hypeking/scopesentry/SKILL.md   — ScopeSentry MCP playbook
-  skill://hypeking/playwright-cli/SKILL.md — playwright-cli (ARTEX)
   skill://hypeking/reverse-skill/         — nested RE/mobile/JS/CTF/firmware packs
 Ambiguous ask?  python3 '~/.omp/agent/skills/hypeking/scripts/route.py' -a '<ask>'
-LLM / prompt-architecture layer?  read skill://hypeking/g0dm0d3/SKILL.md
+LLM / prompt-architecture layer?  read skill://hypeking/pwn-ai-llm/SKILL.md
 Frontend API surface?            read skill://hypeking/pwn-api-recon/SKILL.md
-Asset platform (ScopeSentry)?    read skill://hypeking/scopesentry/SKILL.md
 Binary / APK / JS reverse?       read skill://hypeking/pwn-reverse/SKILL.md
 Adaptix / Caldera / Sliver C2?   read skill://hypeking/pwn-red-team/SKILL.md
 

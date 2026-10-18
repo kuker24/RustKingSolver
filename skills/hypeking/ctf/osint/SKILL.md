@@ -87,6 +87,11 @@ Flag format `REDLIMIT{sosmed.com/username}` — you need platform + handle.
 | Blockchain | Etherscan, Blockchair |
 | Certificates | `crt.sh`, `censys` |
 
+
+## 7. Global Intelligence Feeds & Telemetry (God's Eye View)
+
+For multi-domain real-time monitoring, flight tracking (ADS-B), maritime tracking (AIS), orbital passes (TLE/CelesTrak), seismic events (USGS), and thermal fire/hotspot sensors (NASA FIRMS), consult:
+- `references/gods-eye-view-sources.md`
 ## Delegation
 
 Heavy research chains go to a **subagent per chain**, not inline. Give it the
