@@ -1,8 +1,11 @@
 {
   "schemaVersion": 1,
-  "product": "OpenCodeHighEnd",
-  "sourceRepository": "https://github.com/kuker24/OpenCodeHighEnd",
+  "product": "RustKingSolver — omp Unified Bundle",
+  "productVersion": "1.0.0",
+  "sourceRepository": "https://github.com/kuker24/RustKingSolver",
   "promptSha256": "93b05df84606b96472ecdb54306e8a5586d0b968940f81575c18097be29913db",
   "signedTag": "DEFERRED",
-  "releaseImmutability": "NOT_CONFIGURED"
+  "signedTagRationale": "GPG signing deferred until formal release tag creation (v1.0.0) following branch PR merge to main.",
+  "releaseImmutability": "BRANCH_PROTECTION",
+  "releaseImmutabilityRationale": "Branch protection ruleset enforced on main; release tags set immutable upon GitHub release publication."
 }

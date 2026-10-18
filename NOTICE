@@ -1,0 +1,70 @@
+RustKingSolver — omp Unified Bundle (v1)
+Copyright (c) 2026 Fahmi Harun (kuker24)
+
+This product contains software, skills, and configuration specifications adapted
+from multiple third-party open-source projects. Each upstream project retains its
+respective copyright and licenses as documented below and under vendor/licenses/.
+
+1. OpenCodeHighEnd Engineering Skills Catalog & MCP Integrations
+   Copyright (c) 2026 OpenCode contributors
+   License: MIT and Apache-2.0
+
+2. hypeking & cli-pentestv1 Offensive Engine
+   Copyright (c) 2026 cli-pentestv1 contributors
+   License: MIT
+
+3. pbakaus/impeccable
+   Copyright 2024 Paul Bakaus
+   License: Apache License, Version 2.0 (see vendor/licenses/IMPECCABLE-APACHE2.txt)
+
+4. microsoft/playwright-cli
+   Copyright (c) Microsoft Corporation
+   License: Apache License, Version 2.0 (see vendor/licenses/MICROSOFT-PLAYWRIGHT-CLI-APACHE2.txt)
+
+5. mattpocock/skills
+   Copyright (c) 2026 Matt Pocock
+   License: MIT (see vendor/licenses/MATT-POCOCK-MIT.txt)
+
+6. dmmulroy/anti-slop
+   Copyright (c) 2026 Dillon Mulroy
+   License: MIT (see vendor/licenses/DMMULROY-ANTI-SLOP-MIT.txt)
+
+7. emilkowalski/skills
+   Copyright (c) 2026 Emil Kowalski
+   License: MIT (see vendor/licenses/EMILKOWALSKI-MIT.txt)
+
+8. nateherkai/scroll-craft
+   Copyright (c) 2026 Nate Herk
+   License: MIT (see vendor/licenses/NATEHERK-SCROLL-CRAFT-MIT.txt)
+
+9. cursor/plugins pstack
+   Copyright (c) 2026 Anysphere, Inc.
+   License: MIT (see vendor/licenses/PSTACK-MIT.txt)
+
+10. zhaoxuya520/reverse-skill (supply-chain, game-modding, reverse packs)
+    Copyright (c) 2026 zhaoxuya520
+    License: MIT (see vendor/licenses/ZHAOXUYA520-REVERSE-SKILL-MIT.txt)
+
+11. Oldcircle/geo-sleuth (photo-geolocation)
+    Copyright (c) 2026 Oldcircle
+    License: MIT (see vendor/licenses/GEOSLEUTH-MIT.txt)
+
+12. confident-ai/deepteam (red-teaming-llms-with-deepteam)
+    Copyright 2024 Confident AI
+    License: Apache License, Version 2.0 (see vendor/licenses/CONFIDENTAI-DEEPTEAM-APACHE2.txt)
+
+13. morluto/rea (rea-agents MCP)
+    Copyright (c) 2026 Mor Luto
+    License: MIT (see vendor/licenses/MORLUTO-REA-MIT.txt)
+
+14. DeusData/codebase-memory-mcp
+    Copyright (c) 2024 DeusData
+    License: MIT
+
+15. oraios/serena (external pointer)
+    Copyright (c) 2024 oraios
+    License: GPL-3.0 (>1.7.0 pointer only; not bundled)
+
+16. reticlehq/server (external pointer)
+    Copyright (c) 2024 Reticle
+    License: FSL-1.1-MIT

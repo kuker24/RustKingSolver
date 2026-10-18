@@ -42,6 +42,16 @@ if [ ! -f "$TARGET/bin/codebase-memory-mcp" ] || [ "$(sha256sum "$TARGET/bin/cod
     tar -xzf "$CBM_TAR" -C "$TARGET/bin/"
     rm -f "$CBM_TAR"
   fi
+  ACTUAL_SHA="$(sha256sum "$TARGET/bin/codebase-memory-mcp" 2>/dev/null | awk '{print $1}')"
+  if [ "$ACTUAL_SHA" != "$EXPECTED_CBM_SHA" ]; then
+    echo "[!] ERROR: codebase-memory-mcp SHA256 mismatch or missing!"
+    echo "    Expected: $EXPECTED_CBM_SHA"
+    echo "    Actual:   $ACTUAL_SHA"
+    exit 1
+  fi
+  if [ ! -f "$ROOT/bin/codebase-memory-mcp" ]; then
+    cp "$TARGET/bin/codebase-memory-mcp" "$ROOT/bin/codebase-memory-mcp"
+  fi
 fi
 chmod +x "$TARGET/bin/"* 2>/dev/null || true
 # 5. Sync mcp/

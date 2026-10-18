@@ -1,0 +1,744 @@
+{
+  "schemaVersion": 1,
+  "bundle": "RustKingSolver",
+  "version": "1.0.0",
+  "harness": "oh-my-pi v18.12.1",
+  "policy": {
+    "allowlistMode": "strict",
+    "firstPartyLicense": "MIT",
+    "thirdPartyPolicy": "permissive_or_isolated_pointer"
+  },
+  "counts": {
+    "automaticSkills": 52,
+    "manualSkills": 15,
+    "slashCommands": 15,
+    "mcpServersTotal": 17,
+    "mcpServersActive": 4,
+    "gapPacksIntegrated": 5
+  },
+  "gapPacks": [
+    {
+      "name": "geo-sleuth",
+      "target": "skills/hypeking/ctf/osint/photo-geolocation",
+      "upstream": "https://github.com/Oldcircle/geo-sleuth",
+      "license": "MIT"
+    },
+    {
+      "name": "rea",
+      "target": "mcpServers.rea",
+      "upstream": "https://github.com/morluto/rea",
+      "license": "MIT"
+    },
+    {
+      "name": "universal-modder",
+      "target": "skills/hypeking/reverse-skill/game-modding",
+      "upstream": "https://github.com/rehan-remade/universal-modder",
+      "license": "MIT"
+    },
+    {
+      "name": "deepteam",
+      "target": "skills/hypeking/\u0432\u0441\u0435\u0433\u0434\u0430 \u043f\u043e\u0431\u0435\u0436\u0434\u0430\u0442\u044c/09-ai-llm-web/red-teaming-llms-with-deepteam",
+      "upstream": "https://github.com/confident-ai/deepteam",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "supply-chain",
+      "target": "skills/hypeking/reverse-skill/supply-chain",
+      "upstream": "https://github.com/zhaoxuya520/reverse-skill",
+      "license": "MIT"
+    }
+  ],
+  "automaticSkills": [
+    {
+      "name": "academic",
+      "type": "automatic",
+      "path": "skills/academic",
+      "upstream": "first-party",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "adhd",
+      "type": "automatic",
+      "path": "skills/adhd",
+      "upstream": "vendored skill; license in SKILL.md frontmatter",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "agent-architecture-audit",
+      "type": "automatic",
+      "path": "skills/agent-architecture-audit",
+      "upstream": "https://github.com/affaan-m/ECC",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "api-design",
+      "type": "automatic",
+      "path": "skills/api-design",
+      "upstream": "https://github.com/affaan-m/ECC",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "automation-audit-ops",
+      "type": "automatic",
+      "path": "skills/automation-audit-ops",
+      "upstream": "https://github.com/affaan-m/ECC",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "browser-act",
+      "type": "automatic",
+      "path": "skills/browser-act",
+      "upstream": "GrokBestFriend 1.3.1 skill snapshot; CLI is a separate host package",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "business-motion-film",
+      "type": "automatic",
+      "path": "skills/business-motion-film",
+      "upstream": "https://github.com/echris6/motion-video-kit@255562b04b1e5ecaa4ba98e5c9aa191d5ba7f6fa",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "chrome-devtools-axi",
+      "type": "automatic",
+      "path": "skills/chrome-devtools-axi",
+      "upstream": "GrokBestFriend 1.3.1 skill snapshot",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "click-path-audit",
+      "type": "automatic",
+      "path": "skills/click-path-audit",
+      "upstream": "https://github.com/affaan-m/ECC",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "code-tour",
+      "type": "automatic",
+      "path": "skills/code-tour",
+      "upstream": "https://github.com/affaan-m/ECC",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "codebase-design",
+      "type": "automatic",
+      "path": "skills/codebase-design",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    },
+    {
+      "name": "contract-first",
+      "type": "automatic",
+      "path": "skills/contract-first",
+      "upstream": "https://github.com/affaan-m/ECC",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "cost-aware-llm-pipeline",
+      "type": "automatic",
+      "path": "skills/cost-aware-llm-pipeline",
+      "upstream": "https://github.com/affaan-m/ECC",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "deck-design",
+      "type": "automatic",
+      "path": "skills/deck-design",
+      "upstream": "carnot-tech/consulting-pptx-skill@f50edac656d34636f026afec9e6dbb3697f4c6d4",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "diagnosing-bugs",
+      "type": "automatic",
+      "path": "skills/diagnosing-bugs",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    },
+    {
+      "name": "diagram-design",
+      "type": "automatic",
+      "path": "skills/diagram-design",
+      "upstream": "https://github.com/cathrynlavery/diagram-design",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "domain-modeling",
+      "type": "automatic",
+      "path": "skills/domain-modeling",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    },
+    {
+      "name": "emil-design-eng",
+      "type": "automatic",
+      "path": "skills/emil-design-eng",
+      "upstream": "GrokBestFriend 1.3.1 skill snapshot",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "eval-harness",
+      "type": "automatic",
+      "path": "skills/eval-harness",
+      "upstream": "https://github.com/affaan-m/ECC",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "found-this-design",
+      "type": "automatic",
+      "path": "skills/found-this-design",
+      "upstream": "GrokBestFriend 1.3.1 skill snapshot",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "full-audit-keamanan",
+      "type": "automatic",
+      "path": "skills/full-audit-keamanan",
+      "upstream": "GrokBestFriend 1.3.1 skill snapshot",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "full-performance-audit",
+      "type": "automatic",
+      "path": "skills/full-performance-audit",
+      "upstream": "GrokBestFriend 1.3.1 skill snapshot",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "gh-axi",
+      "type": "automatic",
+      "path": "skills/gh-axi",
+      "upstream": "GrokBestFriend 1.3.1 skill snapshot; gh-axi CLI is a separate npm package",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "grill-with-docs",
+      "type": "automatic",
+      "path": "skills/grill-with-docs",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    },
+    {
+      "name": "humanizer",
+      "type": "automatic",
+      "path": "skills/humanizer",
+      "upstream": "https://github.com/blader/humanizer",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "hypeking",
+      "type": "automatic",
+      "path": "skills/hypeking",
+      "upstream": "https://github.com/kuker24/cli-pentestv1.git",
+      "commit": "fda8e627f43897884c6c9802619fe839fa149391",
+      "license": "MIT"
+    },
+    {
+      "name": "hyperframes",
+      "type": "automatic",
+      "path": "skills/hyperframes",
+      "upstream": "https://github.com/heygen-com/hyperframes@6037d228441e23e50cd6713a464d6158941cfcae",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "id-demo-video",
+      "type": "automatic",
+      "path": "skills/id-demo-video",
+      "upstream": "first-party",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "impeccable",
+      "type": "automatic",
+      "path": "skills/impeccable",
+      "upstream": "vendored skill; license in SKILL.md frontmatter",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "install-anti-slop",
+      "type": "automatic",
+      "path": "skills/install-anti-slop",
+      "upstream": "https://github.com/dmmulroy/anti-slop",
+      "commit": "c44ef22ca116d0ba62a3ff663a0bd13a3f3fa40b",
+      "license": "MIT"
+    },
+    {
+      "name": "json-render",
+      "type": "automatic",
+      "path": "skills/json-render",
+      "upstream": "vercel-labs/json-render@c2600d73908ed505e6d726f5b6f969ba8f597ce7",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "markitdown",
+      "type": "automatic",
+      "path": "skills/markitdown",
+      "upstream": "https://github.com/microsoft/markitdown@b8f79c57ebc0044be41323d89b2a45d3fda8460e",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "matt-code-review",
+      "type": "automatic",
+      "path": "skills/matt-code-review",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    },
+    {
+      "name": "mongodb-ops",
+      "type": "automatic",
+      "path": "skills/mongodb-ops",
+      "upstream": "first-party",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "ninerouter",
+      "type": "automatic",
+      "path": "skills/ninerouter",
+      "upstream": "https://github.com/decolua/9router@a99cf57239ff778b61e434c2786009d5ed1c412c",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "pageindex",
+      "type": "automatic",
+      "path": "skills/pageindex",
+      "upstream": "VectifyAI/PageIndex@6d23caf416858f2ca136840305d1f479a86f6ef7",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "penulis-ilmiah",
+      "type": "automatic",
+      "path": "skills/penulis-ilmiah",
+      "upstream": "first-party",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "playwright-qa",
+      "type": "automatic",
+      "path": "skills/playwright-qa",
+      "upstream": "https://github.com/microsoft/playwright-cli",
+      "commit": "b85c7a736bb473bf55b584e54a09ffa698d6d871",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "prototype",
+      "type": "automatic",
+      "path": "skills/prototype",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    },
+    {
+      "name": "research",
+      "type": "automatic",
+      "path": "skills/research",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    },
+    {
+      "name": "scroll-craft",
+      "type": "automatic",
+      "path": "skills/scroll-craft",
+      "upstream": "https://github.com/nateherkai/scroll-craft",
+      "commit": "75d81f74e83692add18cd7a8a8e078b8a887a579",
+      "license": "MIT"
+    },
+    {
+      "name": "scroll-world",
+      "type": "automatic",
+      "path": "skills/scroll-world",
+      "upstream": "oso95/scroll-world@71cc36d3bb150248ae36a2c552f9cbf88802a79c",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "skill-stocktake",
+      "type": "automatic",
+      "path": "skills/skill-stocktake",
+      "upstream": "https://github.com/affaan-m/ECC",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "smartbook-ingest",
+      "type": "automatic",
+      "path": "skills/smartbook-ingest",
+      "upstream": "first-party",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "smartdoc",
+      "type": "automatic",
+      "path": "skills/smartdoc",
+      "upstream": "first-party",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "supabase-ops",
+      "type": "automatic",
+      "path": "skills/supabase-ops",
+      "upstream": "first-party",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "tdd",
+      "type": "automatic",
+      "path": "skills/tdd",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    },
+    {
+      "name": "to-spec",
+      "type": "automatic",
+      "path": "skills/to-spec",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    },
+    {
+      "name": "to-tickets",
+      "type": "automatic",
+      "path": "skills/to-tickets",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    },
+    {
+      "name": "vercel-ops",
+      "type": "automatic",
+      "path": "skills/vercel-ops",
+      "upstream": "first-party",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "visual-studio",
+      "type": "automatic",
+      "path": "skills/visual-studio",
+      "upstream": "GrokBestFriend 1.3.1 skill snapshot",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "writing-for-agents",
+      "type": "automatic",
+      "path": "skills/writing-for-agents",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    }
+  ],
+  "manualSkills": [
+    {
+      "name": "architect",
+      "type": "manual",
+      "path": "manual-skills/architect",
+      "commandStub": "commands/architect.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "arena",
+      "type": "manual",
+      "path": "manual-skills/arena",
+      "commandStub": "commands/arena.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "blast-radius",
+      "type": "manual",
+      "path": "manual-skills/blast-radius",
+      "commandStub": "commands/blast-radius.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "create-verification-skill",
+      "type": "manual",
+      "path": "manual-skills/create-verification-skill",
+      "commandStub": "commands/create-verification-skill.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "decision-log",
+      "type": "manual",
+      "path": "manual-skills/decision-log",
+      "commandStub": "commands/decision-log.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "demo-video",
+      "type": "manual",
+      "path": "manual-skills/demo-video",
+      "commandStub": "commands/demo-video.md",
+      "upstream": "first-party",
+      "commit": "30d394fb37bbe1ca64abe1a660aefd91ac7d99fc",
+      "license": "MIT"
+    },
+    {
+      "name": "figure-it-out",
+      "type": "manual",
+      "path": "manual-skills/figure-it-out",
+      "commandStub": "commands/figure-it-out.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "type": "manual",
+      "path": "manual-skills/improve-codebase-architecture",
+      "commandStub": "commands/improve-codebase-architecture.md",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    },
+    {
+      "name": "interrogate",
+      "type": "manual",
+      "path": "manual-skills/interrogate",
+      "commandStub": "commands/interrogate.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "maintain-verification-skill",
+      "type": "manual",
+      "path": "manual-skills/maintain-verification-skill",
+      "commandStub": "commands/maintain-verification-skill.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "reflect",
+      "type": "manual",
+      "path": "manual-skills/reflect",
+      "commandStub": "commands/reflect.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "technical-writing",
+      "type": "manual",
+      "path": "manual-skills/technical-writing",
+      "commandStub": "commands/technical-writing.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "unslop",
+      "type": "manual",
+      "path": "manual-skills/unslop",
+      "commandStub": "commands/unslop.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "why",
+      "type": "manual",
+      "path": "manual-skills/why",
+      "commandStub": "commands/why.md",
+      "upstream": "https://github.com/cursor/plugins",
+      "commit": "e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a",
+      "license": "MIT"
+    },
+    {
+      "name": "wizard",
+      "type": "manual",
+      "path": "manual-skills/wizard",
+      "commandStub": "commands/wizard.md",
+      "upstream": "https://github.com/mattpocock/skills",
+      "commit": "d81f3a183412e71a5b1e84ca21bc1a35eea03a60",
+      "license": "MIT"
+    }
+  ],
+  "mcpServers": [
+    {
+      "name": "codebase-memory-mcp",
+      "transport": "stdio",
+      "enabled": true,
+      "upstream": "https://github.com/kuker24/OpenCodeHighEnd",
+      "version": "pinned",
+      "license": "MIT"
+    },
+    {
+      "name": "context7",
+      "transport": "http",
+      "enabled": true,
+      "upstream": "https://mcp.context7.com/mcp",
+      "version": "pinned",
+      "license": "MIT"
+    },
+    {
+      "name": "shadcn",
+      "transport": "stdio",
+      "enabled": true,
+      "upstream": "https://github.com/shadcn-ui/ui",
+      "version": "4.21.1",
+      "license": "MIT"
+    },
+    {
+      "name": "penulis-ilmiah",
+      "transport": "stdio",
+      "enabled": true,
+      "upstream": "https://github.com/kuker24/OpenCodeHighEnd",
+      "version": "0.1.0",
+      "license": "MIT"
+    },
+    {
+      "name": "jshook",
+      "transport": "stdio",
+      "enabled": false,
+      "upstream": "https://github.com/kuker24/OpenCodeHighEnd",
+      "version": "pinned",
+      "license": "MIT"
+    },
+    {
+      "name": "idapro",
+      "transport": "http",
+      "enabled": false,
+      "upstream": "https://github.com/kuker24/OpenCodeHighEnd",
+      "version": "pinned",
+      "license": "MIT"
+    },
+    {
+      "name": "ghidra",
+      "transport": "http",
+      "enabled": false,
+      "upstream": "https://github.com/kuker24/OpenCodeHighEnd",
+      "version": "pinned",
+      "license": "MIT"
+    },
+    {
+      "name": "sliver",
+      "transport": "stdio",
+      "enabled": false,
+      "upstream": "https://github.com/kuker24/OpenCodeHighEnd",
+      "version": "pinned",
+      "license": "MIT"
+    },
+    {
+      "name": "crawl4ai",
+      "transport": "sse",
+      "enabled": false,
+      "upstream": "https://github.com/unclecode/crawl4ai",
+      "version": "0.9.4",
+      "license": "MIT"
+    },
+    {
+      "name": "scrapling",
+      "transport": "stdio",
+      "enabled": false,
+      "upstream": "https://github.com/D4Vinci/Scrapling",
+      "version": "0.4.15",
+      "license": "MIT"
+    },
+    {
+      "name": "markitdown",
+      "transport": "stdio",
+      "enabled": false,
+      "upstream": "https://github.com/microsoft/markitdown",
+      "version": "0.1.8",
+      "license": "MIT"
+    },
+    {
+      "name": "serena",
+      "transport": "stdio",
+      "enabled": false,
+      "upstream": "https://github.com/oraios/serena",
+      "version": "1.7.0",
+      "license": "GPL-3.0"
+    },
+    {
+      "name": "reticle",
+      "transport": "stdio",
+      "enabled": false,
+      "upstream": "https://github.com/kuker24/OpenCodeHighEnd",
+      "version": "3.5.0",
+      "license": "FSL-1.1-MIT"
+    },
+    {
+      "name": "ui-skills",
+      "transport": "http",
+      "enabled": false,
+      "upstream": "https://www.ui-skills.com/mcp",
+      "version": "pinned",
+      "license": "MIT"
+    },
+    {
+      "name": "stitch",
+      "transport": "http",
+      "enabled": false,
+      "upstream": "https://stitch.googleapis.com/mcp",
+      "version": "pinned",
+      "license": "MIT"
+    },
+    {
+      "name": "exa",
+      "transport": "http",
+      "enabled": false,
+      "upstream": "https://github.com/kuker24/OpenCodeHighEnd",
+      "version": "pinned",
+      "license": "MIT"
+    },
+    {
+      "name": "rea",
+      "transport": "stdio",
+      "enabled": false,
+      "upstream": "https://github.com/morluto/rea.git",
+      "version": "pinned",
+      "license": "MIT"
+    }
+  ]
+}

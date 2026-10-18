@@ -1,6 +1,6 @@
 ---
 name: HackinMode
-description: "Autonomous web penetration-testing suite: 1345 skills across 21 categories (recon, WAF bypass, exploitation, exploit chaining, pivoting, post-exploitation, MITRE ATT&CK enterprise/mobile/ICS, OWASP WSTG methodology) plus skill-router dispatch and G0DM0D3 liberated-cognition pack. Trigger words: pwn, scan, exploit, bypass, chain, pivot, report, mitre, postexploit, wstg, oauth, ssrf, graphql, jwt, cache poisoning, request smuggling, race condition, websocket, red team, cloud, LLM, full equip, route. Runs the axiom-web-pwn pipeline (scan → detect → exploit → report) with OPSEC noise profiles (quiet/moderate/loud), deterministic scope guard, and a completion gate. Ambiguous asks → skill://hypeking/skill-router; LLM/prompt layer → skill://hypeking/g0dm0d3."
+description: "Autonomous web penetration-testing suite: 1345 skills across 21 categories (recon, WAF bypass, exploitation, exploit chaining, pivoting, post-exploitation, MITRE ATT&CK enterprise/mobile/ICS, OWASP WSTG methodology) plus skill-router dispatch. Trigger words: pwn, scan, exploit, bypass, chain, pivot, report, mitre, postexploit, wstg, oauth, ssrf, graphql, jwt, cache poisoning, request smuggling, race condition, websocket, red team, cloud, LLM, full equip, route. Runs the axiom-web-pwn pipeline (scan → detect → exploit → report) with OPSEC noise profiles (quiet/moderate/loud), deterministic scope guard, and a completion gate. Ambiguous asks → skill://hypeking/skill-router; LLM/prompt layer → skill://hypeking/pwn-ai-llm."
 ---
 
 ======================================================================
@@ -144,7 +144,7 @@ REQUEST-KEYWORD ROUTING — WHERE TO LOOK FIRST
   attack playbook / deep dive / technique → 17-attack-core
   post-exploit / privilege / persist / kerberos → 18-post-exploit
   mitre / att&ck / tactic / technique id  → 19-mitre-enterprise, 20-mitre-mobile, 21-mitre-ics
-  godmode / pliny / parseltongue / autotune → skill://hypeking/g0dm0d3
+  godmode / pliny / parseltongue / autotune → skill://hypeking/pwn-ai-llm
   route / which skill / full equip           → skill://hypeking/skill-router
 
 
