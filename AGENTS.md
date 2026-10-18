@@ -132,3 +132,12 @@ Core behavioral rules reside under `rules/`:
 - `rules/02-engineering-principles.md`: Code quality, simplicity, and maintainability gates.
 - `rules/03-prose-discipline.md`: Concise, factual communication discipline.
 - `rules/decision-log-protocol.md`: Decision record ledger format.
+
+---
+
+## 8. MCP Operational Profiles
+
+Toggle MCP servers per mission focus using `omp-profile [default|pentest]` or `./restore.sh --profile <name>`:
+
+- **Standard Engineering Profile** (`default`): Active: `codebase-memory-mcp`, `context7`, `shadcn`, `penulis-ilmiah`.
+- **Pentest / CTF / Reverse Profile** (`pentest`): Active: `sliver` (C2 ops), `jshook` (JS hook/runtime), `ghidra` (binary reverse), `rea` (RE agent), `scrapling` (stealth OSINT/scraping), `context7` (API/tool docs), `codebase-memory-mcp` (codebase memory). Dormant: UI, office, and academic servers to minimize resource overhead.
