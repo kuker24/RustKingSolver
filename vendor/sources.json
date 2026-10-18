@@ -310,7 +310,7 @@
     "rea": {
       "repository": "https://github.com/morluto/rea.git",
       "commit": "7c458f04b9155707c8ba406f8b455b10016f1b99",
-      "package": "rea-agents@6.6.0",
+      "package": "rea-agents@6.7.0",
       "description": "Reverse engineering assistant MCP server"
     },
     "universal-modder": {

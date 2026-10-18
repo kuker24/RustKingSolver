@@ -787,7 +787,7 @@
       "path": "mcp.json#rea",
       "upstream": "https://github.com/morluto/rea.git",
       "commit": "7c458f04b9155707c8ba406f8b455b10016f1b99",
-      "version": "6.6.0",
+      "version": "6.7.0",
       "license": "Apache-2.0",
       "modified": false,
       "redistribution": "apache-2.0"

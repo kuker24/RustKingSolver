@@ -159,7 +159,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "rea-agents@6.6.0",
+        "rea-agents@6.7.0",
         "mcp"
       ],
       "enabled": false,
