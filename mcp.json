@@ -51,15 +51,16 @@
       "instructions": true
     },
     "ghidra": {
-      "type": "http",
-      "url": "http://127.0.0.1:8765/mcp",
+      "type": "stdio",
+      "command": "${HOME}/.omp/agent/bin/ghidra-mcp",
+      "args": [],
       "enabled": false,
       "instructions": true
     },
     "sliver": {
       "type": "stdio",
-      "command": "sliver-client",
-      "args": ["mcp", "--config", "${SLIVER_MULTIPLAYER_CFG}"],
+      "command": "${HOME}/.omp/agent/bin/sliver-mcp",
+      "args": [],
       "enabled": false,
       "instructions": true
     },

@@ -9,7 +9,7 @@ Unified capability bundle for `omp` (`oh-my-pi` v18.12.1). Combines the full off
 | `skills/` | 52 discovered skills: 1 umbrella offensive router (`hypeking`) + 51 engineering skills. |
 | `manual-skills/` | 15 manual specialists isolated from automatic scanner discovery. |
 | `commands/` | 15 slash command stubs routing to `~/.omp/agent/manual-skills/<name>/SKILL.md`. |
-| `bin/` | Executables: profile-aware `omp` launcher, `omp-profile` switcher, `opencode-chromium-cdp` (with symlink `omp-chromium-cdp`) and `codebase-memory-mcp`. |
+| `bin/` | Executables: profile-aware `omp` launcher, `omp-profile` switcher, resilient MCP wrappers (`ghidra-mcp`, `sliver-mcp`), `opencode-chromium-cdp` (with symlink `omp-chromium-cdp`) and `codebase-memory-mcp`. |
 | `mcp/` | First-party MCP packages: `penulis-ilmiah` (Indonesian academic paper assistant). |
 | `rules/` | Operational governance: `00-routing.md`, `01-verification.md`, `02-engineering-principles.md`, `03-prose-discipline.md`, `decision-log-protocol.md`. |
 | `mcp.json` | Unified MCP configuration: 4 enabled (codebase-memory, context7, shadcn, penulis-ilmiah) + 13 disabled. |
