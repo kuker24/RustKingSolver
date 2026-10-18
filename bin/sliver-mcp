@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+"""
+bin/sliver-mcp — Resilient MCP stdio wrapper for Sliver C2.
+
+When an operator multiplayer config is available via $SLIVER_MULTIPLAYER_CFG
+or ~/.sliver-client/configs/*.cfg, this wrapper transparently execs
+`sliver-client mcp --config <cfg>`.
+
+When no configuration is present, it acts as a dormant stdio MCP server,
+gracefully answering initialize and tools/list handshakes instead of crashing
+or emitting raw non-JSON text that breaks JSONL parsers.
+"""
+
+import glob
+import json
+import os
+import shutil
+import sys
+
+def find_sliver_config():
+    cfg_env = os.environ.get("SLIVER_MULTIPLAYER_CFG", "").strip()
+    if cfg_env and os.path.isfile(cfg_env):
+        return cfg_env
+    default_dir = os.path.expanduser("~/.sliver-client/configs")
+    if os.path.isdir(default_dir):
+        cfgs = glob.glob(os.path.join(default_dir, "*.cfg"))
+        if cfgs:
+            return cfgs[0]
+    return None
+
+def main():
+    cfg = find_sliver_config()
+    sliver_client = shutil.which("sliver-client") or os.path.expanduser("~/.local/bin/sliver-client")
+
+    if cfg and os.path.isfile(cfg) and os.path.isfile(sliver_client) and os.access(sliver_client, os.X_OK):
+        # Config exists and binary is executable: handover to real sliver-client
+        os.execv(sliver_client, [sliver_client, "mcp", "--config", cfg])
+
+    # Dormant mode: handle MCP JSON-RPC 2.0 stdio
+    for line in sys.stdin:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            req = json.loads(line)
+        except Exception:
+            continue
+
+        msg_id = req.get("id")
+        method = req.get("method")
+
+        if method == "initialize":
+            resp = {
+                "jsonrpc": "2.0",
+                "id": msg_id,
+                "result": {
+                    "protocolVersion": "2024-11-05",
+                    "capabilities": {
+                        "tools": {"listChanged": False}
+                    },
+                    "serverInfo": {
+                        "name": "sliver-c2-dormant",
+                        "version": "1.0.0"
+                    },
+                    "instructions": (
+                        "Sliver C2 MCP is currently dormant because no operator configuration "
+                        "was detected. To connect to a live Sliver teamserver, set "
+                        "SLIVER_MULTIPLAYER_CFG=/path/to/operator.cfg or import a config into "
+                        "~/.sliver-client/configs/."
+                    )
+                }
+            }
+            sys.stdout.write(json.dumps(resp) + "\n")
+            sys.stdout.flush()
+
+        elif method == "notifications/initialized":
+            # Notification: no response required
+            pass
+
+        elif method == "tools/list":
+            resp = {
+                "jsonrpc": "2.0",
+                "id": msg_id,
+                "result": {
+                    "tools": [
+                        {
+                            "name": "sliver_c2_status",
+                            "description": "Check the connection status and configuration path for Sliver C2.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    ]
+                }
+            }
+            sys.stdout.write(json.dumps(resp) + "\n")
+            sys.stdout.flush()
+
+        elif method == "tools/call":
+            resp = {
+                "jsonrpc": "2.0",
+                "id": msg_id,
+                "result": {
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": (
+                                "Sliver C2 is dormant. No operator configuration found.\n"
+                                "To activate Sliver C2 in pentest mode:\n"
+                                "1. Start or connect to a Sliver teamserver.\n"
+                                "2. Export SLIVER_MULTIPLAYER_CFG=/path/to/operator.cfg, or\n"
+                                "3. Import your config: sliver-client import /path/to/operator.cfg"
+                            )
+                        }
+                    ],
+                    "isError": False
+                }
+            }
+            sys.stdout.write(json.dumps(resp) + "\n")
+            sys.stdout.flush()
+
+        elif method == "ping":
+            resp = {"jsonrpc": "2.0", "id": msg_id, "result": {}}
+            sys.stdout.write(json.dumps(resp) + "\n")
+            sys.stdout.flush()
+
+        elif msg_id is not None:
+            # Unknown method fallback
+            resp = {
+                "jsonrpc": "2.0",
+                "id": msg_id,
+                "error": {
+                    "code": -32601,
+                    "message": f"Method not found: {method}"
+                }
+            }
+            sys.stdout.write(json.dumps(resp) + "\n")
+            sys.stdout.flush()
+
+if __name__ == "__main__":
+    main()

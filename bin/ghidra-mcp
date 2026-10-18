@@ -1,0 +1,175 @@
+#!/usr/bin/env python3
+"""
+bin/ghidra-mcp — Resilient MCP stdio wrapper and bridge for Ghidra.
+
+When Ghidra is running with the GhidraMCP bridge active on http://127.0.0.1:8765/mcp,
+this wrapper forwards stdio JSON-RPC requests directly to the HTTP endpoint.
+
+When Ghidra is not running, it acts as a dormant stdio MCP server, gracefully
+answering initialize and tools/list handshakes instead of triggering an
+ECONNREFUSED error that marks the MCP server as failed in omp.
+"""
+
+import json
+import os
+import sys
+import urllib.error
+import urllib.request
+
+GHIDRA_URL = os.environ.get("GHIDRA_MCP_URL", "http://127.0.0.1:8765/mcp")
+
+def probe_ghidra(timeout=0.8):
+    try:
+        req = urllib.request.Request(
+            GHIDRA_URL,
+            data=b'{"jsonrpc":"2.0","id":0,"method":"ping"}',
+            headers={"Content-Type": "application/json"}
+        )
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return resp.status in (200, 204)
+    except Exception:
+        return False
+
+def forward_to_ghidra(data_bytes, timeout=10.0):
+    try:
+        req = urllib.request.Request(
+            GHIDRA_URL,
+            data=data_bytes,
+            headers={"Content-Type": "application/json"}
+        )
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return resp.read().decode("utf-8")
+    except Exception as e:
+        return None
+
+def main():
+    is_live = probe_ghidra()
+
+    for line in sys.stdin:
+        line = line.strip()
+        if not line:
+            continue
+
+        try:
+            req = json.loads(line)
+        except Exception:
+            continue
+
+        msg_id = req.get("id")
+        method = req.get("method")
+
+        # If live, try forwarding
+        if is_live:
+            res_str = forward_to_ghidra(line.encode("utf-8"))
+            if res_str:
+                sys.stdout.write(res_str.strip() + "\n")
+                sys.stdout.flush()
+                continue
+            else:
+                is_live = False
+
+        # Dormant mode handler
+        if method == "initialize":
+            resp = {
+                "jsonrpc": "2.0",
+                "id": msg_id,
+                "result": {
+                    "protocolVersion": "2024-11-05",
+                    "capabilities": {
+                        "tools": {"listChanged": False}
+                    },
+                    "serverInfo": {
+                        "name": "ghidra-bridge-dormant",
+                        "version": "1.0.0"
+                    },
+                    "instructions": (
+                        "Ghidra MCP bridge is dormant because no service is currently listening "
+                        f"at {GHIDRA_URL}. Start Ghidra with the GhidraMCP plugin on port 8765 "
+                        "to enable interactive reverse engineering tools."
+                    )
+                }
+            }
+            sys.stdout.write(json.dumps(resp) + "\n")
+            sys.stdout.flush()
+
+        elif method == "notifications/initialized":
+            pass
+
+        elif method == "tools/list":
+            # Re-probe in case Ghidra was started in the meantime
+            if probe_ghidra():
+                is_live = True
+                res_str = forward_to_ghidra(line.encode("utf-8"))
+                if res_str:
+                    sys.stdout.write(res_str.strip() + "\n")
+                    sys.stdout.flush()
+                    continue
+
+            resp = {
+                "jsonrpc": "2.0",
+                "id": msg_id,
+                "result": {
+                    "tools": [
+                        {
+                            "name": "ghidra_bridge_status",
+                            "description": "Check connection status to the local Ghidra MCP daemon (http://127.0.0.1:8765/mcp).",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    ]
+                }
+            }
+            sys.stdout.write(json.dumps(resp) + "\n")
+            sys.stdout.flush()
+
+        elif method == "tools/call":
+            if probe_ghidra():
+                is_live = True
+                res_str = forward_to_ghidra(line.encode("utf-8"))
+                if res_str:
+                    sys.stdout.write(res_str.strip() + "\n")
+                    sys.stdout.flush()
+                    continue
+
+            resp = {
+                "jsonrpc": "2.0",
+                "id": msg_id,
+                "result": {
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": (
+                                f"Ghidra MCP bridge is dormant (no daemon on {GHIDRA_URL}).\n"
+                                "To enable Ghidra decompilation and symbol analysis:\n"
+                                "1. Open Ghidra.\n"
+                                "2. Launch the GhidraMCP extension or bridge script on port 8765."
+                            )
+                        }
+                    ],
+                    "isError": False
+                }
+            }
+            sys.stdout.write(json.dumps(resp) + "\n")
+            sys.stdout.flush()
+
+        elif method == "ping":
+            resp = {"jsonrpc": "2.0", "id": msg_id, "result": {}}
+            sys.stdout.write(json.dumps(resp) + "\n")
+            sys.stdout.flush()
+
+        elif msg_id is not None:
+            resp = {
+                "jsonrpc": "2.0",
+                "id": msg_id,
+                "error": {
+                    "code": -32601,
+                    "message": f"Method not found: {method}"
+                }
+            }
+            sys.stdout.write(json.dumps(resp) + "\n")
+            sys.stdout.flush()
+
+if __name__ == "__main__":
+    main()

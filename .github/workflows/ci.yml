@@ -75,6 +75,10 @@ jobs:
         run: |
           python3 tests/test_route.py
 
+      - name: Run launcher smoke test
+        run: |
+          python3 tests/test_launcher.py
+
       - name: Build & test MCP penulis-ilmiah
         run: |
           cd mcp/penulis-ilmiah
