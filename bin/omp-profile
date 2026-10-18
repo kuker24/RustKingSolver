@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Switch MCP profile for omp (oh-my-pi)
+set -euo pipefail
+
+TARGET_DIR="${OMP_AGENT_DIR:-$HOME/.omp/agent}"
+PROFILES_DIR="${TARGET_DIR}/profiles"
+
+usage() {
+  cat <<'EOF'
+Usage: omp-profile [default|pentest|status]
+
+Profiles:
+  default   Standard engineering MCP profile (codebase-memory, context7, shadcn, penulis-ilmiah)
+  pentest   Offensive/CTF/reverse profile (sliver, jshook, ghidra, rea, scrapling, context7, codebase-memory)
+  status    Show active profile and enabled MCP servers
+EOF
+  exit 1
+}
+
+PROFILE="${1:-status}"
+
+case "$PROFILE" in
+  default)
+    if [ ! -f "$PROFILES_DIR/mcp.default.json" ]; then
+      echo "[!] Profile file $PROFILES_DIR/mcp.default.json not found."
+      exit 1
+    fi
+    cp "$PROFILES_DIR/mcp.default.json" "$TARGET_DIR/mcp.json"
+    echo "[+] Switched omp MCP configuration to profile: default"
+    ;;
+  pentest)
+    if [ ! -f "$PROFILES_DIR/mcp.pentest.json" ]; then
+      echo "[!] Profile file $PROFILES_DIR/mcp.pentest.json not found."
+      exit 1
+    fi
+    cp "$PROFILES_DIR/mcp.pentest.json" "$TARGET_DIR/mcp.json"
+    echo "[+] Switched omp MCP configuration to profile: pentest"
+    ;;
+  status)
+    if [ ! -f "$TARGET_DIR/mcp.json" ]; then
+      echo "[!] Target MCP config $TARGET_DIR/mcp.json not found. Run ./restore.sh first."
+      exit 1
+    fi
+    echo "[*] Active MCP servers in $TARGET_DIR/mcp.json:"
+    python3 -c "
+import json
+data = json.load(open('$TARGET_DIR/mcp.json'))
+enabled = [k for k, v in data.get('mcpServers', {}).items() if v.get('enabled')]
+disabled = [k for k, v in data.get('mcpServers', {}).items() if not v.get('enabled')]
+print('  ENABLED (' + str(len(enabled)) + '):', ', '.join(enabled))
+print('  DISABLED (' + str(len(disabled)) + '):', ', '.join(disabled))
+"
+    ;;
+  *)
+    usage
+    ;;
+esac

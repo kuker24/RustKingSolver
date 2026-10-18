@@ -39,6 +39,29 @@ omp skill list --json
 
 Target discovery: exactly **52 skills** (1 `hypeking` + 51 OpenCodeHighEnd skills).
 
+## MCP Profiles & Presets
+
+The bundle ships with two pre-configured MCP operational profiles under `profiles/`:
+
+1. **Default Engineering Profile** (`profiles/mcp.default.json`):
+   - Active: `codebase-memory-mcp`, `context7`, `shadcn`, `penulis-ilmiah`.
+   - Designed for standard software engineering, UI design, refactoring, and academic writing.
+
+2. **Pentest-Mode Profile** (`profiles/mcp.pentest.json`):
+   - Active: `sliver` (C2 ops), `jshook` (JS runtime hooking), `ghidra` (binary reverse), `rea` (RE agent), `scrapling` (stealth OSINT/scraping), `context7` (docs), `codebase-memory-mcp` (codebase graph).
+   - Dormant: `shadcn`, `ui-skills`, `stitch`, `markitdown`, `penulis-ilmiah`, `reticle`, `exa`, `crawl4ai`, `idapro`, `serena` to conserve CPU/RAM.
+
+**Profile Commands**:
+```bash
+# Deploy with pentest profile at restore time
+./restore.sh --profile pentest
+
+# Or switch profiles on a deployed environment at any time
+bin/omp-profile pentest
+bin/omp-profile default
+bin/omp-profile status
+```
+
 ## Environment Variables
 
 Credentials are never stored in the repository. Set the required variables in your shell environment:

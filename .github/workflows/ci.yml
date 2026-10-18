@@ -31,7 +31,7 @@ jobs:
         run: |
           python3 -c '
           import json
-          for f in ["mcp.json", "vendor/provenance.json", "vendor/sources.json", "vendor/freeze-manifest.json", "vendor/release-contract.json"]:
+          for f in ["mcp.json", "profiles/mcp.default.json", "profiles/mcp.pentest.json", "vendor/provenance.json", "vendor/sources.json", "vendor/freeze-manifest.json", "vendor/release-contract.json"]:
               with open(f) as fp:
                   json.load(fp)
               print(f"VALID: {f}")

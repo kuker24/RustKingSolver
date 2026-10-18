@@ -4,10 +4,28 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET="${OMP_AGENT_DIR:-$HOME/.omp/agent}"
+PROFILE="default"
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --profile)
+      PROFILE="$2"
+      shift 2
+      ;;
+    default|pentest)
+      PROFILE="$1"
+      shift
+      ;;
+    *)
+      echo "Unknown argument: $1"
+      echo "Usage: ./restore.sh [--profile default|pentest]"
+      exit 1
+      ;;
+  esac
+done
 
-echo "[*] Restoring omp bundle to: $TARGET"
+echo "[*] Restoring omp bundle (profile: $PROFILE) to: $TARGET"
 
-mkdir -p "$TARGET"/{skills,manual-skills,commands,bin,mcp,rules,vendor,state/chromium-profile,logs}
+mkdir -p "$TARGET"/{skills,manual-skills,commands,bin,mcp,rules,vendor,profiles,state/chromium-profile,logs}
 
 # 1. Sync skills (52 discovered skills)
 echo "[*] Synchronizing skills/..."
@@ -65,17 +83,21 @@ fi
 echo "[*] Synchronizing rules/..."
 rsync -a --delete "$ROOT/rules/" "$TARGET/rules/"
 
-# 7. Sync vendor/
-echo "[*] Synchronizing vendor/..."
+# 7. Sync vendor/ & profiles/
+echo "[*] Synchronizing vendor/ and profiles/..."
 rsync -a --delete "$ROOT/vendor/" "$TARGET/vendor/"
+rsync -a --delete "$ROOT/profiles/" "$TARGET/profiles/"
 
 # 8. Copy root configurations
-echo "[*] Deploying root configurations (mcp.json, config.yml, models.yml, AGENTS.md)..."
-cp "$ROOT/mcp.json" "$TARGET/mcp.json"
+echo "[*] Deploying root configurations (profile: $PROFILE)..."
+if [ "$PROFILE" = "pentest" ]; then
+  cp "$ROOT/profiles/mcp.pentest.json" "$TARGET/mcp.json"
+else
+  cp "$ROOT/mcp.json" "$TARGET/mcp.json"
+fi
 cp "$ROOT/config.yml" "$TARGET/config.yml"
 cp "$ROOT/models.yml" "$TARGET/models.yml"
 cp "$ROOT/AGENTS.md" "$TARGET/AGENTS.md"
-
 echo "[+] Restore complete!"
 echo "    Skills installed: $(ls -1 "$TARGET/skills" | wc -l)"
 echo "    Manual skills:    $(ls -1 "$TARGET/manual-skills" | wc -l)"

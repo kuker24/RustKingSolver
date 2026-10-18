@@ -79,10 +79,32 @@ def test_gap_packs_routing():
         )
         assert expected_target in res.stdout, f"Expected {expected_target} for query '{q}', got:\n{res.stdout}"
     print("[PASS] test_gap_packs_routing")
+def test_mcp_profiles():
+    root = os.path.dirname(os.path.dirname(__file__))
+    default_path = os.path.join(root, "profiles", "mcp.default.json")
+    pentest_path = os.path.join(root, "profiles", "mcp.pentest.json")
+
+    with open(default_path) as f:
+        d_def = json.load(f)
+    with open(pentest_path) as f:
+        d_pen = json.load(f)
+
+    assert len(d_def["mcpServers"]) == 17, "Default profile must have 17 servers"
+    assert len(d_pen["mcpServers"]) == 17, "Pentest profile must have 17 servers"
+
+    pen_enabled = [k for k, v in d_pen["mcpServers"].items() if v.get("enabled")]
+    for expected in ["sliver", "jshook", "ghidra", "rea", "scrapling", "context7", "codebase-memory-mcp"]:
+        assert expected in pen_enabled, f"Pentest profile must enable {expected}"
+
+    for disabled in ["shadcn", "penulis-ilmiah", "markitdown", "stitch", "ui-skills", "reticle", "exa"]:
+        assert not d_pen["mcpServers"][disabled].get("enabled"), f"{disabled} must be disabled in pentest profile"
+
+    print("[PASS] test_mcp_profiles")
 
 if __name__ == "__main__":
     test_text_contract_8_fields()
     test_json_output_contract()
     test_godmode_routing_to_ai_llm()
     test_gap_packs_routing()
-    print("ALL ROUTER TESTS PASSED.")
+    test_mcp_profiles()
+    print("ALL TESTS PASSED.")
