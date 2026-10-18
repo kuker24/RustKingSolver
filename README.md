@@ -1,4 +1,4 @@
-# cli-pentestv1 — omp Unified Bundle (v1)
+# RustKingSolver — omp Unified Bundle (v1)
 
 Unified capability bundle for `omp` (`oh-my-pi` v18.12.1). Combines the full offensive security suite `hypeking` (`cli-pentestv1`), the complete software engineering catalog from `OpenCodeHighEnd` (51 automatic skills + 15 manual slash commands + full browser CDP stack), 5 functional gap integrations (`geo-sleuth`, `rea`, `universal-modder`, `deepteam`, `supply-chain`), 17 configured MCP servers, and a single technical router in `AGENTS.md`.
 
