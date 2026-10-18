@@ -96,7 +96,25 @@ else
   cp "$ROOT/mcp.json" "$TARGET/mcp.json"
 fi
 cp "$ROOT/config.yml" "$TARGET/config.yml"
-cp "$ROOT/models.yml" "$TARGET/models.yml"
+
+# Deploy models.yml with key resolution
+RESOLVED_KEY="${NINEROUTER_API_KEY:-}"
+if [ -z "$RESOLVED_KEY" ] && [ -f "$HOME/.9router/db/data.sqlite" ]; then
+  RESOLVED_KEY="$(sqlite3 "$HOME/.9router/db/data.sqlite" "SELECT key FROM apiKeys WHERE isActive = 1 ORDER BY (name = 'OMP') DESC LIMIT 1;" 2>/dev/null || true)"
+fi
+if [ -z "$RESOLVED_KEY" ] && [ -f "$TARGET/models.yml" ]; then
+  EXISTING_KEY="$(awk -F': ' '/apiKey:/ {print $2; exit}' "$TARGET/models.yml" | tr -d ' "\r\n' || true)"
+  if [ -n "$EXISTING_KEY" ] && [ "$EXISTING_KEY" != '${NINEROUTER_API_KEY}' ]; then
+    RESOLVED_KEY="$EXISTING_KEY"
+  fi
+fi
+
+if [ -n "$RESOLVED_KEY" ] && [ "$RESOLVED_KEY" != '${NINEROUTER_API_KEY}' ]; then
+  sed "s|\${NINEROUTER_API_KEY}|$RESOLVED_KEY|g" "$ROOT/models.yml" > "$TARGET/models.yml"
+else
+  cp "$ROOT/models.yml" "$TARGET/models.yml"
+fi
+
 cp "$ROOT/AGENTS.md" "$TARGET/AGENTS.md"
 echo "[+] Restore complete!"
 echo "    Skills installed: $(ls -1 "$TARGET/skills" | wc -l)"
