@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Keyword → omp skill:// router for the full pwn + g0dm0d3 equip."""
+"""Keyword → omp skill:// router for the full pwn + CTF equip."""
 from __future__ import annotations
 
 import argparse
@@ -9,7 +9,15 @@ import sys
 
 # (keywords, skill, suite_category, weight)
 RULES: list[tuple[list[str], str, str, int]] = [
-    (["godmode", "g0dm0d3", "pliny", "libertas", "ultraplinian", "parseltongue", "autotune", "l1b3rt4s", "jailbreak research"], "g0dm0d3", "", 100),
+    # CTF competition pack first — a CTF/lomba ask must not land on the web-pentest suite
+    (["ctf crypto", "ecdsa", "dsa ", "nonce reuse", "nonce recurrence", "custom base32", "lattice reduction"], "ctf/crypto", "ctf/crypto", 99),
+    (["ctf reverse", "vm bytecode", "bytecode vm", "custom spn", "xorshift", "anti-debug", "pyc"], "ctf/reverse", "ctf/reverse", 98),
+    (["ctf forensics", "zero-width", "zero width", "zws", "stego", "steghide", "spectrogram", "pcap tls"], "ctf/forensics", "ctf/forensics", 98),
+    (["ctf osint", "geolocation", "geo-int", "exif gps", "reverse image search", "on-chain"], "ctf/osint", "ctf/osint", 97),
+    (["ctf ics", "ics challenge", "plc", "modbus", "scada", "conveyor", "ladder logic"], "ctf/ics", "ctf/ics", 97),
+    (["ctf web", "ssti waf", "jinja blacklist", "pickle", "session forge", "mime spoof"], "ctf/web-ctf", "ctf/web", 98),
+    (["worklist", "submit flag", "flag oracle", "ctf token", "fetch artifact"], "ctf/infra", "ctf/infra", 96),
+    (["ctf", "lomba", "靶场", "awd"], "ctf", "ctf", 96),
     (["route", "routing", "which skill", "triage", "dispatch", "skill router"], "skill-router", "", 95),
     (["pwn ", "pwn\t", "axiom", "aggressive pipeline", "web pwn"], "HackinMode", "pipeline", 90),
     (["httpx", "katana", "param miner", "param-miner", "web fuzz", "recon methodology", "fingerprint"], "pwn-recon", "01-recon", 80),
@@ -34,8 +42,7 @@ RULES: list[tuple[list[str], str, str, int]] = [
     (["ssti", "xxe", "cors", "host header", "idor", "open redirect", "attack-jwt", "attack playbook"], "pwn-attack-core", "17-attack-core", 85),
     (["postexploit", "post-exploit", "privesc", "privilege escalation", "kerberos", "bloodhound", "ad security", "lateral movement"], "pwn-post-exploit", "18-post-exploit", 85),
     (["mitre ics", "att&ck ics", "ta010"], "pwn-mitre-ics", "21-mitre-ics", 90),
-    (["mitre mobile", "att&ck mobile", "ta002"], "pwn-mitre-mobile", "20-mitre-mobile", 90),
-    (["mitre", "att&ck", "t1", "ta000"], "pwn-mitre-enterprise", "19-mitre-enterprise", 70),
+    (["mitre", "att&ck", "t1", "ta000"], "pwn-mitre-ics", "21-mitre-ics", 70),
     (["recon", "scan", "probe"], "pwn-recon", "01-recon", 50),
     (["exploit", "rce", "injection"], "pwn-exploit", "03-exploit", 45),
     (["full equip", "max equip", "equip all"], "skill-router", "", 40),

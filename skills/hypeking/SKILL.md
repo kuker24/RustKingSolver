@@ -12,14 +12,12 @@ alwaysApply: true
 ~/.omp/agent/skills/hypeking/
 ├── SKILL.md                 ← you are here (auto-router)
 ├── scripts/route.py         ← CLI dispatcher
+├── ctf/                     ← CTF competition pack (crypto/reverse/forensics/osint/ics/web-ctf/infra)
 ├── HackinMode/              ← web pwn orchestrator
-├── g0dm0d3/                 ← GODMODE / Parseltongue / AutoTune
 ├── skill-router/            ← detailed routing tables (nested)
-├── pwn-*/                   ← category indexes (+ api-recon, reverse)
-├── scopesentry/             ← ScopeSentry MCP (ARTEX)
-├── playwright-cli/          ← playwright-cli (ARTEX)
+├── pwn-*/                   ← web-pentest category indexes
 ├── reverse-skill/           ← RE/mobile/JS/CTF/firmware gap packs
-└── всегда побеждать/        ← web suite + pipeline
+└── всегда побеждать/        ← web suite + pipeline (REAL pentest — not the CTF default)
 ```
 
 ## AUTO-ROUTE — do this on EVERY ask (no prior call required)
@@ -41,12 +39,16 @@ alwaysApply: true
 
 | Keywords | Nested path | Mode |
 |---|---|---|
+| ctf, lomba, 靶场, worklist, submit flag | `ctf/SKILL.md` | read → run infra |
+| ctf crypto, ecdsa, dsa, nonce reuse, nonce recurrence, rsa, custom base-N | `ctf/crypto/SKILL.md` | read → run solver |
+| ctf reverse, vm bytecode, spn, pyc, anti-debug, prng feedback | `ctf/reverse/SKILL.md` | read |
+| ctf forensics, stego, zero-width, zws, pcap, audio, metadata | `ctf/forensics/SKILL.md` | read |
+| ctf osint, geolocation, exif gps, social discovery, blockchain | `ctf/osint/SKILL.md` | read → delegate |
+| ctf ics, ot, plc, modbus, scada, conveyor, setpoint | `ctf/ics/SKILL.md` | read |
+| ctf web, ssti waf, jinja blacklist, pickle, session forge, upload bypass | `ctf/web-ctf/SKILL.md` | read → run builder |
 | pwn, axiom, aggressive, full pipeline | `HackinMode/SKILL.md` | read → run pipeline |
-| godmode, g0dm0d3, pliny, ultraplinian, parseltongue, autotune, libertas | `g0dm0d3/SKILL.md` | read → scripts |
 | route, which skill, triage, full equip, dispatch, artex | `SKILL.md` (this) / `scripts/route.py` | run |
 | api recon, SPA harvest, webpack/vite, xhr/fetch stub | `pwn-api-recon/SKILL.md` → `01-recon/api-recon/` | read/run |
-| scopesentry, ssk_, list_assets, create_scan_task | `scopesentry/SKILL.md` | read → MCP |
-| playwright-cli, playwright mcp, snapshot refs | `playwright-cli/SKILL.md` | read/run CLI |
 | apk, jadx, apktool, smali, frida | `reverse-skill/apk-reverse/` | read |
 | ipa, ios, objection, mobsf, ssl pinning | `reverse-skill/mobile-reverse/` | read |
 | js reverse, jshook, 前端加密, sourcemap | `reverse-skill/js-reverse/` | read |
@@ -63,7 +65,7 @@ alwaysApply: true
 | nuclei, ffuf, dalfox, burp, cicd, chain | `pwn-automation/SKILL.md` → `06-automation/` | run |
 | api security, bola, bfla, shadow api | `pwn-web-security/SKILL.md` → `07-web-security/` | run |
 | aws, azure, gcp, k8s, iam, s3 | `pwn-cloud-web/SKILL.md` → `08-cloud-web/` | run |
-| llm, prompt injection, mcp, guardrail, garak, pyrit | `pwn-ai-llm/SKILL.md` + `g0dm0d3/` | run |
+| llm, prompt injection, mcp, guardrail, garak, pyrit | `pwn-ai-llm/SKILL.md` | run |
 | osint, shodan, crt.sh, darkweb, typosquat | `pwn-adv-recon/SKILL.md` → `10-adv-recon/` | run |
 | wireshark, zeek, scapy, netflow, snort | `pwn-network-web/SKILL.md` → `11-network-web/` | run |
 | adaptix, adaptixc2, axscript, gopher agent | `12-red-team-web/operating-adaptix-c2/` | read/run |
@@ -79,7 +81,8 @@ alwaysApply: true
 | mitre mobile | `pwn-mitre-mobile/SKILL.md` → `20-mitre-mobile/` | read |
 | mitre ics | `pwn-mitre-ics/SKILL.md` → `21-mitre-ics/` | read |
 
-Default (no keyword): `HackinMode/SKILL.md`.
+Default for a **CTF / lomba** ask: `ctf/SKILL.md`.
+Default otherwise (no keyword): `HackinMode/SKILL.md`.
 
 ## Output contract (every routed turn)
 
@@ -120,5 +123,5 @@ Suite absolute root: `~/.omp/agent/skills/hypeking/всегда побеждат
 
 ```
 HYPEKING ARMED
-1 discovered skill · 1345 nested · G0DM0D3 · auto-route ON
+1 discovered skill · 2802 nested · CTF pack · auto-route ON
 ```

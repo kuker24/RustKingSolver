@@ -1,22 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/packages/coding-agent/src/config/mcp-schema.json",
   "mcpServers": {
-    "scopesentry": {
-      "type": "http",
-      "url": "http://127.0.0.1:8082/mcp",
-      "headers": {
-        "X-API-Key": "${SCOPESENTRY_API_KEY}"
-      },
-      "enabled": false,
-      "instructions": true
-    },
-    "playwright": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "@playwright/mcp", "--headless"],
-      "enabled": false,
-      "instructions": true
-    },
     "jshook": {
       "type": "stdio",
       "command": "npx",
@@ -47,5 +31,5 @@
       "instructions": true
     }
   },
-  "disabledServers": ["scopesentry", "playwright", "jshook", "idapro", "ghidra", "sliver"]
+  "disabledServers": ["jshook", "idapro", "ghidra", "sliver"]
 }

@@ -51,8 +51,7 @@ node runtime_harvest.js config.json
 |---|---|
 | HTTP probe / crawl / fuzz | `pwn-recon` |
 | API exploit (BOLA/BFLA/…) | `pwn-web-security` |
-| Browser MCP / CLI | `playwright-cli` + omp `browser` tool |
-| Asset platform sync | `scopesentry` |
+| Browser automation | omp built-in `browser` tool |
 
 ## Provenance
 

@@ -71,7 +71,7 @@ API patterns (Caldera v5-ish): `/api/v2/adversaries`, `/api/v2/abilities`, `/api
 |---|---|
 | Manual C2 implant ops | `operating-sliver-c2` / `operating-adaptix-c2` / `operating-havoc-c2` |
 | MITRE Engage design | `designing-adversary-engagement-with-mitre-engage` |
-| ATT&CK enterprise | `pwn-mitre-enterprise` |
+| ATT&CK ICS | `pwn-mitre-ics` |
 | Phishing initial access | GoPhish / Evilginx packs |
 
 ## References

@@ -1,6 +1,6 @@
 ---
 name: pwn-ai-llm
-description: "AI/LLM security: prompt injection, RAG pipeline attacks, guardrails, MCP auditing, red-teaming. 15 skills: assessing-vector-and-embedding-weaknesses, auditing-mcp-servers-for-tool-poisoning, continuous-llm-red-teaming-with-promptfoo, defending-llms-with-guardrails, detecting-ai-model-prompt-injection-attacks, detecting-data-and-model-poisoning, detecting-indirect-prompt-injection, detecting-model-extraction-attacks. Stacks with skill://hypeking/g0dm0d3 (Parseltongue input perturbation, GODMODE CLASSIC combos, AutoTune sampling). Trigger words: assessing vector and embedding weaknesses, auditing mcp servers for tool poisoning, continuous llm red teaming with promptfoo, defending llms with guardrails, detecting ai model prompt injection attacks, detecting data and model poisoning, godmode, parseltongue."
+description: "AI/LLM security: prompt injection, RAG pipeline attacks, guardrails, MCP auditing, red-teaming. 15 skills: assessing-vector-and-embedding-weaknesses, auditing-mcp-servers-for-tool-poisoning, continuous-llm-red-teaming-with-promptfoo, defending-llms-with-guardrails, detecting-ai-model-prompt-injection-attacks, detecting-data-and-model-poisoning, detecting-indirect-prompt-injection, detecting-model-extraction-attacks. Trigger words: assessing vector and embedding weaknesses, auditing mcp servers for tool poisoning, continuous llm red teaming with promptfoo, defending llms with guardrails, detecting ai model prompt injection attacks, detecting data and model poisoning."
 ---
 
 # pwn-ai-llm — 09-ai-llm-web
@@ -39,16 +39,12 @@ Methodology skills (Mode = read):
 read ~/.omp/agent/skills/hypeking/всегда побеждать/<category>/<skill>/SKILL.md
 ```
 
-## G0DM0D3 stack (liberated cognition)
+## Prompt-architecture stack
 
-For prompt-architecture / multi-model race / input obfuscation / sampling:
-
-```
-read skill://hypeking/g0dm0d3
-python3 '~/.omp/agent/skills/hypeking/g0dm0d3/scripts/parseltongue.py' -t '...' --technique unicode --intensity heavy
-python3 '~/.omp/agent/skills/hypeking/g0dm0d3/scripts/godmode.py' --race -q '...'
-python3 '~/.omp/agent/skills/hypeking/g0dm0d3/scripts/autotune.py' -m '...' --strategy adaptive --json
-```
+The `g0dm0d3` pack (parseltongue / godmode / autotune) was removed 2026-10-18 —
+it was never opened across the Redlimit CTV campaign. Prompt-architecture and
+input-obfuscation work now runs from the 15 skills above; for open-ended
+multi-approach ideation use the `adhd` skill.
 
 Ambiguous cross-pack asks → `read skill://hypeking/skill-router`.
 

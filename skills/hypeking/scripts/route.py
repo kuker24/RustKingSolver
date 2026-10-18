@@ -12,12 +12,18 @@ HYPEKING = Path(__file__).resolve().parent.parent
 
 # (keywords, nested_relpath, suite_category, weight)
 RULES: list[tuple[list[str], str, str, int]] = [
-    (["godmode", "g0dm0d3", "pliny", "libertas", "ultraplinian", "parseltongue", "autotune", "l1b3rt4s", "jailbreak research"], "g0dm0d3/SKILL.md", "", 100),
+    # CTF competition pack — highest priority so a CTF/lomba ask never falls into the web-pentest suite
+    (["ctf crypto", "ecdsa", "dsa ", "nonce reuse", "nonce recurrence", "polynomial recurrence", "custom base32", "custom base64", "aes-gcm", "aes gcm", "lattice reduction"], "ctf/crypto/SKILL.md", "ctf/crypto", 99),
+    (["ctf reverse", "vm bytecode", "bytecode vm", "custom spn", "spn ", "xorshift", "anti-debug", "pyc", "cpython dis", "magic division", "bootleg", "metamorphosis"], "ctf/reverse/SKILL.md", "ctf/reverse", 98),
+    (["ctf forensics", "forensics challenge", "zero-width", "zero width", "zws", "stego", "steghide", "spectrogram", "exiftool", "pcap tls", "partial tls", "disk image", "volatility"], "ctf/forensics/SKILL.md", "ctf/forensics", 98),
+    (["ctf osint", "geolocation", "geo-int", "geoint", "exif gps", "where was this taken", "reverse image search", "wayback", "on-chain", "blockchain osint", "entity label"], "ctf/osint/SKILL.md", "ctf/osint", 97),
+    (["ctf ics", "ics challenge", "ics/ot", "plc", "modbus", "scada", "conveyor", "setpoint", "ladder logic", "ot protocol"], "ctf/ics/SKILL.md", "ctf/ics", 97),
+    (["ctf web", "ssti waf", "jinja blacklist", "blacklist bypass ssti", "pickle", "rcube", "session forge", "deserialization sink", "mime spoof", "upload bypass"], "ctf/web-ctf/SKILL.md", "ctf/web", 98),
+    (["worklist", "submit flag", "flag oracle", "ctf token", "ctf ledger", "fetch artifact", "drive folder artifact", "rate limit 429"], "ctf/infra/SKILL.md", "ctf/infra", 96),
+    (["ctf", "lomba", "ctf sandbox", "competition challenge", "靶场", "awd"], "ctf/SKILL.md", "ctf", 96),
     (["route", "routing", "which skill", "triage", "dispatch", "skill router"], "SKILL.md", "", 95),
     (["pwn ", "pwn\t", "axiom", "aggressive pipeline", "web pwn"], "HackinMode/SKILL.md", "pipeline", 90),
     (["api recon", "api-recon", "frontend api", "spa harvest", "webpack chunk", "vite manifest", "xhr harvest", "fetch stub", "param samples", "runtime_harvest", "preload.js", "shadow endpoint discovery", "route map extract"], "pwn-api-recon/SKILL.md", "01-recon/api-recon", 95),
-    (["scopesentry", "scope sentry", "ssk_", "list_assets", "create_scan_task", "scan template", "asset sync"], "scopesentry/SKILL.md", "", 95),
-    (["playwright-cli", "playwright cli", "playwright mcp", "@playwright/mcp", "browser snapshot", "request mocking", "storage state", "playwright tracing"], "playwright-cli/SKILL.md", "", 90),
     # reverse-skill gap packs (mobile / binary / js crypto / ctf / firmware / forensics)
     (["apk", "jadx", "apktool", "smali", "frida", "repack apk"], "reverse-skill/apk-reverse/SKILL.md", "reverse/apk", 95),
     (["ipa", "ios reverse", "objection", "mobsf", "ssl pinning", "jailbreak bypass"], "reverse-skill/mobile-reverse/SKILL.md", "reverse/mobile", 95),
@@ -39,7 +45,6 @@ RULES: list[tuple[list[str], str, str, int]] = [
     (["thick client", "desktop ipc", "electron reverse"], "reverse-skill/thick-client/SKILL.md", "reverse/thick", 85),
     (["uart", "jtag", "secure boot", "hardware debug"], "reverse-skill/hardware-security/SKILL.md", "reverse/hw", 85),
     (["ollvm", "anti-debug", "unpack", "dsl vm", "reverse engineering"], "reverse-skill/reverse-engineering/SKILL.md", "reverse/general", 80),
-    (["burp mcp", "burpmcp"], "reverse-skill/burp-mcp/README.md", "reverse/burp-mcp", 85),
     (["reverse-skill", "pwn-reverse", "binary reverse", "native reverse"], "pwn-reverse/SKILL.md", "reverse", 70),
     (["httpx", "katana", "param miner", "param-miner", "web fuzz", "recon methodology", "fingerprint"], "pwn-recon/SKILL.md", "01-recon", 80),
     (["cloudflare", "akamai", "aws waf", "waf bypass", "waf evasion"], "pwn-waf-bypass/SKILL.md", "02-waf-bypass", 85),
@@ -63,8 +68,6 @@ RULES: list[tuple[list[str], str, str, int]] = [
     (["ssti", "xxe", "cors", "host header", "idor", "open redirect", "attack-jwt", "attack playbook"], "pwn-attack-core/SKILL.md", "17-attack-core", 85),
     (["postexploit", "post-exploit", "privesc", "privilege escalation", "kerberos", "bloodhound", "ad security", "lateral movement"], "pwn-post-exploit/SKILL.md", "18-post-exploit", 85),
     (["mitre ics", "att&ck ics", "ta010"], "pwn-mitre-ics/SKILL.md", "21-mitre-ics", 90),
-    (["mitre mobile", "att&ck mobile", "ta002"], "pwn-mitre-mobile/SKILL.md", "20-mitre-mobile", 90),
-    (["mitre", "att&ck", "t1", "ta000"], "pwn-mitre-enterprise/SKILL.md", "19-mitre-enterprise", 70),
     (["recon", "scan", "probe"], "pwn-recon/SKILL.md", "01-recon", 50),
     (["exploit", "rce", "injection"], "pwn-exploit/SKILL.md", "03-exploit", 45),
     (["full equip", "max equip", "equip all", "artex", "reverse-skill"], "SKILL.md", "", 40),
