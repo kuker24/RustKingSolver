@@ -1,0 +1,65 @@
+{
+  "report": {
+    "target": "http://127.0.0.1:8000",
+    "generated": "2026-10-07T17:23:05.943888",
+    "breach_level": 0,
+    "breach_status": "No Breach \u2014 Target secure or not vulnerable",
+    "tool": "AXIOM Web Pwn Pipeline v2.0"
+  },
+  "recon": {
+    "alive": true,
+    "status_code": 200,
+    "title": "",
+    "server": "Werkzeug/3.1.9 Python/3.13.5",
+    "technologies": [],
+    "endpoints": [],
+    "parameters": [],
+    "forms": [
+      {
+        "action": "/search",
+        "method": null,
+        "fields": []
+      }
+    ],
+    "cookies": {},
+    "headers": {
+      "Server": "Werkzeug/3.1.9 Python/3.13.5",
+      "Date": "Wed, 07 Oct 2026 10:22:48 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Length": "86",
+      "Connection": "close"
+    }
+  },
+  "vulnerabilities": [
+    {
+      "type": "clickjacking",
+      "url": "http://127.0.0.1:8000",
+      "severity": "low",
+      "evidence": "No X-Frame-Options and no frame-ancestors \u2014 page is framable"
+    },
+    {
+      "type": "security_headers",
+      "url": "http://127.0.0.1:8000",
+      "severity": "low",
+      "evidence": "Missing 5/5 baseline headers: Content-Security-Policy, Strict-Transport-Security, X-Content-Type-Options, Referrer-Policy, Permissions-Policy"
+    }
+  ],
+  "exploits": [
+    {
+      "type": "clickjacking",
+      "target": "http://127.0.0.1:8000",
+      "level": 0,
+      "success": false,
+      "evidence": "No X-Frame-Options and no frame-ancestors \u2014 page is framable",
+      "skill_used": null
+    },
+    {
+      "type": "security_headers",
+      "target": "http://127.0.0.1:8000",
+      "level": 0,
+      "success": false,
+      "evidence": "Missing 5/5 baseline headers: Content-Security-Policy, Strict-Transport-Security, X-Content-Type-Options, Referrer-Policy, Permissions-Policy",
+      "skill_used": null
+    }
+  ]
+}

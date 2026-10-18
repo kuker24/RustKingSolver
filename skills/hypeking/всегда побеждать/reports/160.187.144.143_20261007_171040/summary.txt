@@ -1,0 +1,17 @@
+==================================================
+AXIOM WEB PWN — SUMMARY
+==================================================
+Target:         160.187.144.143
+Date:           2026-10-07 17:10:41
+Technologies:   0
+Vulnerabilities: 0
+Exploits:       0 (0 successful)
+Breach Level:   0/5
+Status:         No Breach — Target secure or not vulnerable
+--------------------------------------------------
+VULNERABILITIES:
+  (none detected)
+--------------------------------------------------
+EXPLOITS:
+  (none executed)
+==================================================

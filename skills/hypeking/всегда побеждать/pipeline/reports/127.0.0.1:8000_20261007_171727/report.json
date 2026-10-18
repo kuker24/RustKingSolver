@@ -1,0 +1,23 @@
+{
+  "report": {
+    "target": "http://127.0.0.1:8000",
+    "generated": "2026-10-07T17:17:29.358639",
+    "breach_level": 0,
+    "breach_status": "No Breach \u2014 Target secure or not vulnerable",
+    "tool": "AXIOM Web Pwn Pipeline v2.0"
+  },
+  "recon": {
+    "alive": false,
+    "status_code": 0,
+    "title": "",
+    "server": "",
+    "technologies": [],
+    "endpoints": [],
+    "parameters": [],
+    "forms": [],
+    "cookies": {},
+    "headers": {}
+  },
+  "vulnerabilities": [],
+  "exploits": []
+}

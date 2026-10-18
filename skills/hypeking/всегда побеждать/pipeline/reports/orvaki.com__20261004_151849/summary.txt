@@ -1,0 +1,17 @@
+==================================================
+AXIOM WEB PWN — SUMMARY
+==================================================
+Target:         https://orvaki.com
+Date:           2026-10-04 15:18:55
+Technologies:   1
+Vulnerabilities: 1
+Exploits:       1 (1 successful)
+Breach Level:   4/5
+Status:         Critical Breach — Remote code execution or equivalent
+--------------------------------------------------
+VULNERABILITIES:
+  [CRITICAL] ssti
+--------------------------------------------------
+EXPLOITS:
+  ✓ ssti (level 4)
+==================================================

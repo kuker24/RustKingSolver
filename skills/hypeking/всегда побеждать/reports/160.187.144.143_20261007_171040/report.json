@@ -1,0 +1,23 @@
+{
+  "report": {
+    "target": "160.187.144.143",
+    "generated": "2026-10-07T17:10:41.176189",
+    "breach_level": 0,
+    "breach_status": "No Breach \u2014 Target secure or not vulnerable",
+    "tool": "AXIOM Web Pwn Pipeline v2.0"
+  },
+  "recon": {
+    "alive": false,
+    "status_code": 0,
+    "title": "",
+    "server": "",
+    "technologies": [],
+    "endpoints": [],
+    "parameters": [],
+    "forms": [],
+    "cookies": {},
+    "headers": {}
+  },
+  "vulnerabilities": [],
+  "exploits": []
+}

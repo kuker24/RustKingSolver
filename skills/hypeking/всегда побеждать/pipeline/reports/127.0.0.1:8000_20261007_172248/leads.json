@@ -1,0 +1,22 @@
+{
+  "leads": [
+    {
+      "id": 1,
+      "kind": "exploit_failed",
+      "detail": "clickjacking at http://127.0.0.1:8000 \u2014 exploit ran, no confirmation",
+      "status": "open",
+      "created": "2026-10-07T17:23:05",
+      "closed": null,
+      "close_reason": null
+    },
+    {
+      "id": 2,
+      "kind": "exploit_failed",
+      "detail": "security_headers at http://127.0.0.1:8000 \u2014 exploit ran, no confirmation",
+      "status": "open",
+      "created": "2026-10-07T17:23:05",
+      "closed": null,
+      "close_reason": null
+    }
+  ]
+}

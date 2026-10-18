@@ -1,0 +1,22 @@
+# --- private runtime state (never commit) ---
+sessions/
+cache/
+blobs/
+predict/
+terminal-sessions/
+logs/
+run/
+
+# --- databases ---
+*.db
+*.db-shm
+*.db-wal
+
+# --- python junk ---
+**/__pycache__/
+**/*.pyc
+
+# --- secrets ---
+.env
+*.env
+**/broker.token

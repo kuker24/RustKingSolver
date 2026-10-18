@@ -1,0 +1,17 @@
+==================================================
+AXIOM WEB PWN — SUMMARY
+==================================================
+Target:         https://orvaki.com
+Date:           2026-10-04 15:23:28
+Technologies:   1
+Vulnerabilities: 0
+Exploits:       0 (0 successful)
+Breach Level:   0/5
+Status:         No Breach — Target secure or not vulnerable
+--------------------------------------------------
+VULNERABILITIES:
+  (none detected)
+--------------------------------------------------
+EXPLOITS:
+  (none executed)
+==================================================

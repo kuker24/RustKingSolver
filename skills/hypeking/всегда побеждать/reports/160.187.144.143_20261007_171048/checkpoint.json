@@ -1,0 +1,8 @@
+{
+  "target": "http://160.187.144.143",
+  "phase": "report",
+  "breach_level": 4,
+  "vulns_found": 3,
+  "exploits_run": 3,
+  "elapsed": 31.79
+}

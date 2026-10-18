@@ -1,0 +1,467 @@
+2026-10-07 20:10:18,798 [DEBUG] Target: https://fahmi.eu.cc
+2026-10-07 20:10:18,798 [DEBUG] Output: reports/fahmi.eu.cc_20261007_201018
+2026-10-07 20:10:18,798 [DEBUG] Aggressive: False
+2026-10-07 20:10:18,798 [DEBUG] Profile: loud (delay 0.0s +-0.0, log DEBUG)
+2026-10-07 20:10:18,798 [DEBUG] --------------------------------------------------
+2026-10-07 20:10:18,806 [DEBUG] Scope: OK: 64.29.17.1
+2026-10-07 20:10:18,806 [INFO] [PHASE 1/7] RECONNAISSANCE
+2026-10-07 20:10:18,807 [DEBUG] Starting new HTTPS connection (1): fahmi.eu.cc:443
+2026-10-07 20:10:18,916 [DEBUG] https://fahmi.eu.cc:443 "GET / HTTP/1.1" 200 None
+2026-10-07 20:10:18,977 [DEBUG] https://fahmi.eu.cc:443 "GET / HTTP/1.1" 200 None
+2026-10-07 20:10:19,020 [DEBUG] https://fahmi.eu.cc:443 "GET / HTTP/1.1" 200 None
+2026-10-07 20:10:19,025 [DEBUG] Starting new HTTPS connection (2): fahmi.eu.cc:443
+2026-10-07 20:10:19,026 [DEBUG] Starting new HTTPS connection (3): fahmi.eu.cc:443
+2026-10-07 20:10:19,026 [DEBUG] Starting new HTTPS connection (4): fahmi.eu.cc:443
+2026-10-07 20:10:19,027 [DEBUG] Starting new HTTPS connection (5): fahmi.eu.cc:443
+2026-10-07 20:10:19,027 [DEBUG] Starting new HTTPS connection (6): fahmi.eu.cc:443
+2026-10-07 20:10:19,028 [DEBUG] Starting new HTTPS connection (7): fahmi.eu.cc:443
+2026-10-07 20:10:19,028 [DEBUG] Starting new HTTPS connection (8): fahmi.eu.cc:443
+2026-10-07 20:10:19,029 [DEBUG] Starting new HTTPS connection (9): fahmi.eu.cc:443
+2026-10-07 20:10:19,029 [DEBUG] Starting new HTTPS connection (10): fahmi.eu.cc:443
+2026-10-07 20:10:19,046 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/media/47a941f4dc84ae7f-s.p.3g5qaekp1rkwe.woff2 HTTP/1.1" 200 6852
+2026-10-07 20:10:19,049 [DEBUG] SHIFT_JIS Japanese prober hit error at byte 13
+2026-10-07 20:10:19,049 [DEBUG] EUC-JP Japanese prober hit error at byte 12
+2026-10-07 20:10:19,049 [DEBUG] GB2312 Chinese prober hit error at byte 12
+2026-10-07 20:10:19,049 [DEBUG] EUC-KR Korean prober hit error at byte 12
+2026-10-07 20:10:19,049 [DEBUG] CP949 Korean prober hit error at byte 13
+2026-10-07 20:10:19,049 [DEBUG] Big5 Chinese prober hit error at byte 12
+2026-10-07 20:10:19,049 [DEBUG] EUC-TW Taiwan prober hit error at byte 12
+2026-10-07 20:10:19,049 [DEBUG] Johab Korean prober hit error at byte 12
+2026-10-07 20:10:19,067 [DEBUG] windows-1251 Russian confidence = 0.05183849704303814
+2026-10-07 20:10:19,067 [DEBUG] KOI8-R Russian confidence = 0.055736765374919936
+2026-10-07 20:10:19,067 [DEBUG] ISO-8859-5 Russian confidence = 0.06028738362711507
+2026-10-07 20:10:19,067 [DEBUG] MacCyrillic Russian confidence = 0.05095286558968287
+2026-10-07 20:10:19,067 [DEBUG] IBM866 Russian confidence = 0.051421078312660164
+2026-10-07 20:10:19,068 [DEBUG] IBM855 Russian confidence = 0.05268828747959043
+2026-10-07 20:10:19,068 [DEBUG] ISO-8859-7 Greek confidence = 0.09945006961224895
+2026-10-07 20:10:19,068 [DEBUG] windows-1253 Greek confidence = 0.10085617599494144
+2026-10-07 20:10:19,068 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.05890306491566602
+2026-10-07 20:10:19,068 [DEBUG] windows-1251 Bulgarian confidence = 0.05556834888219391
+2026-10-07 20:10:19,068 [DEBUG] TIS-620 Thai confidence = 0.05595618007893451
+2026-10-07 20:10:19,068 [DEBUG] ISO-8859-9 Turkish confidence = 0.051563171733758476
+2026-10-07 20:10:19,068 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,068 [DEBUG] ISO-8859-8 Hebrew confidence = 0.05297567431144952
+2026-10-07 20:10:19,068 [DEBUG] ISO-8859-8 Hebrew confidence = 0.05548835451594514
+2026-10-07 20:10:19,068 [DEBUG] no probers hit minimum threshold
+2026-10-07 20:10:19,068 [DEBUG] utf-8  confidence = 0.010000000000000009
+2026-10-07 20:10:19,068 [DEBUG] SHIFT_JIS Japanese confidence = 0.01
+2026-10-07 20:10:19,068 [DEBUG] EUC-JP Japanese confidence = 0.01
+2026-10-07 20:10:19,068 [DEBUG] GB2312 Chinese confidence = 0.01
+2026-10-07 20:10:19,068 [DEBUG] EUC-KR Korean confidence = 0.01
+2026-10-07 20:10:19,068 [DEBUG] CP949 Korean confidence = 0.01
+2026-10-07 20:10:19,068 [DEBUG] Big5 Chinese confidence = 0.01
+2026-10-07 20:10:19,068 [DEBUG] EUC-TW Taiwan confidence = 0.01
+2026-10-07 20:10:19,068 [DEBUG] Johab Korean confidence = 0.01
+2026-10-07 20:10:19,068 [DEBUG] windows-1251 Russian confidence = 0.05183849704303814
+2026-10-07 20:10:19,068 [DEBUG] KOI8-R Russian confidence = 0.055736765374919936
+2026-10-07 20:10:19,068 [DEBUG] ISO-8859-5 Russian confidence = 0.06028738362711507
+2026-10-07 20:10:19,068 [DEBUG] MacCyrillic Russian confidence = 0.05095286558968287
+2026-10-07 20:10:19,068 [DEBUG] IBM866 Russian confidence = 0.051421078312660164
+2026-10-07 20:10:19,068 [DEBUG] IBM855 Russian confidence = 0.05268828747959043
+2026-10-07 20:10:19,068 [DEBUG] ISO-8859-7 Greek confidence = 0.09945006961224895
+2026-10-07 20:10:19,068 [DEBUG] windows-1253 Greek confidence = 0.10085617599494144
+2026-10-07 20:10:19,068 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.05890306491566602
+2026-10-07 20:10:19,068 [DEBUG] windows-1251 Bulgarian confidence = 0.05556834888219391
+2026-10-07 20:10:19,068 [DEBUG] TIS-620 Thai confidence = 0.05595618007893451
+2026-10-07 20:10:19,068 [DEBUG] ISO-8859-9 Turkish confidence = 0.051563171733758476
+2026-10-07 20:10:19,068 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,069 [DEBUG] ISO-8859-8 Hebrew confidence = 0.05297567431144952
+2026-10-07 20:10:19,069 [DEBUG] ISO-8859-8 Hebrew confidence = 0.05548835451594514
+2026-10-07 20:10:19,069 [DEBUG] ISO-8859-1  confidence = 0.01
+2026-10-07 20:10:19,069 [DEBUG] MacRoman  confidence = 0.0
+2026-10-07 20:10:19,119 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/media/6607ed879f189729-s.p.0crrl9gbf9-u7.woff2 HTTP/1.1" 200 6192
+2026-10-07 20:10:19,122 [DEBUG] SHIFT_JIS Japanese prober hit error at byte 13
+2026-10-07 20:10:19,122 [DEBUG] EUC-JP Japanese prober hit error at byte 13
+2026-10-07 20:10:19,123 [DEBUG] GB2312 Chinese prober hit error at byte 13
+2026-10-07 20:10:19,123 [DEBUG] EUC-KR Korean prober hit error at byte 13
+2026-10-07 20:10:19,123 [DEBUG] CP949 Korean prober hit error at byte 13
+2026-10-07 20:10:19,123 [DEBUG] Big5 Chinese prober hit error at byte 13
+2026-10-07 20:10:19,123 [DEBUG] EUC-TW Taiwan prober hit error at byte 13
+2026-10-07 20:10:19,123 [DEBUG] Johab Korean prober hit error at byte 13
+2026-10-07 20:10:19,138 [DEBUG] windows-1251 Russian confidence = 0.0561803170411947
+2026-10-07 20:10:19,138 [DEBUG] KOI8-R Russian confidence = 0.05684377983291929
+2026-10-07 20:10:19,138 [DEBUG] ISO-8859-5 Russian confidence = 0.05208437321846802
+2026-10-07 20:10:19,138 [DEBUG] MacCyrillic Russian confidence = 0.0562482776275779
+2026-10-07 20:10:19,138 [DEBUG] IBM866 Russian confidence = 0.0616659341962503
+2026-10-07 20:10:19,138 [DEBUG] IBM855 Russian confidence = 0.04923028850743905
+2026-10-07 20:10:19,138 [DEBUG] ISO-8859-7 Greek confidence = 0.08435196824813429
+2026-10-07 20:10:19,138 [DEBUG] windows-1253 Greek confidence = 0.08580020545737874
+2026-10-07 20:10:19,138 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.05701289560017914
+2026-10-07 20:10:19,138 [DEBUG] windows-1251 Bulgarian confidence = 0.05216078737632317
+2026-10-07 20:10:19,138 [DEBUG] TIS-620 Thai confidence = 0.04853006392752759
+2026-10-07 20:10:19,138 [DEBUG] ISO-8859-9 Turkish confidence = 0.05386049120396584
+2026-10-07 20:10:19,138 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,138 [DEBUG] ISO-8859-8 Hebrew confidence = 0.045626941918894943
+2026-10-07 20:10:19,138 [DEBUG] ISO-8859-8 Hebrew confidence = 0.05451218850310079
+2026-10-07 20:10:19,138 [DEBUG] no probers hit minimum threshold
+2026-10-07 20:10:19,138 [DEBUG] utf-8  confidence = 0.010000000000000009
+2026-10-07 20:10:19,138 [DEBUG] SHIFT_JIS Japanese confidence = 0.01
+2026-10-07 20:10:19,138 [DEBUG] EUC-JP Japanese confidence = 0.01
+2026-10-07 20:10:19,138 [DEBUG] GB2312 Chinese confidence = 0.01
+2026-10-07 20:10:19,138 [DEBUG] EUC-KR Korean confidence = 0.01
+2026-10-07 20:10:19,138 [DEBUG] CP949 Korean confidence = 0.01
+2026-10-07 20:10:19,138 [DEBUG] Big5 Chinese confidence = 0.01
+2026-10-07 20:10:19,138 [DEBUG] EUC-TW Taiwan confidence = 0.01
+2026-10-07 20:10:19,138 [DEBUG] Johab Korean confidence = 0.01
+2026-10-07 20:10:19,139 [DEBUG] windows-1251 Russian confidence = 0.0561803170411947
+2026-10-07 20:10:19,139 [DEBUG] KOI8-R Russian confidence = 0.05684377983291929
+2026-10-07 20:10:19,139 [DEBUG] ISO-8859-5 Russian confidence = 0.05208437321846802
+2026-10-07 20:10:19,139 [DEBUG] MacCyrillic Russian confidence = 0.0562482776275779
+2026-10-07 20:10:19,139 [DEBUG] IBM866 Russian confidence = 0.0616659341962503
+2026-10-07 20:10:19,139 [DEBUG] IBM855 Russian confidence = 0.04923028850743905
+2026-10-07 20:10:19,139 [DEBUG] ISO-8859-7 Greek confidence = 0.08435196824813429
+2026-10-07 20:10:19,139 [DEBUG] windows-1253 Greek confidence = 0.08580020545737874
+2026-10-07 20:10:19,139 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.05701289560017914
+2026-10-07 20:10:19,139 [DEBUG] windows-1251 Bulgarian confidence = 0.05216078737632317
+2026-10-07 20:10:19,139 [DEBUG] TIS-620 Thai confidence = 0.04853006392752759
+2026-10-07 20:10:19,139 [DEBUG] ISO-8859-9 Turkish confidence = 0.05386049120396584
+2026-10-07 20:10:19,139 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,139 [DEBUG] ISO-8859-8 Hebrew confidence = 0.045626941918894943
+2026-10-07 20:10:19,139 [DEBUG] ISO-8859-8 Hebrew confidence = 0.05451218850310079
+2026-10-07 20:10:19,139 [DEBUG] ISO-8859-1  confidence = 0.01
+2026-10-07 20:10:19,139 [DEBUG] MacRoman  confidence = 0.0
+2026-10-07 20:10:19,141 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/media/c8e5a3cc82376372-s.p.1tvy6_bzr423s.woff2 HTTP/1.1" 200 13856
+2026-10-07 20:10:19,147 [DEBUG] SHIFT_JIS Japanese prober hit error at byte 13
+2026-10-07 20:10:19,147 [DEBUG] EUC-JP Japanese prober hit error at byte 13
+2026-10-07 20:10:19,147 [DEBUG] GB2312 Chinese prober hit error at byte 13
+2026-10-07 20:10:19,147 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/media/b9b8b7119bc15bee-s.p.3gpfavkf5dvlj.woff2 HTTP/1.1" 200 12440
+2026-10-07 20:10:19,147 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/chunks/17tuxysuvqwd2.js HTTP/1.1" 200 None
+2026-10-07 20:10:19,147 [DEBUG] EUC-KR Korean prober hit error at byte 13
+2026-10-07 20:10:19,147 [DEBUG] https://fahmi.eu.cc:443 "GET /apple-icon HTTP/1.1" 200 5928
+2026-10-07 20:10:19,148 [DEBUG] CP949 Korean prober hit error at byte 13
+2026-10-07 20:10:19,153 [DEBUG] SHIFT_JIS Japanese prober hit error at byte 12
+2026-10-07 20:10:19,153 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/chunks/2stgj8s0iaww7.css HTTP/1.1" 200 None
+2026-10-07 20:10:19,155 [DEBUG] SHIFT_JIS Japanese prober hit error at byte 71
+2026-10-07 20:10:19,155 [DEBUG] Big5 Chinese prober hit error at byte 13
+2026-10-07 20:10:19,155 [DEBUG] EUC-JP Japanese prober hit error at byte 11
+2026-10-07 20:10:19,156 [DEBUG] EUC-JP Japanese prober hit error at byte 0
+2026-10-07 20:10:19,156 [DEBUG] EUC-TW Taiwan prober hit error at byte 13
+2026-10-07 20:10:19,156 [DEBUG] GB2312 Chinese prober hit error at byte 12
+2026-10-07 20:10:19,156 [DEBUG] GB2312 Chinese prober hit error at byte 20
+2026-10-07 20:10:19,156 [DEBUG] Johab Korean prober hit error at byte 13
+2026-10-07 20:10:19,156 [DEBUG] EUC-KR Korean prober hit error at byte 11
+2026-10-07 20:10:19,156 [DEBUG] EUC-KR Korean prober hit error at byte 0
+2026-10-07 20:10:19,172 [DEBUG] CP949 Korean prober hit error at byte 12
+2026-10-07 20:10:19,177 [DEBUG] CP949 Korean prober hit error at byte 31
+2026-10-07 20:10:19,178 [DEBUG] https://fahmi.eu.cc:443 "GET / HTTP/1.1" 200 None
+2026-10-07 20:10:19,178 [DEBUG] Big5 Chinese prober hit error at byte 11
+2026-10-07 20:10:19,178 [DEBUG] Big5 Chinese prober hit error at byte 0
+2026-10-07 20:10:19,197 [DEBUG] windows-1251 Russian confidence = 0.05336062541103553
+2026-10-07 20:10:19,198 [DEBUG] https://fahmi.eu.cc:443 "GET / HTTP/1.1" 200 None
+2026-10-07 20:10:19,198 [DEBUG] EUC-TW Taiwan prober hit error at byte 11
+2026-10-07 20:10:19,198 [DEBUG] EUC-TW Taiwan prober hit error at byte 0
+2026-10-07 20:10:19,198 [DEBUG] KOI8-R Russian confidence = 0.051570222232166125
+2026-10-07 20:10:19,198 [DEBUG] Johab Korean prober hit error at byte 12
+2026-10-07 20:10:19,199 [DEBUG] https://fahmi.eu.cc:443 "GET /brand/favicon.svg HTTP/1.1" 200 None
+2026-10-07 20:10:19,199 [DEBUG] Johab Korean prober hit error at byte 20
+2026-10-07 20:10:19,199 [DEBUG] ISO-8859-5 Russian confidence = 0.05350782974427028
+2026-10-07 20:10:19,215 [DEBUG] https://fahmi.eu.cc:443 "GET /brand/favicon.svg HTTP/1.1" 200 None
+2026-10-07 20:10:19,232 [DEBUG] windows-1251 Russian confidence = 0.04600489043220033
+2026-10-07 20:10:19,232 [DEBUG] https://fahmi.eu.cc:443 "GET /start HTTP/1.1" 200 None
+2026-10-07 20:10:19,232 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/chunks/2s3ggolrqmp9v.js HTTP/1.1" 200 None
+2026-10-07 20:10:19,248 [DEBUG] MacCyrillic Russian confidence = 0.05583647318955779
+2026-10-07 20:10:19,248 [DEBUG] windows-1251 Russian confidence = 0.051786621956605626
+2026-10-07 20:10:19,249 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/chunks/095m0rcbzy0nt.js HTTP/1.1" 200 None
+2026-10-07 20:10:19,249 [DEBUG] KOI8-R Russian confidence = 0.06225719491501957
+2026-10-07 20:10:19,250 [DEBUG] IBM866 Russian confidence = 0.06200235733473814
+2026-10-07 20:10:19,250 [DEBUG] KOI8-R Russian confidence = 0.06538833336081516
+2026-10-07 20:10:19,252 [DEBUG] ISO-8859-5 Russian confidence = 0.06412041866861712
+2026-10-07 20:10:19,252 [DEBUG] IBM855 Russian confidence = 0.04673225264839462
+2026-10-07 20:10:19,252 [DEBUG] ISO-8859-5 Russian confidence = 0.04463051737458912
+2026-10-07 20:10:19,252 [DEBUG] MacCyrillic Russian confidence = 0.04829093791277515
+2026-10-07 20:10:19,252 [DEBUG] ISO-8859-7 Greek confidence = 0.08474475583352377
+2026-10-07 20:10:19,252 [DEBUG] MacCyrillic Russian confidence = 0.04876308193871084
+2026-10-07 20:10:19,252 [DEBUG] IBM866 Russian confidence = 0.05476999618518786
+2026-10-07 20:10:19,252 [DEBUG] windows-1253 Greek confidence = 0.08495003093561573
+2026-10-07 20:10:19,252 [DEBUG] IBM866 Russian confidence = 0.04729283806774087
+2026-10-07 20:10:19,252 [DEBUG] IBM855 Russian confidence = 0.06139297022277336
+2026-10-07 20:10:19,252 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.05602501326364764
+2026-10-07 20:10:19,252 [DEBUG] IBM855 Russian confidence = 0.05176577472163512
+2026-10-07 20:10:19,252 [DEBUG] ISO-8859-7 Greek confidence = 0.0934208479292956
+2026-10-07 20:10:19,252 [DEBUG] windows-1251 Bulgarian confidence = 0.05256310413916037
+2026-10-07 20:10:19,252 [DEBUG] ISO-8859-7 Greek confidence = 0.09175785821416628
+2026-10-07 20:10:19,252 [DEBUG] windows-1253 Greek confidence = 0.09580973765984159
+2026-10-07 20:10:19,252 [DEBUG] TIS-620 Thai confidence = 0.05929709282238969
+2026-10-07 20:10:19,253 [DEBUG] windows-1253 Greek confidence = 0.09364875681042845
+2026-10-07 20:10:19,253 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.06528954332063128
+2026-10-07 20:10:19,253 [DEBUG] ISO-8859-9 Turkish confidence = 0.05041858283356793
+2026-10-07 20:10:19,253 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.047888991966665136
+2026-10-07 20:10:19,253 [DEBUG] windows-1251 Bulgarian confidence = 0.04755640567211041
+2026-10-07 20:10:19,253 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,253 [DEBUG] windows-1251 Bulgarian confidence = 0.04436287360967945
+2026-10-07 20:10:19,253 [DEBUG] TIS-620 Thai confidence = 0.05820901248794378
+2026-10-07 20:10:19,253 [DEBUG] ISO-8859-8 Hebrew confidence = 0.053053552786641166
+2026-10-07 20:10:19,253 [DEBUG] TIS-620 Thai confidence = 0.047739840693145914
+2026-10-07 20:10:19,253 [DEBUG] ISO-8859-9 Turkish confidence = 0.06095193802839005
+2026-10-07 20:10:19,253 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0516602271579011
+2026-10-07 20:10:19,253 [DEBUG] ISO-8859-9 Turkish confidence = 0.04998255330439332
+2026-10-07 20:10:19,253 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,253 [DEBUG] no probers hit minimum threshold
+2026-10-07 20:10:19,253 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,253 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0552661578085726
+2026-10-07 20:10:19,253 [DEBUG] utf-8  confidence = 0.010000000000000009
+2026-10-07 20:10:19,254 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0539026859852091
+2026-10-07 20:10:19,254 [DEBUG] ISO-8859-8 Hebrew confidence = 0.057501642843526095
+2026-10-07 20:10:19,254 [DEBUG] SHIFT_JIS Japanese confidence = 0.01
+2026-10-07 20:10:19,254 [DEBUG] ISO-8859-8 Hebrew confidence = 0.06755186398146376
+2026-10-07 20:10:19,254 [DEBUG] no probers hit minimum threshold
+2026-10-07 20:10:19,254 [DEBUG] EUC-JP Japanese confidence = 0.01
+2026-10-07 20:10:19,254 [DEBUG] no probers hit minimum threshold
+2026-10-07 20:10:19,254 [DEBUG] utf-8  confidence = 0.010000000000000009
+2026-10-07 20:10:19,254 [DEBUG] GB2312 Chinese confidence = 0.01
+2026-10-07 20:10:19,254 [DEBUG] utf-8  confidence = 0.010000000000000009
+2026-10-07 20:10:19,254 [DEBUG] SHIFT_JIS Japanese confidence = 0.01
+2026-10-07 20:10:19,254 [DEBUG] EUC-KR Korean confidence = 0.01
+2026-10-07 20:10:19,254 [DEBUG] SHIFT_JIS Japanese confidence = 0.01
+2026-10-07 20:10:19,254 [DEBUG] EUC-JP Japanese confidence = 0.01
+2026-10-07 20:10:19,254 [DEBUG] CP949 Korean confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] EUC-JP Japanese confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] GB2312 Chinese confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] Big5 Chinese confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] GB2312 Chinese confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] EUC-KR Korean confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] EUC-TW Taiwan confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] EUC-KR Korean confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] CP949 Korean confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] Johab Korean confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] CP949 Korean confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] Big5 Chinese confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] windows-1251 Russian confidence = 0.05336062541103553
+2026-10-07 20:10:19,255 [DEBUG] Big5 Chinese confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] EUC-TW Taiwan confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] KOI8-R Russian confidence = 0.051570222232166125
+2026-10-07 20:10:19,255 [DEBUG] EUC-TW Taiwan confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] Johab Korean confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] ISO-8859-5 Russian confidence = 0.05350782974427028
+2026-10-07 20:10:19,255 [DEBUG] Johab Korean confidence = 0.01
+2026-10-07 20:10:19,255 [DEBUG] windows-1251 Russian confidence = 0.04600489043220033
+2026-10-07 20:10:19,255 [DEBUG] MacCyrillic Russian confidence = 0.05583647318955779
+2026-10-07 20:10:19,255 [DEBUG] windows-1251 Russian confidence = 0.051786621956605626
+2026-10-07 20:10:19,255 [DEBUG] KOI8-R Russian confidence = 0.06225719491501957
+2026-10-07 20:10:19,256 [DEBUG] IBM866 Russian confidence = 0.06200235733473814
+2026-10-07 20:10:19,256 [DEBUG] KOI8-R Russian confidence = 0.06538833336081516
+2026-10-07 20:10:19,256 [DEBUG] ISO-8859-5 Russian confidence = 0.06412041866861712
+2026-10-07 20:10:19,256 [DEBUG] IBM855 Russian confidence = 0.04673225264839462
+2026-10-07 20:10:19,256 [DEBUG] ISO-8859-5 Russian confidence = 0.04463051737458912
+2026-10-07 20:10:19,256 [DEBUG] MacCyrillic Russian confidence = 0.04829093791277515
+2026-10-07 20:10:19,256 [DEBUG] ISO-8859-7 Greek confidence = 0.08474475583352377
+2026-10-07 20:10:19,256 [DEBUG] MacCyrillic Russian confidence = 0.04876308193871084
+2026-10-07 20:10:19,256 [DEBUG] IBM866 Russian confidence = 0.05476999618518786
+2026-10-07 20:10:19,256 [DEBUG] windows-1253 Greek confidence = 0.08495003093561573
+2026-10-07 20:10:19,256 [DEBUG] IBM866 Russian confidence = 0.04729283806774087
+2026-10-07 20:10:19,256 [DEBUG] IBM855 Russian confidence = 0.06139297022277336
+2026-10-07 20:10:19,256 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.05602501326364764
+2026-10-07 20:10:19,256 [DEBUG] IBM855 Russian confidence = 0.05176577472163512
+2026-10-07 20:10:19,256 [DEBUG] ISO-8859-7 Greek confidence = 0.0934208479292956
+2026-10-07 20:10:19,256 [DEBUG] windows-1251 Bulgarian confidence = 0.05256310413916037
+2026-10-07 20:10:19,256 [DEBUG] ISO-8859-7 Greek confidence = 0.09175785821416628
+2026-10-07 20:10:19,256 [DEBUG] windows-1253 Greek confidence = 0.09580973765984159
+2026-10-07 20:10:19,256 [DEBUG] TIS-620 Thai confidence = 0.05929709282238969
+2026-10-07 20:10:19,256 [DEBUG] windows-1253 Greek confidence = 0.09364875681042845
+2026-10-07 20:10:19,256 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.06528954332063128
+2026-10-07 20:10:19,256 [DEBUG] ISO-8859-9 Turkish confidence = 0.05041858283356793
+2026-10-07 20:10:19,256 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.047888991966665136
+2026-10-07 20:10:19,256 [DEBUG] windows-1251 Bulgarian confidence = 0.04755640567211041
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,257 [DEBUG] windows-1251 Bulgarian confidence = 0.04436287360967945
+2026-10-07 20:10:19,257 [DEBUG] TIS-620 Thai confidence = 0.05820901248794378
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-8 Hebrew confidence = 0.053053552786641166
+2026-10-07 20:10:19,257 [DEBUG] TIS-620 Thai confidence = 0.047739840693145914
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-9 Turkish confidence = 0.06095193802839005
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0516602271579011
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-9 Turkish confidence = 0.04998255330439332
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-1  confidence = 0.01
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0552661578085726
+2026-10-07 20:10:19,257 [DEBUG] MacRoman  confidence = 0.0
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0539026859852091
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-8 Hebrew confidence = 0.057501642843526095
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-8 Hebrew confidence = 0.06755186398146376
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-1  confidence = 0.01
+2026-10-07 20:10:19,257 [DEBUG] ISO-8859-1  confidence = 0.01
+2026-10-07 20:10:19,258 [DEBUG] MacRoman  confidence = 0.0
+2026-10-07 20:10:19,258 [DEBUG] MacRoman  confidence = 0.0
+2026-10-07 20:10:19,271 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/chunks/2corl6wyj4669.js HTTP/1.1" 200 None
+2026-10-07 20:10:19,273 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/chunks/36nmaag7ucfp3.js HTTP/1.1" 200 None
+2026-10-07 20:10:19,280 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/chunks/3wc_kxht-4htf.js HTTP/1.1" 200 None
+2026-10-07 20:10:19,280 [DEBUG] https://fahmi.eu.cc:443 "GET /icon HTTP/1.1" 200 1013
+2026-10-07 20:10:19,281 [DEBUG] SHIFT_JIS Japanese prober hit error at byte 33
+2026-10-07 20:10:19,281 [DEBUG] EUC-JP Japanese prober hit error at byte 0
+2026-10-07 20:10:19,281 [DEBUG] GB2312 Chinese prober hit error at byte 33
+2026-10-07 20:10:19,281 [DEBUG] EUC-KR Korean prober hit error at byte 0
+2026-10-07 20:10:19,281 [DEBUG] CP949 Korean prober hit error at byte 33
+2026-10-07 20:10:19,281 [DEBUG] Big5 Chinese prober hit error at byte 0
+2026-10-07 20:10:19,281 [DEBUG] EUC-TW Taiwan prober hit error at byte 0
+2026-10-07 20:10:19,281 [DEBUG] Johab Korean prober hit error at byte 33
+2026-10-07 20:10:19,284 [DEBUG] windows-1251 Russian confidence = 0.05382905957106013
+2026-10-07 20:10:19,284 [DEBUG] KOI8-R Russian confidence = 0.048413529941486816
+2026-10-07 20:10:19,284 [DEBUG] ISO-8859-5 Russian confidence = 0.030278376197769897
+2026-10-07 20:10:19,284 [DEBUG] MacCyrillic Russian confidence = 0.04316642885127162
+2026-10-07 20:10:19,284 [DEBUG] IBM866 Russian confidence = 0.028540383754862588
+2026-10-07 20:10:19,284 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/chunks/1_7_7g_yq55vn.js HTTP/1.1" 200 None
+2026-10-07 20:10:19,284 [DEBUG] IBM855 Russian confidence = 0.07766290016285568
+2026-10-07 20:10:19,284 [DEBUG] ISO-8859-7 Greek confidence = 0.07471109043130428
+2026-10-07 20:10:19,284 [DEBUG] windows-1253 Greek confidence = 0.07676761566051098
+2026-10-07 20:10:19,284 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.027520462828324644
+2026-10-07 20:10:19,284 [DEBUG] windows-1251 Bulgarian confidence = 0.05455208310072342
+2026-10-07 20:10:19,284 [DEBUG] TIS-620 Thai confidence = 0.07706214924198258
+2026-10-07 20:10:19,284 [DEBUG] ISO-8859-9 Turkish confidence = 0.05625853092105373
+2026-10-07 20:10:19,285 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,285 [DEBUG] ISO-8859-8 Hebrew confidence = 0.03378903593037011
+2026-10-07 20:10:19,285 [DEBUG] ISO-8859-8 Hebrew confidence = 0.04786780090135765
+2026-10-07 20:10:19,285 [DEBUG] no probers hit minimum threshold
+2026-10-07 20:10:19,285 [DEBUG] utf-8  confidence = 0.010000000000000009
+2026-10-07 20:10:19,285 [DEBUG] SHIFT_JIS Japanese confidence = 0.01
+2026-10-07 20:10:19,285 [DEBUG] EUC-JP Japanese confidence = 0.01
+2026-10-07 20:10:19,285 [DEBUG] GB2312 Chinese confidence = 0.01
+2026-10-07 20:10:19,285 [DEBUG] EUC-KR Korean confidence = 0.01
+2026-10-07 20:10:19,285 [DEBUG] CP949 Korean confidence = 0.01
+2026-10-07 20:10:19,285 [DEBUG] Big5 Chinese confidence = 0.01
+2026-10-07 20:10:19,285 [DEBUG] https://fahmi.eu.cc:443 "GET /_next/static/immutable/chunks/turbopack-3xpsgnh7g37se.js HTTP/1.1" 200 None
+2026-10-07 20:10:19,285 [DEBUG] EUC-TW Taiwan confidence = 0.01
+2026-10-07 20:10:19,286 [DEBUG] Johab Korean confidence = 0.01
+2026-10-07 20:10:19,286 [DEBUG] windows-1251 Russian confidence = 0.05382905957106013
+2026-10-07 20:10:19,286 [DEBUG] KOI8-R Russian confidence = 0.048413529941486816
+2026-10-07 20:10:19,286 [DEBUG] ISO-8859-5 Russian confidence = 0.030278376197769897
+2026-10-07 20:10:19,286 [DEBUG] MacCyrillic Russian confidence = 0.04316642885127162
+2026-10-07 20:10:19,286 [DEBUG] IBM866 Russian confidence = 0.028540383754862588
+2026-10-07 20:10:19,286 [DEBUG] IBM855 Russian confidence = 0.07766290016285568
+2026-10-07 20:10:19,286 [DEBUG] ISO-8859-7 Greek confidence = 0.07471109043130428
+2026-10-07 20:10:19,286 [DEBUG] windows-1253 Greek confidence = 0.07676761566051098
+2026-10-07 20:10:19,286 [DEBUG] ISO-8859-5 Bulgarian confidence = 0.027520462828324644
+2026-10-07 20:10:19,286 [DEBUG] windows-1251 Bulgarian confidence = 0.05455208310072342
+2026-10-07 20:10:19,286 [DEBUG] TIS-620 Thai confidence = 0.07706214924198258
+2026-10-07 20:10:19,286 [DEBUG] ISO-8859-9 Turkish confidence = 0.05625853092105373
+2026-10-07 20:10:19,286 [DEBUG] ISO-8859-8 Hebrew confidence = 0.0
+2026-10-07 20:10:19,286 [DEBUG] ISO-8859-8 Hebrew confidence = 0.03378903593037011
+2026-10-07 20:10:19,286 [DEBUG] ISO-8859-8 Hebrew confidence = 0.04786780090135765
+2026-10-07 20:10:19,286 [DEBUG] ISO-8859-1  confidence = 0.01
+2026-10-07 20:10:19,286 [DEBUG] MacRoman  confidence = 0.0
+2026-10-07 20:10:19,300 [DEBUG] [ROUTER] Recommended suite categories:
+2026-10-07 20:10:19,300 [DEBUG]   -> Discovery: 01-recon, 10-adv-recon, 01-recon/katana-crawler-auto
+2026-10-07 20:10:19,300 [INFO] [PHASE 2/7] VULNERABILITY DETECTION
+2026-10-07 20:10:19,302 [DEBUG] Starting new HTTPS connection (1): fahmi.eu.cc:443
+2026-10-07 20:10:19,302 [DEBUG] Starting new HTTPS connection (2): fahmi.eu.cc:443
+2026-10-07 20:10:19,303 [DEBUG] Starting new HTTPS connection (3): fahmi.eu.cc:443
+2026-10-07 20:10:19,303 [DEBUG] Starting new HTTPS connection (4): fahmi.eu.cc:443
+2026-10-07 20:10:19,303 [DEBUG] Starting new HTTPS connection (5): fahmi.eu.cc:443
+2026-10-07 20:10:19,377 [DEBUG] https://fahmi.eu.cc:443 "GET /?q=%3Cscript%3Ealert(1)%3C/script%3E&search=%3Cscript%3Ealert(1)%3C/script%3E&s=%3Cscript%3Ealert(1)%3C/script%3E HTTP/1.1" 200 None
+2026-10-07 20:10:19,402 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=../../../etc/passwd&page=../../../etc/passwd&include=../../../etc/passwd HTTP/1.1" 200 None
+2026-10-07 20:10:19,406 [DEBUG] https://fahmi.eu.cc:443 "GET /?id=' HTTP/1.1" 200 None
+2026-10-07 20:10:19,409 [DEBUG] https://fahmi.eu.cc:443 "GET /user/1001 HTTP/1.1" 404 None
+2026-10-07 20:10:19,410 [DEBUG] https://fahmi.eu.cc:443 "GET /?next=//https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,429 [DEBUG] https://fahmi.eu.cc:443 "GET /user/1002 HTTP/1.1" 404 None
+2026-10-07 20:10:19,432 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=../../etc/passwd&page=../../etc/passwd&include=../../etc/passwd HTTP/1.1" 200 None
+2026-10-07 20:10:19,435 [DEBUG] https://fahmi.eu.cc:443 "GET /?next=https://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,447 [DEBUG] https://fahmi.eu.cc:443 "GET /?id='%20OR%20'1'='1 HTTP/1.1" 200 None
+2026-10-07 20:10:19,451 [DEBUG] https://fahmi.eu.cc:443 "GET /user/2001 HTTP/1.1" 404 None
+2026-10-07 20:10:19,459 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=../etc/passwd&page=../etc/passwd&include=../etc/passwd HTTP/1.1" 200 None
+2026-10-07 20:10:19,464 [DEBUG] https://fahmi.eu.cc:443 "GET /?url=http://169.254.169.254/latest/meta-data/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,467 [DEBUG] https://fahmi.eu.cc:443 "GET /?next=http://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,482 [DEBUG] https://fahmi.eu.cc:443 "GET /?id='%20UNION%20SELECT%20NULL-- HTTP/1.1" 200 None
+2026-10-07 20:10:19,484 [DEBUG] https://fahmi.eu.cc:443 "GET /user/5000 HTTP/1.1" 404 None
+2026-10-07 20:10:19,491 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=....//....//....//etc/passwd&page=....//....//....//etc/passwd&include=....//....//....//etc/passwd HTTP/1.1" 200 None
+2026-10-07 20:10:19,496 [DEBUG] https://fahmi.eu.cc:443 "GET /?redirect=//https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,501 [DEBUG] https://fahmi.eu.cc:443 "GET /?url=http://localhost:8080/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,503 [DEBUG] https://fahmi.eu.cc:443 "GET /?id=%22 HTTP/1.1" 200 None
+2026-10-07 20:10:19,507 [DEBUG] https://fahmi.eu.cc:443 "GET /profile/1001 HTTP/1.1" 404 None
+2026-10-07 20:10:19,517 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=../../../../windows/win.ini&page=../../../../windows/win.ini&include=../../../../windows/win.ini HTTP/1.1" 200 None
+2026-10-07 20:10:19,520 [DEBUG] https://fahmi.eu.cc:443 "GET /?redirect=https://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,522 [DEBUG] https://fahmi.eu.cc:443 "GET /?url=http://127.0.0.1:22/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,528 [DEBUG] https://fahmi.eu.cc:443 "GET /?id=;%20DROP%20TABLE-- HTTP/1.1" 200 None
+2026-10-07 20:10:19,532 [DEBUG] https://fahmi.eu.cc:443 "GET /profile/1002 HTTP/1.1" 404 None
+2026-10-07 20:10:19,541 [DEBUG] https://fahmi.eu.cc:443 "GET /?url=http://%5B::1%5D:80/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,545 [DEBUG] https://fahmi.eu.cc:443 "GET / HTTP/1.1" 200 None
+2026-10-07 20:10:19,551 [DEBUG] https://fahmi.eu.cc:443 "GET /?redirect=http://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,553 [DEBUG] https://fahmi.eu.cc:443 "GET /profile/2001 HTTP/1.1" 404 None
+2026-10-07 20:10:19,570 [DEBUG] https://fahmi.eu.cc:443 "GET /?path=http://169.254.169.254/latest/meta-data/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,596 [DEBUG] https://fahmi.eu.cc:443 "GET /?url=//https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,597 [DEBUG] https://fahmi.eu.cc:443 "GET / HTTP/1.1" 200 None
+2026-10-07 20:10:19,607 [DEBUG] https://fahmi.eu.cc:443 "GET /profile/5000 HTTP/1.1" 404 None
+2026-10-07 20:10:19,614 [DEBUG] https://fahmi.eu.cc:443 "GET /?page=' HTTP/1.1" 200 None
+2026-10-07 20:10:19,632 [DEBUG] https://fahmi.eu.cc:443 "GET /?path=http://localhost:8080/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,642 [DEBUG] https://fahmi.eu.cc:443 "GET / HTTP/1.1" 200 None
+2026-10-07 20:10:19,657 [DEBUG] https://fahmi.eu.cc:443 "GET /?url=https://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,658 [DEBUG] https://fahmi.eu.cc:443 "GET /order/1001 HTTP/1.1" 404 None
+2026-10-07 20:10:19,671 [DEBUG] https://fahmi.eu.cc:443 "GET /?path=http://127.0.0.1:22/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,676 [DEBUG] https://fahmi.eu.cc:443 "GET /?page='%20OR%20'1'='1 HTTP/1.1" 200 None
+2026-10-07 20:10:19,680 [DEBUG] https://fahmi.eu.cc:443 "GET /order/1002 HTTP/1.1" 404 None
+2026-10-07 20:10:19,696 [DEBUG] https://fahmi.eu.cc:443 "GET /?page='%20UNION%20SELECT%20NULL-- HTTP/1.1" 200 None
+2026-10-07 20:10:19,707 [DEBUG] https://fahmi.eu.cc:443 "GET /?path=http://%5B::1%5D:80/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,715 [DEBUG] https://fahmi.eu.cc:443 "GET /order/2001 HTTP/1.1" 404 None
+2026-10-07 20:10:19,717 [DEBUG] https://fahmi.eu.cc:443 "GET /?url=http://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,726 [DEBUG] https://fahmi.eu.cc:443 "GET /?page=%22 HTTP/1.1" 200 None
+2026-10-07 20:10:19,751 [DEBUG] https://fahmi.eu.cc:443 "GET /?page=;%20DROP%20TABLE-- HTTP/1.1" 200 None
+2026-10-07 20:10:19,755 [DEBUG] https://fahmi.eu.cc:443 "GET /order/5000 HTTP/1.1" 404 None
+2026-10-07 20:10:19,757 [DEBUG] https://fahmi.eu.cc:443 "GET /?return=//https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,776 [DEBUG] https://fahmi.eu.cc:443 "GET /invoice/1001 HTTP/1.1" 404 None
+2026-10-07 20:10:19,779 [DEBUG] https://fahmi.eu.cc:443 "GET /?return=https://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,782 [DEBUG] https://fahmi.eu.cc:443 "GET /?cat=' HTTP/1.1" 200 None
+2026-10-07 20:10:19,798 [DEBUG] https://fahmi.eu.cc:443 "GET /invoice/1002 HTTP/1.1" 404 None
+2026-10-07 20:10:19,804 [DEBUG] https://fahmi.eu.cc:443 "GET /?redirect=http://169.254.169.254/latest/meta-data/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,808 [DEBUG] https://fahmi.eu.cc:443 "GET /?return=http://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,823 [DEBUG] https://fahmi.eu.cc:443 "GET /invoice/2001 HTTP/1.1" 404 None
+2026-10-07 20:10:19,831 [DEBUG] https://fahmi.eu.cc:443 "GET /?dest=//https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,842 [DEBUG] https://fahmi.eu.cc:443 "GET /invoice/5000 HTTP/1.1" 404 None
+2026-10-07 20:10:19,845 [DEBUG] https://fahmi.eu.cc:443 "GET /?redirect=http://localhost:8080/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,855 [DEBUG] https://fahmi.eu.cc:443 "GET /?dest=https://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,873 [DEBUG] https://fahmi.eu.cc:443 "GET /file/1001 HTTP/1.1" 404 None
+2026-10-07 20:10:19,875 [DEBUG] https://fahmi.eu.cc:443 "GET /?cat='%20OR%20'1'='1 HTTP/1.1" 200 None
+2026-10-07 20:10:19,876 [DEBUG] https://fahmi.eu.cc:443 "GET /?dest=http://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,896 [DEBUG] https://fahmi.eu.cc:443 "GET /file/1002 HTTP/1.1" 404 None
+2026-10-07 20:10:19,898 [DEBUG] https://fahmi.eu.cc:443 "GET /?redirect=http://127.0.0.1:22/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,902 [DEBUG] https://fahmi.eu.cc:443 "GET /?cat='%20UNION%20SELECT%20NULL-- HTTP/1.1" 200 None
+2026-10-07 20:10:19,903 [DEBUG] https://fahmi.eu.cc:443 "GET /?target=//https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,920 [DEBUG] https://fahmi.eu.cc:443 "GET /file/2001 HTTP/1.1" 404 None
+2026-10-07 20:10:19,925 [DEBUG] https://fahmi.eu.cc:443 "GET /?cat=%22 HTTP/1.1" 200 None
+2026-10-07 20:10:19,939 [DEBUG] https://fahmi.eu.cc:443 "GET /?redirect=http://%5B::1%5D:80/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,943 [DEBUG] https://fahmi.eu.cc:443 "GET /file/5000 HTTP/1.1" 404 None
+2026-10-07 20:10:19,956 [DEBUG] https://fahmi.eu.cc:443 "GET /?cat=;%20DROP%20TABLE-- HTTP/1.1" 200 None
+2026-10-07 20:10:19,966 [DEBUG] https://fahmi.eu.cc:443 "GET /?target=https://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:19,970 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=http://169.254.169.254/latest/meta-data/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,980 [DEBUG] https://fahmi.eu.cc:443 "GET /?product=' HTTP/1.1" 200 None
+2026-10-07 20:10:19,994 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=http://localhost:8080/ HTTP/1.1" 200 None
+2026-10-07 20:10:19,998 [DEBUG] https://fahmi.eu.cc:443 "GET /?target=http://https://evil.com HTTP/1.1" 200 None
+2026-10-07 20:10:20,006 [DEBUG] https://fahmi.eu.cc:443 "GET /?product='%20OR%20'1'='1 HTTP/1.1" 200 None
+2026-10-07 20:10:20,018 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=http://127.0.0.1:22/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,038 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=http://%5B::1%5D:80/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,055 [DEBUG] https://fahmi.eu.cc:443 "GET /?product='%20UNION%20SELECT%20NULL-- HTTP/1.1" 200 None
+2026-10-07 20:10:20,064 [DEBUG] https://fahmi.eu.cc:443 "GET /?load=http://169.254.169.254/latest/meta-data/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,080 [DEBUG] https://fahmi.eu.cc:443 "GET /?product=%22 HTTP/1.1" 200 None
+2026-10-07 20:10:20,090 [DEBUG] https://fahmi.eu.cc:443 "GET /?load=http://localhost:8080/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,106 [DEBUG] https://fahmi.eu.cc:443 "GET /?product=;%20DROP%20TABLE-- HTTP/1.1" 200 None
+2026-10-07 20:10:20,112 [DEBUG] https://fahmi.eu.cc:443 "GET /?load=http://127.0.0.1:22/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,128 [DEBUG] https://fahmi.eu.cc:443 "GET /?user=' HTTP/1.1" 200 None
+2026-10-07 20:10:20,138 [DEBUG] https://fahmi.eu.cc:443 "GET /?load=http://%5B::1%5D:80/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,171 [DEBUG] https://fahmi.eu.cc:443 "GET /?fetch=http://169.254.169.254/latest/meta-data/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,175 [DEBUG] https://fahmi.eu.cc:443 "GET /?user='%20OR%20'1'='1 HTTP/1.1" 200 None
+2026-10-07 20:10:20,200 [DEBUG] https://fahmi.eu.cc:443 "GET /?fetch=http://localhost:8080/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,218 [DEBUG] https://fahmi.eu.cc:443 "GET /?user='%20UNION%20SELECT%20NULL-- HTTP/1.1" 200 None
+2026-10-07 20:10:20,227 [DEBUG] https://fahmi.eu.cc:443 "GET /?fetch=http://127.0.0.1:22/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,243 [DEBUG] https://fahmi.eu.cc:443 "GET /?user=%22 HTTP/1.1" 200 None
+2026-10-07 20:10:20,248 [DEBUG] https://fahmi.eu.cc:443 "GET /?fetch=http://%5B::1%5D:80/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,267 [DEBUG] https://fahmi.eu.cc:443 "GET /?user=;%20DROP%20TABLE-- HTTP/1.1" 200 None
+2026-10-07 20:10:20,291 [DEBUG] https://fahmi.eu.cc:443 "GET /?src=http://169.254.169.254/latest/meta-data/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,301 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=' HTTP/1.1" 200 None
+2026-10-07 20:10:20,316 [DEBUG] https://fahmi.eu.cc:443 "GET /?src=http://localhost:8080/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,326 [DEBUG] https://fahmi.eu.cc:443 "GET /?file='%20OR%20'1'='1 HTTP/1.1" 200 None
+2026-10-07 20:10:20,345 [DEBUG] https://fahmi.eu.cc:443 "GET /?src=http://127.0.0.1:22/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,380 [DEBUG] https://fahmi.eu.cc:443 "GET /?src=http://%5B::1%5D:80/ HTTP/1.1" 200 None
+2026-10-07 20:10:20,389 [DEBUG] https://fahmi.eu.cc:443 "GET /?file='%20UNION%20SELECT%20NULL-- HTTP/1.1" 200 None
+2026-10-07 20:10:20,419 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=%22 HTTP/1.1" 200 None
+2026-10-07 20:10:20,447 [DEBUG] https://fahmi.eu.cc:443 "GET /?file=;%20DROP%20TABLE-- HTTP/1.1" 200 None
+2026-10-07 20:10:20,466 [DEBUG] https://fahmi.eu.cc:443 "GET /?order=' HTTP/1.1" 200 None
+2026-10-07 20:10:20,502 [DEBUG] https://fahmi.eu.cc:443 "GET /?order='%20OR%20'1'='1 HTTP/1.1" 200 None
+2026-10-07 20:10:20,552 [DEBUG] https://fahmi.eu.cc:443 "GET /?order='%20UNION%20SELECT%20NULL-- HTTP/1.1" 200 None
+2026-10-07 20:10:20,595 [DEBUG] https://fahmi.eu.cc:443 "GET /?order=%22 HTTP/1.1" 200 None
+2026-10-07 20:10:20,619 [DEBUG] https://fahmi.eu.cc:443 "GET /?order=;%20DROP%20TABLE-- HTTP/1.1" 200 None
+2026-10-07 20:10:20,622 [INFO] [PHASE 7/7] REPORT
+2026-10-07 20:10:20,627 [INFO] ==================================================
+2026-10-07 20:10:20,627 [INFO] PIPELINE COMPLETE in 1.83s
+2026-10-07 20:10:20,627 [INFO] Target: https://fahmi.eu.cc
+2026-10-07 20:10:20,627 [INFO] Vulnerabilities: 0
+2026-10-07 20:10:20,627 [INFO] Exploits executed: 0
+2026-10-07 20:10:20,627 [INFO] Breach level: 0/5
+2026-10-07 20:10:20,627 [INFO] Report: reports/fahmi.eu.cc_20261007_201018/report.html
+2026-10-07 20:10:20,627 [INFO] ==================================================

@@ -1,0 +1,16 @@
+2026-10-04 15:23:22,390 [INFO] Target: https://orvaki.com
+2026-10-04 15:23:22,390 [INFO] Output: reports/orvaki.com__20261004_152322
+2026-10-04 15:23:22,390 [INFO] Aggressive: True
+2026-10-04 15:23:22,390 [INFO] --------------------------------------------------
+2026-10-04 15:23:22,390 [INFO] [PHASE 1/7] RECONNAISSANCE
+2026-10-04 15:23:24,618 [WARNING] Connection pool is full, discarding connection: mkirwdkcwzbjzkluindi.supabase.co. Connection pool size: 10
+2026-10-04 15:23:25,467 [INFO] [PHASE 2/7] VULNERABILITY DETECTION
+2026-10-04 15:23:28,805 [INFO] [PHASE 7/7] REPORT
+2026-10-04 15:23:28,810 [INFO] ==================================================
+2026-10-04 15:23:28,810 [INFO] PIPELINE COMPLETE in 6.42s
+2026-10-04 15:23:28,810 [INFO] Target: https://orvaki.com
+2026-10-04 15:23:28,810 [INFO] Vulnerabilities: 0
+2026-10-04 15:23:28,810 [INFO] Exploits executed: 0
+2026-10-04 15:23:28,810 [INFO] Breach level: 0/5
+2026-10-04 15:23:28,810 [INFO] Report: reports/orvaki.com__20261004_152322/report.html
+2026-10-04 15:23:28,810 [INFO] ==================================================

@@ -1,0 +1,14 @@
+[
+  {
+    "type": "clickjacking",
+    "url": "http://127.0.0.1:8000",
+    "severity": "low",
+    "evidence": "No X-Frame-Options and no frame-ancestors \u2014 page is framable"
+  },
+  {
+    "type": "security_headers",
+    "url": "http://127.0.0.1:8000",
+    "severity": "low",
+    "evidence": "Missing 5/5 baseline headers: Content-Security-Policy, Strict-Transport-Security, X-Content-Type-Options, Referrer-Policy, Permissions-Policy"
+  }
+]

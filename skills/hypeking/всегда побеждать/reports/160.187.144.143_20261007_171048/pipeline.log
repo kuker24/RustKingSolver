@@ -1,0 +1,34 @@
+2026-10-07 17:10:48,864 [INFO] Target: http://160.187.144.143
+2026-10-07 17:10:48,864 [INFO] Output: reports/160.187.144.143_20261007_171048
+2026-10-07 17:10:48,864 [INFO] Aggressive: False
+2026-10-07 17:10:48,864 [INFO] Profile: moderate (delay 0.5s +-0.25, log INFO)
+2026-10-07 17:10:48,864 [INFO] --------------------------------------------------
+2026-10-07 17:10:48,864 [INFO] Scope: OK: 160.187.144.143
+2026-10-07 17:10:48,864 [INFO] [PHASE 1/7] RECONNAISSANCE
+2026-10-07 17:11:00,622 [INFO] [ROUTER] Recommended suite categories:
+2026-10-07 17:11:00,623 [INFO]   -> Discovery: 01-recon, 10-adv-recon, 01-recon/httpx-smart-recon
+2026-10-07 17:11:00,623 [INFO] [PHASE 2/7] VULNERABILITY DETECTION
+2026-10-07 17:11:19,631 [INFO] [PHASE 4/7] EXPLOITATION
+2026-10-07 17:11:20,073 [INFO] [PHASE 7/7] REPORT
+2026-10-07 17:11:20,073 [WARNING] GATE BLOCKED: open leads remain — finish or close them:
+  ├─ [2] exploit_failed: clickjacking at http://160.187.144.143 — exploit ran, no confirmation
+  ├─ [3] exploit_failed: security_headers at http://160.187.144.143 — exploit ran, no confirmation
+  └─ close leads in leads.json, rerun to exhaustion, or pass --force-report.
+2026-10-07 17:11:20,074 [ERROR] Report blocked — close leads, exhaust --budget-min, or rerun with --force-report.
+2026-10-07 17:31:33,954 [INFO] Target: http://160.187.144.143
+2026-10-07 17:31:33,954 [INFO] Output: reports/160.187.144.143_20261007_171048
+2026-10-07 17:31:33,954 [INFO] Aggressive: False
+2026-10-07 17:31:33,954 [INFO] Profile: moderate (delay 0.5s +-0.25, log INFO)
+2026-10-07 17:31:33,954 [INFO] --------------------------------------------------
+2026-10-07 17:31:33,954 [INFO] Scope: OK: 160.187.144.143
+2026-10-07 17:31:33,954 [INFO] [PHASE 1/7] RECONNAISSANCE
+2026-10-07 17:31:46,485 [INFO] [ROUTER] Recommended suite categories:
+2026-10-07 17:31:46,485 [INFO]   -> Discovery: 01-recon, 10-adv-recon, 01-recon/httpx-smart-recon
+2026-10-07 17:31:46,485 [INFO] [PHASE 2/7] VULNERABILITY DETECTION
+2026-10-07 17:32:05,381 [INFO] [PHASE 4/7] EXPLOITATION
+2026-10-07 17:32:05,744 [INFO] [PHASE 7/7] REPORT
+2026-10-07 17:32:05,744 [WARNING] GATE BLOCKED: open leads remain — finish or close them:
+  ├─ [5] exploit_failed: clickjacking at http://160.187.144.143 — exploit ran, no confirmation
+  ├─ [6] exploit_failed: security_headers at http://160.187.144.143 — exploit ran, no confirmation
+  └─ close leads in leads.json, rerun to exhaustion, or pass --force-report.
+2026-10-07 17:32:05,744 [ERROR] Report blocked — close leads, exhaust --budget-min, or rerun with --force-report.

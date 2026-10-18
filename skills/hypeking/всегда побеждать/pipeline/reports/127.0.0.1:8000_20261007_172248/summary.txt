@@ -1,0 +1,19 @@
+==================================================
+AXIOM WEB PWN — SUMMARY
+==================================================
+Target:         http://127.0.0.1:8000
+Date:           2026-10-07 17:23:05
+Technologies:   0
+Vulnerabilities: 2
+Exploits:       2 (0 successful)
+Breach Level:   0/5
+Status:         No Breach — Target secure or not vulnerable
+--------------------------------------------------
+VULNERABILITIES:
+  [     LOW] clickjacking
+  [     LOW] security_headers
+--------------------------------------------------
+EXPLOITS:
+  ✗ clickjacking (level 0)
+  ✗ security_headers (level 0)
+==================================================

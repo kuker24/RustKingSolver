@@ -1,0 +1,58 @@
+{
+  "leads": [
+    {
+      "id": 1,
+      "kind": "finding",
+      "detail": "ssrf at http://160.187.144.143?url=http://169.254.169.254/latest/meta-data/ \u2014 detected",
+      "status": "closed",
+      "created": "2026-10-07T17:11:20",
+      "closed": "2026-10-07T17:35:00",
+      "close_reason": "false-positive \u2014 manual differential (baseline vs url=169.254.169.254 vs url=127.0.0.1) returned byte-identical Apache default page; no server-side fetch"
+    },
+    {
+      "id": 2,
+      "kind": "exploit_failed",
+      "detail": "clickjacking at http://160.187.144.143 \u2014 exploit ran, no confirmation",
+      "status": "closed",
+      "created": "2026-10-07T17:11:20",
+      "closed": "2026-10-07T17:35:00",
+      "close_reason": "confirmed \u2014 missing X-Frame-Options/frame-ancestors on default page; trivial impact, no sensitive action to frame"
+    },
+    {
+      "id": 3,
+      "kind": "exploit_failed",
+      "detail": "security_headers at http://160.187.144.143 \u2014 exploit ran, no confirmation",
+      "status": "closed",
+      "created": "2026-10-07T17:11:20",
+      "closed": "2026-10-07T17:35:00",
+      "close_reason": "confirmed \u2014 5/5 baseline headers absent on default page; informational only"
+    },
+    {
+      "id": 4,
+      "kind": "finding",
+      "detail": "ssrf at http://160.187.144.143?url=http://169.254.169.254/latest/meta-data/ \u2014 detected",
+      "status": "exploited",
+      "created": "2026-10-07T17:32:05",
+      "closed": "2026-10-07T17:32:05",
+      "close_reason": "exploited"
+    },
+    {
+      "id": 5,
+      "kind": "exploit_failed",
+      "detail": "clickjacking at http://160.187.144.143 \u2014 exploit ran, no confirmation",
+      "status": "open",
+      "created": "2026-10-07T17:32:05",
+      "closed": null,
+      "close_reason": null
+    },
+    {
+      "id": 6,
+      "kind": "exploit_failed",
+      "detail": "security_headers at http://160.187.144.143 \u2014 exploit ran, no confirmation",
+      "status": "open",
+      "created": "2026-10-07T17:32:05",
+      "closed": null,
+      "close_reason": null
+    }
+  ]
+}

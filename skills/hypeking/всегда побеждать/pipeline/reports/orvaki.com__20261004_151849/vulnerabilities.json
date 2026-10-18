@@ -1,0 +1,8 @@
+[
+  {
+    "type": "ssti",
+    "url": "https://orvaki.com?name={{7*7}}&user={{7*7}}",
+    "severity": "critical",
+    "evidence": "Template expression evaluated: 7*7=49"
+  }
+]

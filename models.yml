@@ -1,0 +1,9 @@
+providers:
+  9router:
+    baseUrl: http://127.0.0.1:20128/v1
+    apiKey: ${NINEROUTER_API_KEY}
+    api: openai-completions
+    authHeader: true
+    disableStrictTools: true
+    discovery:
+      type: proxy

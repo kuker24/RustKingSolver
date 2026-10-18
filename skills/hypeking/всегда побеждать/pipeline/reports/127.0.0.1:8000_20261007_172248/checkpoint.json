@@ -1,0 +1,8 @@
+{
+  "target": "http://127.0.0.1:8000",
+  "phase": "report",
+  "breach_level": 0,
+  "vulns_found": 2,
+  "exploits_run": 2,
+  "elapsed": 17.87
+}

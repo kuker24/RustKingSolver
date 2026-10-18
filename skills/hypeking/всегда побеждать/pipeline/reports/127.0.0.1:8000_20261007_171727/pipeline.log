@@ -1,0 +1,6 @@
+2026-10-07 17:17:27,708 [WARNING] Target: http://127.0.0.1:8000
+2026-10-07 17:17:27,708 [WARNING] Output: reports/127.0.0.1:8000_20261007_171727
+2026-10-07 17:17:27,709 [WARNING] Aggressive: False
+2026-10-07 17:17:27,709 [WARNING] Profile: quiet (delay 2.0s +-1.0, log WARNING)
+2026-10-07 17:17:27,709 [WARNING] --------------------------------------------------
+2026-10-07 17:17:27,709 [WARNING] Scope: LAB_MODE: private/reserved target 127.0.0.1 allowed by --lab

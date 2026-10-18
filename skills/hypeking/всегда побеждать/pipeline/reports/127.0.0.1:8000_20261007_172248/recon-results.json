@@ -1,0 +1,24 @@
+{
+  "alive": true,
+  "status_code": 200,
+  "title": "",
+  "server": "Werkzeug/3.1.9 Python/3.13.5",
+  "technologies": [],
+  "endpoints": [],
+  "parameters": [],
+  "forms": [
+    {
+      "action": "/search",
+      "method": null,
+      "fields": []
+    }
+  ],
+  "cookies": {},
+  "headers": {
+    "Server": "Werkzeug/3.1.9 Python/3.13.5",
+    "Date": "Wed, 07 Oct 2026 10:22:48 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Content-Length": "86",
+    "Connection": "close"
+  }
+}

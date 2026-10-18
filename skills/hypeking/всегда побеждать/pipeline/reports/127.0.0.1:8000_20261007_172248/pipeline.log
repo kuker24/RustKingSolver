@@ -1,0 +1,23 @@
+2026-10-07 17:22:48,070 [INFO] Target: http://127.0.0.1:8000
+2026-10-07 17:22:48,070 [INFO] Output: reports/127.0.0.1:8000_20261007_172248
+2026-10-07 17:22:48,070 [INFO] Aggressive: False
+2026-10-07 17:22:48,070 [INFO] Profile: moderate (delay 0.5s +-0.25, log INFO)
+2026-10-07 17:22:48,070 [INFO] --------------------------------------------------
+2026-10-07 17:22:48,070 [INFO] Scope: LAB_MODE: private/reserved target 127.0.0.1 allowed by --lab
+2026-10-07 17:22:48,070 [INFO] [PHASE 1/7] RECONNAISSANCE
+2026-10-07 17:22:49,200 [INFO] [PHASE 2/7] VULNERABILITY DETECTION
+2026-10-07 17:23:05,938 [INFO] [PHASE 4/7] EXPLOITATION
+2026-10-07 17:23:05,943 [INFO] [PHASE 7/7] REPORT
+2026-10-07 17:23:05,943 [WARNING] GATE BLOCKED: open leads remain — finish or close them:
+  ├─ [1] exploit_failed: clickjacking at http://127.0.0.1:8000 — exploit ran, no confirmation
+  ├─ [2] exploit_failed: security_headers at http://127.0.0.1:8000 — exploit ran, no confirmation
+  └─ close leads in leads.json, rerun to exhaustion, or pass --force-report.
+2026-10-07 17:23:05,943 [WARNING] --force-report: overriding completion gate (open leads preserved in leads.json)
+2026-10-07 17:23:05,944 [INFO] ==================================================
+2026-10-07 17:23:05,944 [INFO] PIPELINE COMPLETE in 17.87s
+2026-10-07 17:23:05,944 [INFO] Target: http://127.0.0.1:8000
+2026-10-07 17:23:05,944 [INFO] Vulnerabilities: 2
+2026-10-07 17:23:05,944 [INFO] Exploits executed: 2
+2026-10-07 17:23:05,944 [INFO] Breach level: 0/5
+2026-10-07 17:23:05,944 [INFO] Report: reports/127.0.0.1:8000_20261007_172248/report.html
+2026-10-07 17:23:05,944 [INFO] ==================================================

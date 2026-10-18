@@ -1,0 +1,17 @@
+==================================================
+AXIOM WEB PWN — SUMMARY
+==================================================
+Target:         https://fahmi.eu.cc
+Date:           2026-10-07 20:10:20
+Technologies:   1
+Vulnerabilities: 0
+Exploits:       0 (0 successful)
+Breach Level:   0/5
+Status:         No Breach — Target secure or not vulnerable
+--------------------------------------------------
+VULNERABILITIES:
+  (none detected)
+--------------------------------------------------
+EXPLOITS:
+  (none executed)
+==================================================
